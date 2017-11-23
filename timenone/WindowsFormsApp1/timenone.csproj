@@ -72,6 +72,12 @@
     <Compile Include="Countdown.Designer.cs">
       <DependentUpon>Countdown.cs</DependentUpon>
     </Compile>
+    <Compile Include="edit_alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edit_alert.Designer.cs">
+      <DependentUpon>edit_alert.cs</DependentUpon>
+    </Compile>
     <Compile Include="home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Countdown.resx">
       <DependentUpon>Countdown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="edit_alert.resx">
+      <DependentUpon>edit_alert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="home.resx">
       <DependentUpon>home.cs</DependentUpon>
