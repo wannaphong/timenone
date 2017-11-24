@@ -34,8 +34,8 @@
             this.note = new System.Windows.Forms.TextBox();
             this.save = new System.Windows.Forms.Button();
             this.clean = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.h = new System.Windows.Forms.ComboBox();
+            this.m = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -91,10 +91,10 @@
             this.clean.UseVisualStyleBackColor = true;
             this.clean.Click += new System.EventHandler(this.clean_Click);
             // 
-            // comboBox1
+            // h
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.h.FormattingEnabled = true;
+            this.h.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
@@ -119,15 +119,15 @@
             "21",
             "22",
             "23"});
-            this.comboBox1.Location = new System.Drawing.Point(100, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 8;
+            this.h.Location = new System.Drawing.Point(100, 52);
+            this.h.Name = "h";
+            this.h.Size = new System.Drawing.Size(121, 21);
+            this.h.TabIndex = 8;
             // 
-            // comboBox2
+            // m
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.m.FormattingEnabled = true;
+            this.m.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
@@ -188,18 +188,18 @@
             "57",
             "58",
             "59"});
-            this.comboBox2.Location = new System.Drawing.Point(100, 115);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 9;
+            this.m.Location = new System.Drawing.Point(100, 115);
+            this.m.Name = "m";
+            this.m.Size = new System.Drawing.Size(121, 21);
+            this.m.TabIndex = 9;
             // 
             // add_alert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.m);
+            this.Controls.Add(this.h);
             this.Controls.Add(this.clean);
             this.Controls.Add(this.save);
             this.Controls.Add(this.note);
@@ -209,6 +209,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "add_alert";
             this.Text = "add_alert";
+            this.Load += new System.EventHandler(this.add_alert_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,7 +223,7 @@
         private System.Windows.Forms.TextBox note;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button clean;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox h;
+        private System.Windows.Forms.ComboBox m;
     }
 }

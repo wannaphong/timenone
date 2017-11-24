@@ -23,5 +23,11 @@ namespace WindowsFormsApp1
             //m.Text = "";
             note.Text = "";
         }
+
+        private void add_alert_Load(object sender, EventArgs e)
+        {
+            h.DropDownStyle = ComboBoxStyle.DropDownList; // ล็อค ไม่ให้กรอกข้อความได้
+            m.DropDownStyle = ComboBoxStyle.DropDownList; // ล็อค ไม่ให้กรอกข้อความได้
+        }
     }
 }

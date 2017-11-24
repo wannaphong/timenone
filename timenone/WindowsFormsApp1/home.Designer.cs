@@ -91,6 +91,7 @@
             this.นาฬกาจบเวลาToolStripMenuItem.Name = "นาฬกาจบเวลาToolStripMenuItem";
             this.นาฬกาจบเวลาToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.นาฬกาจบเวลาToolStripMenuItem.Text = "นาฬิกาจับเวลา";
+            this.นาฬกาจบเวลาToolStripMenuItem.Click += new System.EventHandler(this.นาฬกาจบเวลาToolStripMenuItem_Click);
             // 
             // ออกจากโปรแกรมToolStripMenuItem
             // 

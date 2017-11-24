@@ -65,5 +65,11 @@ namespace WindowsFormsApp1
             add_alert a = new add_alert();
             a.ShowDialog();
         }
+
+        private void นาฬกาจบเวลาToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Timer_system a = new Timer_system();
+            a.ShowDialog();
+        }
     }
 }
