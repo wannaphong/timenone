@@ -37,10 +37,15 @@ namespace WindowsFormsApp1
             }
             timer1.Start();
         }
+        private void check_time(DateTime s)
+        {
+            TimeSpan timeOfDay = s.TimeOfDay;
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             timenow.Text = DateTime.Now.ToLongTimeString();
+            check_time(DateTime.Now);
         }
 
         private void ออกจากโปรแกรมToolStripMenuItem_Click(object sender, EventArgs e)

@@ -19,8 +19,8 @@ namespace WindowsFormsApp1
 
         private void clean_Click(object sender, EventArgs e)
         {
-            //h.Text = "";
-            //m.Text = "";
+            h.Refresh();
+            m.Refresh();
             note.Text = "";
         }
 
