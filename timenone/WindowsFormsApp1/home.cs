@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiteDB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +16,11 @@ namespace WindowsFormsApp1
         public List<string> h = new List<string>();
         public List<string> m = new List<string>();
         public List<string> note = new List<string>();
+        string file = "";
         public home()
         {
             var db = new db();
+            file = new db().file_db().ToString();
             InitializeComponent();
             timer1.Start();
         }
@@ -40,10 +43,26 @@ namespace WindowsFormsApp1
         private void check_time(DateTime s)
         {
             TimeSpan timeOfDay = s.TimeOfDay;
+            var day=s.DayOfWeek.ToString();
+            var time = new db.Notifications();
+            using (var db2 = new LiteDatabase(file))
+            {
+                var orders = db2.GetCollection<db.Notifications>("Notifications");
+
+                // When query Order, includes references
+                var query = orders
+                    .Find(x => x.H == timeOfDay.Hours.ToString());// && x.M == timeOfDay.Minutes.ToString());
+                //.Find(x => x.S == timeOfDay.Seconds.ToString());
+                //.Include(S => timeOfDay.Seconds.ToString());
+                // .Find(x => x.OrderDate <= DateTime.Now);
+                MessageBox.Show(day.ToString()+query.ToArray().Length.ToString());
+
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             timenow.Text = DateTime.Now.ToLongTimeString();
             check_time(DateTime.Now);
         }

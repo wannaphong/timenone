@@ -15,8 +15,13 @@ namespace WindowsFormsApp1
 {
     class db
     {
-        private string path_file=""+ "db.timenone";
+        //private string path_file=""+ "db.timenone";
         private bool ok;
+        public string name_db= @"MyData.db";
+        public string file_db()
+        {
+            return @"MyData.db";
+        }
         public class Notifications
         {
             public int Id { get; set; }
@@ -37,7 +42,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                using (var db = new LiteDatabase(@"MyData.db"))
+                using (var db = new LiteDatabase(file_db()))
                 {
                     var col = db.GetCollection<Notifications>("Notifications");
                     var data = new Notifications

@@ -37,7 +37,7 @@ namespace WindowsFormsApp1
             var db = new db();
             string[] d = {"วันอาทิตย์","วันจันทร์","วันอังคาร","วันพุธ","วันพฤหัสบดี","วันศุกร์","วันเสาร์"};
             bool d1=false, d2 = false, d3 = false, d4 = false, d5 = false, d6 = false, d7 = false;
-            foreach (var item in days.CheckedItems)
+            foreach (string item in days.CheckedItems)
             {
                 int i = 0;
                 while (i < d.Length)
