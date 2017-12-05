@@ -59,5 +59,11 @@ namespace WindowsFormsApp1
            db.add_data(note.Text,h.Text,m.Text,S.Text,d1,d2,d3,d4,d5,d6,d7, Enable.Checked);
            MessageBox.Show("Ok");
         }
+
+        private void open_f1_Click(object sender, EventArgs e)
+        {
+            home h = new home();
+            h.Show();
+        }
     }
 }

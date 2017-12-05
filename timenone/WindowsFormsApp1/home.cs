@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
             this.Text = "ขณะนี้เป็นเวลา "+ timenow1.ToString("HH:mm:ss");
             try
             {
+                check_time(timenow1);
 
             }
             catch
@@ -40,33 +41,70 @@ namespace WindowsFormsApp1
             }
             timer1.Start();
         }
+        private void a(TimeSpan timeinday,string name)
+        {
+            MessageBox.Show(name);
+        }
         private void check_time(DateTime s)
         {
             TimeSpan timeOfDay = s.TimeOfDay;
-            var day=s.DayOfWeek.ToString();
+            var day = s.DayOfWeek.ToString();
             var time = new db.Notifications();
+           //MessageBox.Show(day+timeOfDay.Hours.ToString() + timeOfDay.Minutes.ToString() + timeOfDay.Seconds.ToString());
             using (var db2 = new LiteDatabase(file))
             {
                 var orders = db2.GetCollection<db.Notifications>("Notifications");
 
                 // When query Order, includes references
-                var query = orders
-                    .Find(x => x.H == timeOfDay.Hours.ToString() && x.M == timeOfDay.Minutes.ToString() && x.S == timeOfDay.Seconds.ToString() && x.Sunday&& x.Monday && x.Tuesday&&x.Wednesday&&x.Thursday&&x.Friday&&x.Saturday&&x.IsActive);
+                var query = orders//.Include(S => timeOfDay.Seconds.ToString())
+                    .Find(x => x.H == timeOfDay.Hours.ToString() && x.M == timeOfDay.Minutes.ToString() && x.S == timeOfDay.Seconds.ToString());
                 //.Find(x => x.S == timeOfDay.Seconds.ToString());
                 //.Include(S => timeOfDay.Seconds.ToString());
                 // .Find(x => x.OrderDate <= DateTime.Now);
-                foreach (var order in query)
+                if (query.ToArray().Length != 0)
                 {
-                    //order.
+                    foreach (var order in query)
+                    {
+                        if (order.IsActive == true)
+                        {
+                            switch (day)
+                            {
+                                case "Sunday":
+                                    if (order.Sunday == true) a(timeOfDay, order.Title);
+                                    break;
+                                case "Monday":
+                                    if (order.Monday == true) a(timeOfDay, order.Title);
+                                    break;
+                                case "Tuesday":
+                                    if (order.Tuesday == true) a(timeOfDay, order.Title);
+                                    break;
+                                case "Wednesday":
+                                    if (order.Wednesday == true) a(timeOfDay, order.Title);
+                                    break;
+                                case "Thursday":
+                                    if (order.Thursday == true) a(timeOfDay, order.Title);
+                                    break;
+                                case "Friday":
+                                    if (order.Friday == true) a(timeOfDay, order.Title);
+                                    break;
+                                case "Saturday":
+                                    if (order.Saturday == true) a(timeOfDay, order.Title);
+                                    break;
+                            }
+
+                        }
+                    }
                 }
-                    MessageBox.Show(day.ToString()+query.ToArray().Length.ToString());            }
+                
+                // MessageBox.Show(day.ToString()+query.ToArray().Length.ToString());            }
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             
             timenow.Text = DateTime.Now.ToLongTimeString();
-            check_time(DateTime.Now);
+           check_time(DateTime.Now);
         }
 
         private void ออกจากโปรแกรมToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,8 +126,10 @@ namespace WindowsFormsApp1
 
         private void add_Click(object sender, EventArgs e)
         {
+            home a1 = new home();
             add_alert a = new add_alert();
-            a.ShowDialog();
+            a.Show();
+            a1.Close();
         }
 
         private void นาฬกาจบเวลาToolStripMenuItem_Click(object sender, EventArgs e)
