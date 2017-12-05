@@ -36,12 +36,16 @@
             this.clean = new System.Windows.Forms.Button();
             this.h = new System.Windows.Forms.ComboBox();
             this.m = new System.Windows.Forms.ComboBox();
+            this.S = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.days = new System.Windows.Forms.CheckedListBox();
+            this.Enable = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 52);
+            this.label1.Location = new System.Drawing.Point(24, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 0;
@@ -50,7 +54,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 115);
+            this.label2.Location = new System.Drawing.Point(24, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 1;
@@ -59,7 +63,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 178);
+            this.label3.Location = new System.Drawing.Point(24, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 2;
@@ -67,23 +71,24 @@
             // 
             // note
             // 
-            this.note.Location = new System.Drawing.Point(106, 178);
+            this.note.Location = new System.Drawing.Point(100, 157);
             this.note.Name = "note";
-            this.note.Size = new System.Drawing.Size(100, 20);
+            this.note.Size = new System.Drawing.Size(121, 20);
             this.note.TabIndex = 5;
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(27, 216);
+            this.save.Location = new System.Drawing.Point(32, 344);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(75, 23);
             this.save.TabIndex = 6;
             this.save.Text = "บันทึก";
             this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // clean
             // 
-            this.clean.Location = new System.Drawing.Point(146, 216);
+            this.clean.Location = new System.Drawing.Point(193, 344);
             this.clean.Name = "clean";
             this.clean.Size = new System.Drawing.Size(75, 23);
             this.clean.TabIndex = 7;
@@ -119,7 +124,7 @@
             "21",
             "22",
             "23"});
-            this.h.Location = new System.Drawing.Point(100, 52);
+            this.h.Location = new System.Drawing.Point(100, 12);
             this.h.Name = "h";
             this.h.Size = new System.Drawing.Size(121, 21);
             this.h.TabIndex = 8;
@@ -188,16 +193,124 @@
             "57",
             "58",
             "59"});
-            this.m.Location = new System.Drawing.Point(100, 115);
+            this.m.Location = new System.Drawing.Point(100, 54);
             this.m.Name = "m";
             this.m.Size = new System.Drawing.Size(121, 21);
             this.m.TabIndex = 9;
+            // 
+            // S
+            // 
+            this.S.FormattingEnabled = true;
+            this.S.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59"});
+            this.S.Location = new System.Drawing.Point(100, 105);
+            this.S.Name = "S";
+            this.S.Size = new System.Drawing.Size(121, 21);
+            this.S.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "วินาที";
+            // 
+            // days
+            // 
+            this.days.FormattingEnabled = true;
+            this.days.Items.AddRange(new object[] {
+            "วันอาทิตย์",
+            "วันจันทร์",
+            "วันอังคาร",
+            "วันพุธ",
+            "วันพฤหัสบดี",
+            "วันศุกร์",
+            "วันเสาร์"});
+            this.days.Location = new System.Drawing.Point(83, 192);
+            this.days.Name = "days";
+            this.days.Size = new System.Drawing.Size(134, 109);
+            this.days.TabIndex = 12;
+            // 
+            // Enable
+            // 
+            this.Enable.AutoSize = true;
+            this.Enable.Location = new System.Drawing.Point(110, 308);
+            this.Enable.Name = "Enable";
+            this.Enable.Size = new System.Drawing.Size(57, 17);
+            this.Enable.TabIndex = 13;
+            this.Enable.Text = "ใช้งาน";
+            this.Enable.UseVisualStyleBackColor = true;
             // 
             // add_alert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(291, 379);
+            this.Controls.Add(this.Enable);
+            this.Controls.Add(this.days);
+            this.Controls.Add(this.S);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.m);
             this.Controls.Add(this.h);
             this.Controls.Add(this.clean);
@@ -225,5 +338,9 @@
         private System.Windows.Forms.Button clean;
         private System.Windows.Forms.ComboBox h;
         private System.Windows.Forms.ComboBox m;
+        private System.Windows.Forms.ComboBox S;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckedListBox days;
+        private System.Windows.Forms.CheckBox Enable;
     }
 }

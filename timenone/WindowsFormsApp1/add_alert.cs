@@ -28,6 +28,12 @@ namespace WindowsFormsApp1
         {
             h.DropDownStyle = ComboBoxStyle.DropDownList; // ล็อค ไม่ให้กรอกข้อความได้
             m.DropDownStyle = ComboBoxStyle.DropDownList; // ล็อค ไม่ให้กรอกข้อความได้
+            S.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
