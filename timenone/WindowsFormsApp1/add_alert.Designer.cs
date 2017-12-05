@@ -279,6 +279,7 @@
             // days
             // 
             this.days.FormattingEnabled = true;
+            this.days.HorizontalScrollbar = true;
             this.days.Items.AddRange(new object[] {
             "วันอาทิตย์",
             "วันจันทร์",

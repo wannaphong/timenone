@@ -15,9 +15,9 @@ namespace WindowsFormsApp1
         public List<string> h = new List<string>();
         public List<string> m = new List<string>();
         public List<string> note = new List<string>();
-        string a = new db().show();
         public home()
         {
+            var db = new db();
             InitializeComponent();
             timer1.Start();
         }

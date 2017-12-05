@@ -12,6 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class add_alert : Form
     {
+        
         public add_alert()
         {
             InitializeComponent();
@@ -33,7 +34,30 @@ namespace WindowsFormsApp1
 
         private void save_Click(object sender, EventArgs e)
         {
-           
+            var db = new db();
+            string[] d = {"วันอาทิตย์","วันจันทร์","วันอังคาร","วันพุธ","วันพฤหัสบดี","วันศุกร์","วันเสาร์"};
+            bool d1=false, d2 = false, d3 = false, d4 = false, d5 = false, d6 = false, d7 = false;
+            foreach (var item in days.CheckedItems)
+            {
+                int i = 0;
+                while (i < d.Length)
+                {
+                    if (d[i] == item)
+                    {
+                        if (i == 0) d1 = true;
+                        else if (i == 1) d2 = true;
+                        else if (i == 2) d3 = true;
+                        else if (i == 3) d4 = true;
+                        else if (i == 4) d5 = true;
+                        else if (i == 6) d6 = true;
+                        else if (i == 7) d7 = true;
+                    }
+                    i++;
+                }
+
+            }
+           db.add_data(note.Text,h.Text,m.Text,S.Text,d1,d2,d3,d4,d5,d6,d7, Enable.Checked);
+           MessageBox.Show("Ok");
         }
     }
 }
