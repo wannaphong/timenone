@@ -51,13 +51,15 @@ namespace WindowsFormsApp1
 
                 // When query Order, includes references
                 var query = orders
-                    .Find(x => x.H == timeOfDay.Hours.ToString());// && x.M == timeOfDay.Minutes.ToString());
+                    .Find(x => x.H == timeOfDay.Hours.ToString() && x.M == timeOfDay.Minutes.ToString() && x.S == timeOfDay.Seconds.ToString() && x.Sunday&& x.Monday && x.Tuesday&&x.Wednesday&&x.Thursday&&x.Friday&&x.Saturday&&x.IsActive);
                 //.Find(x => x.S == timeOfDay.Seconds.ToString());
                 //.Include(S => timeOfDay.Seconds.ToString());
                 // .Find(x => x.OrderDate <= DateTime.Now);
-                MessageBox.Show(day.ToString()+query.ToArray().Length.ToString());
-
-            }
+                foreach (var order in query)
+                {
+                    //order.
+                }
+                    MessageBox.Show(day.ToString()+query.ToArray().Length.ToString());            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
