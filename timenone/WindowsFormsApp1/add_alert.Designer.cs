@@ -40,7 +40,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.days = new System.Windows.Forms.CheckedListBox();
             this.Enable = new System.Windows.Forms.CheckBox();
-            this.open_f1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -304,22 +303,11 @@
             this.Enable.Text = "ใช้งาน";
             this.Enable.UseVisualStyleBackColor = true;
             // 
-            // open_f1
-            // 
-            this.open_f1.Location = new System.Drawing.Point(223, 247);
-            this.open_f1.Name = "open_f1";
-            this.open_f1.Size = new System.Drawing.Size(75, 23);
-            this.open_f1.TabIndex = 14;
-            this.open_f1.Text = "บันทึก";
-            this.open_f1.UseVisualStyleBackColor = true;
-            this.open_f1.Click += new System.EventHandler(this.open_f1_Click);
-            // 
             // add_alert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(291, 379);
-            this.Controls.Add(this.open_f1);
             this.Controls.Add(this.Enable);
             this.Controls.Add(this.days);
             this.Controls.Add(this.S);
@@ -355,6 +343,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckedListBox days;
         private System.Windows.Forms.CheckBox Enable;
-        private System.Windows.Forms.Button open_f1;
     }
 }

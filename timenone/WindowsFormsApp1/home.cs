@@ -41,9 +41,48 @@ namespace WindowsFormsApp1
             }
             timer1.Start();
         }
-        private void a(TimeSpan timeinday,string name)
+        TimeSpan timeold= DateTime.Now.TimeOfDay;
+        string name_old="";
+        List<string> name_5=new List<string> ();// string[] name_5;
+        public bool Check_Notifications(TimeSpan timeinday, string name)
         {
-            MessageBox.Show(name);
+            bool v = true;
+            if (timeold.Equals(timeinday)!=false) {
+                timeold = timeinday;
+                name_5.Clear();
+                v = true;
+            }
+            else
+            {
+                if (name_5.ToArray().Length != 0)
+                {
+                    int i = 0;
+                    string[] name_51 = name_5.ToArray();
+                    while (i< name_51.Length)
+                    {
+                        if(name_51[i] == name)
+                        {
+                            v = false;
+                            break;
+                        }
+                        i++;
+                    }
+                    name_5.Add(name);
+                }
+                else
+                {
+                    v = true;
+                    name_5.Add(name);
+                }
+            }
+            return v;
+        }
+        private void show_Notifications(TimeSpan timeinday,string name)
+        {
+            if (Check_Notifications(timeinday, name) == true)
+            {
+                MessageBox.Show(name);
+            }
         }
         private void check_time(DateTime s)
         {
@@ -70,25 +109,25 @@ namespace WindowsFormsApp1
                             switch (day)
                             {
                                 case "Sunday":
-                                    if (order.Sunday == true) a(timeOfDay, order.Title);
+                                    if (order.Sunday == true) show_Notifications(timeOfDay, order.Title);
                                     break;
                                 case "Monday":
-                                    if (order.Monday == true) a(timeOfDay, order.Title);
+                                    if (order.Monday == true) show_Notifications(timeOfDay, order.Title);
                                     break;
                                 case "Tuesday":
-                                    if (order.Tuesday == true) a(timeOfDay, order.Title);
+                                    if (order.Tuesday == true) show_Notifications(timeOfDay, order.Title);
                                     break;
                                 case "Wednesday":
-                                    if (order.Wednesday == true) a(timeOfDay, order.Title);
+                                    if (order.Wednesday == true) show_Notifications(timeOfDay, order.Title);
                                     break;
                                 case "Thursday":
-                                    if (order.Thursday == true) a(timeOfDay, order.Title);
+                                    if (order.Thursday == true) show_Notifications(timeOfDay, order.Title);
                                     break;
                                 case "Friday":
-                                    if (order.Friday == true) a(timeOfDay, order.Title);
+                                    if (order.Friday == true) show_Notifications(timeOfDay, order.Title);
                                     break;
                                 case "Saturday":
-                                    if (order.Saturday == true) a(timeOfDay, order.Title);
+                                    if (order.Saturday == true) show_Notifications(timeOfDay, order.Title);
                                     break;
                             }
 
