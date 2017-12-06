@@ -14,7 +14,6 @@ namespace WindowsFormsApp1
     {
         public static double settime=60000;
         public static bool run = false;
-        double seconds, minutes;
         public Countdown()
         {
             InitializeComponent();
