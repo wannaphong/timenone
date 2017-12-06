@@ -16,5 +16,17 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+        
+
+        private void buOK_Click(object sender, EventArgs e) { 
+            Countdown.settime=0;
+            Countdown.settime = TimeSpan.FromMinutes(int.Parse(m.Text)).TotalMilliseconds + TimeSpan.FromSeconds(int.Parse(s.Text)).TotalMilliseconds;
+            MessageBox.Show((TimeSpan.FromMinutes(int.Parse(m.Text)).TotalMilliseconds + TimeSpan.FromSeconds(int.Parse(s.Text)).TotalMilliseconds).ToString());
+        }
+
+        private void set_time_countdown_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

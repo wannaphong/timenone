@@ -12,14 +12,14 @@ namespace WindowsFormsApp1
 {
     public partial class Countdown : Form
     {
-        int time;
-       // public
-        int OrigTime = 18000;
+        public static double settime=60000;
+        public static bool run = false;
+        double seconds, minutes;
         public Countdown()
         {
             InitializeComponent();
         }
-
+        DateTime dt = new DateTime();
         private void Countdown_Load(object sender, EventArgs e)
         {
 
@@ -27,15 +27,47 @@ namespace WindowsFormsApp1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            OrigTime--;
-            label1.Text = OrigTime / 60 + ":" + ((OrigTime % 60) >= 10 ? (OrigTime % 60).ToString() : "0" + OrigTime % 60);
+            if (settime != 0&& run!=false)
+            {
+                settime--;
+                label2.Text = dt.AddMilliseconds(settime).ToString("HH:mm:ss");
+                //label2.Text = settime / 60 + ":" + ((settime % 60) >= 10 ? (settime % 60).ToString() : "0" + settime % 60);
+            }
+                else
+                {
+                    label2.Text = "00:00:00";
+                }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Timer timeX = new Timer();
-            //timeX.Interval = 1800000;
-            timeX.Tick += new EventHandler(timer1_Tick);
+            MessageBox.Show(settime.ToString());
+                timer1 = new Timer();
+            run = true;
+            if (settime != 0)
+            {
+                timer1.Interval = 1000;
+                timer1.Start();
+                timer1.Tick += new EventHandler(timer1_Tick);
+            }
+            else
+            {
+                label2.Text = "00:00:00";
+            }
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            settime = 0;
+            run = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            set_time_countdown settimebox = new set_time_countdown();
+            settimebox.ShowDialog();
         }
     }
 }

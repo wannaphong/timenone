@@ -55,7 +55,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 25);
             this.label2.TabIndex = 1;
-            this.label2.Text = "00 : 00 : 30";
+            this.label2.Text = "00 : 00 : 00";
             // 
             // timer1
             // 
@@ -80,6 +80,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "เริ่มใหม่";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -89,6 +90,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "ตั้งค่าเวลาใหม่";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Countdown
             // 
