@@ -106,7 +106,7 @@ namespace WindowsFormsApp1
 
                 // When query Order, includes references
                 var query = orders//.Include(S => timeOfDay.Seconds.ToString())
-                    .Find(x => x.H == timeOfDay.Hours.ToString() && x.M == timeOfDay.Minutes.ToString() && x.S == timeOfDay.Seconds.ToString());
+                    .Find(x => x.H == timeOfDay.Hours.ToString() && x.M == timeOfDay.Minutes.ToString());
                 if (query.ToArray().Length != 0)
                 {
                     foreach (var order in query)

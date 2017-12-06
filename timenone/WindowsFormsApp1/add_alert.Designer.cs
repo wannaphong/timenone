@@ -36,8 +36,6 @@
             this.clean = new System.Windows.Forms.Button();
             this.h = new System.Windows.Forms.ComboBox();
             this.m = new System.Windows.Forms.ComboBox();
-            this.S = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.days = new System.Windows.Forms.CheckedListBox();
             this.Enable = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
@@ -198,84 +196,6 @@
             this.m.Size = new System.Drawing.Size(121, 21);
             this.m.TabIndex = 9;
             // 
-            // S
-            // 
-            this.S.FormattingEnabled = true;
-            this.S.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50",
-            "51",
-            "52",
-            "53",
-            "54",
-            "55",
-            "56",
-            "57",
-            "58",
-            "59"});
-            this.S.Location = new System.Drawing.Point(100, 105);
-            this.S.Name = "S";
-            this.S.Size = new System.Drawing.Size(121, 21);
-            this.S.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "วินาที";
-            // 
             // days
             // 
             this.days.FormattingEnabled = true;
@@ -310,8 +230,6 @@
             this.ClientSize = new System.Drawing.Size(291, 379);
             this.Controls.Add(this.Enable);
             this.Controls.Add(this.days);
-            this.Controls.Add(this.S);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.m);
             this.Controls.Add(this.h);
             this.Controls.Add(this.clean);
@@ -340,8 +258,6 @@
         private System.Windows.Forms.Button clean;
         private System.Windows.Forms.ComboBox h;
         private System.Windows.Forms.ComboBox m;
-        private System.Windows.Forms.ComboBox S;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckedListBox days;
         private System.Windows.Forms.CheckBox Enable;
     }
