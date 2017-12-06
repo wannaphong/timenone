@@ -12,6 +12,8 @@ namespace WindowsFormsApp1
 {
     public partial class Countdown : Form
     {
+        int time;
+       // public
         int OrigTime = 18000;
         public Countdown()
         {
