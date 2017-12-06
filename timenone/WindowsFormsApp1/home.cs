@@ -1,10 +1,12 @@
 ﻿using LiteDB;
+using NAudio.Wave;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,6 +29,12 @@ namespace WindowsFormsApp1
         private void Form1_Resize(object sender, EventArgs e)
         {
 
+            if (WindowState == FormWindowState.Minimized)
+            {
+                this.ShowInTaskbar = false;
+                this.Hide();
+                // Do some stuff
+            }
         }
         private void notifyIcon_Click(object sender, EventArgs e)
         {
@@ -84,14 +92,32 @@ namespace WindowsFormsApp1
             }
             return v;
         }
-        private void show_Notifications(TimeSpan timeinday,string name)
+        private void show_Notifications(TimeSpan timeinday, string name)
         {
             if (Check_Notifications(timeinday, name) == true)
             {
-                Notification n = new Notification();
-                Notification.h = name;
-                Notification.time= timeinday.ToString();
-                n.Show();
+                SoundPlayer my_wave_file = new SoundPlayer(@"C:\Users\wannaphong\Documents\timenone\timenone\funky-breakbeat_102bpm_F_major.wav");
+
+                /* if (outputDevice == null)
+                 {
+                     outputDevice = new WaveOutEvent();
+                     //outputDevice.PlaybackStopped += Notification.OnPlaybackStopped;
+                 }
+                 if (audioFile == null)
+                 {
+                     audioFile = new AudioFileReader(@"C:\Users\wannaphong\Documents\timenone\timenone\funky-breakbeat_102bpm_F_major.wav");
+                     outputDevice.Init(audioFile);
+                 }
+                 outputDevice.Play();*/
+                //outputDevice.get
+                my_wave_file.PlaySync();
+                my_wave_file.Stop();
+                my_wave_file = null;
+                MessageBox.Show(name);
+                
+                // DialogResult result = MessageBox.Show(name);
+                /*  outputDevice = null;
+                  audioFile = null;*/
             }
         }
         private void check_time(DateTime s)
@@ -196,6 +222,11 @@ namespace WindowsFormsApp1
         private void timenow_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ออกจากโปรแกรมToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.event_time = new System.Windows.Forms.Label();
             this.time_this = new System.Windows.Forms.Label();
+            this.close = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // event_time
@@ -52,13 +53,25 @@
             this.time_this.TabIndex = 1;
             this.time_this.Text = "label1";
             // 
+            // close
+            // 
+            this.close.Location = new System.Drawing.Point(96, 181);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(75, 23);
+            this.close.TabIndex = 2;
+            this.close.Text = "close";
+            this.close.UseVisualStyleBackColor = true;
+            this.close.Click += new System.EventHandler(this.close_Click);
+            // 
             // Notification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.close);
             this.Controls.Add(this.time_this);
             this.Controls.Add(this.event_time);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Notification";
             this.Text = "Notification";
             this.Load += new System.EventHandler(this.Notification_Load);
@@ -71,5 +84,6 @@
 
         private System.Windows.Forms.Label event_time;
         private System.Windows.Forms.Label time_this;
+        private System.Windows.Forms.Button close;
     }
 }

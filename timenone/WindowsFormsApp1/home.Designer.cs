@@ -42,6 +42,7 @@
             this.notifyHome = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStripHome = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.เปดแอพToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ออกจากโปรแกรมToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStripHome.SuspendLayout();
             this.SuspendLayout();
@@ -134,16 +135,24 @@
             // contextMenuStripHome
             // 
             this.contextMenuStripHome.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.เปดแอพToolStripMenuItem});
+            this.เปดแอพToolStripMenuItem,
+            this.ออกจากโปรแกรมToolStripMenuItem1});
             this.contextMenuStripHome.Name = "contextMenuStripHome";
-            this.contextMenuStripHome.Size = new System.Drawing.Size(112, 26);
+            this.contextMenuStripHome.Size = new System.Drawing.Size(153, 70);
             // 
             // เปดแอพToolStripMenuItem
             // 
             this.เปดแอพToolStripMenuItem.Name = "เปดแอพToolStripMenuItem";
-            this.เปดแอพToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.เปดแอพToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.เปดแอพToolStripMenuItem.Text = "เปิดแอพ";
             this.เปดแอพToolStripMenuItem.Click += new System.EventHandler(this.เปดแอพToolStripMenuItem_Click);
+            // 
+            // ออกจากโปรแกรมToolStripMenuItem1
+            // 
+            this.ออกจากโปรแกรมToolStripMenuItem1.Name = "ออกจากโปรแกรมToolStripMenuItem1";
+            this.ออกจากโปรแกรมToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.ออกจากโปรแกรมToolStripMenuItem1.Text = "ออกจากโปรแกรม";
+            this.ออกจากโปรแกรมToolStripMenuItem1.Click += new System.EventHandler(this.ออกจากโปรแกรมToolStripMenuItem1_Click);
             // 
             // home
             // 
@@ -183,5 +192,6 @@
         private System.Windows.Forms.NotifyIcon notifyHome;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripHome;
         private System.Windows.Forms.ToolStripMenuItem เปดแอพToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ออกจากโปรแกรมToolStripMenuItem1;
     }
 }

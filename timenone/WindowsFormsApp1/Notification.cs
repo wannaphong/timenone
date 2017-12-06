@@ -21,6 +21,13 @@ namespace WindowsFormsApp1
         public Notification()
         {
             InitializeComponent();
+            //timer1.Start();
+        }
+        void Notification_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //your code here
+            outputDevice.Stop();
+            this.Hide();
         }
         public void get_data(string time, string h)
         {
@@ -29,6 +36,8 @@ namespace WindowsFormsApp1
 
         private void Notification_Load(object sender, EventArgs e)
         {
+            //this.FormClosed += new FormClosedEventHandler(f_FormClosed);
+            //this.FormClosing += new FormClosingEventHandler(Notification_FormClosing);
             event_time.Text = h;
             time_this.Text = time;
             if (outputDevice == null)
@@ -42,6 +51,22 @@ namespace WindowsFormsApp1
                 outputDevice.Init(audioFile);
             }
             outputDevice.Play();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+           /* Notification n = new Notification();
+            if (n.Visible == false)
+            {
+                outputDevice.Stop();
+                timer1.Stop();
+            }*/
+        }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            outputDevice.Stop();
+            this.Hide();
         }
     }
 }
