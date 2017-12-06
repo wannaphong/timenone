@@ -88,7 +88,10 @@ namespace WindowsFormsApp1
         {
             if (Check_Notifications(timeinday, name) == true)
             {
-                MessageBox.Show(name);
+                Notification n = new Notification();
+                Notification.h = name;
+                Notification.time= timeinday.ToString();
+                n.Show();
             }
         }
         private void check_time(DateTime s)
