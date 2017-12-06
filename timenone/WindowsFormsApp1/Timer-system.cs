@@ -42,6 +42,11 @@ namespace WindowsFormsApp1
             t.Stop();
         }
 
+        private void time_now_save_Click(object sender, EventArgs e)
+        {
+            timebox.Text += string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'))+"\r\n";
+        }
+
         private void OnTimeEvent1(object sender,System.Timers.ElapsedEventArgs e)
         {
             Invoke(new Action(() =>

@@ -32,6 +32,8 @@
             this.bnStart = new System.Windows.Forms.Button();
             this.bnStop = new System.Windows.Forms.Button();
             this.bnP = new System.Windows.Forms.Button();
+            this.timebox = new System.Windows.Forms.TextBox();
+            this.time_now_save = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // show_time
@@ -66,7 +68,7 @@
             // 
             // bnP
             // 
-            this.bnP.Location = new System.Drawing.Point(101, 115);
+            this.bnP.Location = new System.Drawing.Point(44, 135);
             this.bnP.Name = "bnP";
             this.bnP.Size = new System.Drawing.Size(75, 23);
             this.bnP.TabIndex = 3;
@@ -74,11 +76,33 @@
             this.bnP.UseVisualStyleBackColor = true;
             this.bnP.Click += new System.EventHandler(this.bnP_Click);
             // 
+            // timebox
+            // 
+            this.timebox.Location = new System.Drawing.Point(44, 175);
+            this.timebox.Multiline = true;
+            this.timebox.Name = "timebox";
+            this.timebox.ReadOnly = true;
+            this.timebox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.timebox.Size = new System.Drawing.Size(191, 134);
+            this.timebox.TabIndex = 4;
+            // 
+            // time_now_save
+            // 
+            this.time_now_save.Location = new System.Drawing.Point(138, 135);
+            this.time_now_save.Name = "time_now_save";
+            this.time_now_save.Size = new System.Drawing.Size(75, 23);
+            this.time_now_save.TabIndex = 5;
+            this.time_now_save.Text = "แบ่งเวลา";
+            this.time_now_save.UseVisualStyleBackColor = true;
+            this.time_now_save.Click += new System.EventHandler(this.time_now_save_Click);
+            // 
             // Timer_system
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 150);
+            this.ClientSize = new System.Drawing.Size(284, 321);
+            this.Controls.Add(this.time_now_save);
+            this.Controls.Add(this.timebox);
             this.Controls.Add(this.bnP);
             this.Controls.Add(this.bnStop);
             this.Controls.Add(this.bnStart);
@@ -98,5 +122,7 @@
         private System.Windows.Forms.Button bnStart;
         private System.Windows.Forms.Button bnStop;
         private System.Windows.Forms.Button bnP;
+        private System.Windows.Forms.TextBox timebox;
+        private System.Windows.Forms.Button time_now_save;
     }
 }
