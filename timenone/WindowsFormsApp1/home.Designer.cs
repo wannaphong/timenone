@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
             this.timenow = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -38,7 +39,11 @@
             this.ออกจากโปรแกรมToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.เกยวกบโปรแกรมToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.add = new System.Windows.Forms.Button();
+            this.notifyHome = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStripHome = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.เปดแอพToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            this.contextMenuStripHome.SuspendLayout();
             this.SuspendLayout();
             // 
             // timenow
@@ -48,11 +53,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.timenow.AutoSize = true;
             this.timenow.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.timenow.Location = new System.Drawing.Point(107, 85);
+            this.timenow.Location = new System.Drawing.Point(79, 87);
             this.timenow.Name = "timenow";
             this.timenow.Size = new System.Drawing.Size(158, 55);
             this.timenow.TabIndex = 0;
             this.timenow.Text = "label1";
+            this.timenow.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.timenow.Click += new System.EventHandler(this.timenow_Click);
             // 
             // timer1
             // 
@@ -117,6 +124,27 @@
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
             // 
+            // notifyHome
+            // 
+            this.notifyHome.ContextMenuStrip = this.contextMenuStripHome;
+            this.notifyHome.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyHome.Icon")));
+            this.notifyHome.Text = "Ok";
+            this.notifyHome.Visible = true;
+            // 
+            // contextMenuStripHome
+            // 
+            this.contextMenuStripHome.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.เปดแอพToolStripMenuItem});
+            this.contextMenuStripHome.Name = "contextMenuStripHome";
+            this.contextMenuStripHome.Size = new System.Drawing.Size(112, 26);
+            // 
+            // เปดแอพToolStripMenuItem
+            // 
+            this.เปดแอพToolStripMenuItem.Name = "เปดแอพToolStripMenuItem";
+            this.เปดแอพToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.เปดแอพToolStripMenuItem.Text = "เปิดแอพ";
+            this.เปดแอพToolStripMenuItem.Click += new System.EventHandler(this.เปดแอพToolStripMenuItem_Click);
+            // 
             // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,13 +153,16 @@
             this.Controls.Add(this.add);
             this.Controls.Add(this.timenow);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.contextMenuStripHome.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +179,8 @@
         private System.Windows.Forms.ToolStripMenuItem เกยวกบโปรแกรมToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem นาฬกานบถอยหลงToolStripMenuItem;
         private System.Windows.Forms.Button add;
+        private System.Windows.Forms.NotifyIcon notifyHome;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripHome;
+        private System.Windows.Forms.ToolStripMenuItem เปดแอพToolStripMenuItem;
     }
 }

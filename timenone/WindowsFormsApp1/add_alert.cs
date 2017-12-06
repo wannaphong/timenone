@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         public add_alert()
         {
             InitializeComponent();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.add_alert_FormClosing);
         }
 
         private void clean_Click(object sender, EventArgs e)
@@ -23,6 +24,10 @@ namespace WindowsFormsApp1
             h.Refresh();
             m.Refresh();
             note.Text = "";
+        }
+        private void add_alert_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //home.ActiveForm.Opacity = 1.0;
         }
 
         private void add_alert_Load(object sender, EventArgs e)

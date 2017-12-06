@@ -28,49 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.show_time = new System.Windows.Forms.Label();
+            this.bnStart = new System.Windows.Forms.Button();
+            this.bnStop = new System.Windows.Forms.Button();
+            this.bnP = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // show_time
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(88, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "03:00:00";
+            this.show_time.AutoSize = true;
+            this.show_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.show_time.Location = new System.Drawing.Point(88, 44);
+            this.show_time.Name = "show_time";
+            this.show_time.Size = new System.Drawing.Size(96, 25);
+            this.show_time.TabIndex = 0;
+            this.show_time.Text = "00:00:00";
             // 
-            // button1
+            // bnStart
             // 
-            this.button1.Location = new System.Drawing.Point(44, 95);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "เริ่มใหม่";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bnStart.Location = new System.Drawing.Point(44, 95);
+            this.bnStart.Name = "bnStart";
+            this.bnStart.Size = new System.Drawing.Size(75, 23);
+            this.bnStart.TabIndex = 1;
+            this.bnStart.Text = "เริ่มใหม่";
+            this.bnStart.UseVisualStyleBackColor = true;
+            this.bnStart.Click += new System.EventHandler(this.bnStart_Click);
             // 
-            // button2
+            // bnStop
             // 
-            this.button2.Location = new System.Drawing.Point(167, 95);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "หยุดชั่วคราว";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bnStop.Location = new System.Drawing.Point(182, 95);
+            this.bnStop.Name = "bnStop";
+            this.bnStop.Size = new System.Drawing.Size(75, 23);
+            this.bnStop.TabIndex = 2;
+            this.bnStop.Text = "หยุด";
+            this.bnStop.UseVisualStyleBackColor = true;
+            this.bnStop.Click += new System.EventHandler(this.bnStop_Click);
+            // 
+            // bnP
+            // 
+            this.bnP.Location = new System.Drawing.Point(101, 115);
+            this.bnP.Name = "bnP";
+            this.bnP.Size = new System.Drawing.Size(75, 23);
+            this.bnP.TabIndex = 3;
+            this.bnP.Text = "หยุดชั่วคราว";
+            this.bnP.UseVisualStyleBackColor = true;
+            this.bnP.Click += new System.EventHandler(this.bnP_Click);
             // 
             // Timer_system
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 150);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.bnP);
+            this.Controls.Add(this.bnStop);
+            this.Controls.Add(this.bnStart);
+            this.Controls.Add(this.show_time);
             this.Name = "Timer_system";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timer_system";
+            this.Load += new System.EventHandler(this.Timer_system_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,8 +94,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label show_time;
+        private System.Windows.Forms.Button bnStart;
+        private System.Windows.Forms.Button bnStop;
+        private System.Windows.Forms.Button bnP;
     }
 }

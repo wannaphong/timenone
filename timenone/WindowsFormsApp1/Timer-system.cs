@@ -6,15 +6,68 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
     public partial class Timer_system : Form
     {
+        System.Timers.Timer t;
+        int h, m, s;
         public Timer_system()
         {
             InitializeComponent();
+        }
+
+        private void Timer_system_Load(object sender, EventArgs e)
+        {
+            t = new System.Timers.Timer();
+            t.Interval = 1000;
+            t.Elapsed += OnTimeEvent1;
+        }
+
+        private void bnStart_Click(object sender, EventArgs e)
+        {
+            t.Start();
+        }
+
+        private void bnP_Click(object sender, EventArgs e)
+        {
+            t.Stop();
+        }
+
+        private void bnStop_Click(object sender, EventArgs e)
+        {
+            t.Stop();
+        }
+
+        private void OnTimeEvent1(object sender,System.Timers.ElapsedEventArgs e)
+        {
+            Invoke(new Action(() =>
+            {
+                s += 1;
+                if (s == 60)
+                {
+                    s = 0;
+                    m++;
+                }
+                if (m == 60)
+                {
+                    m = 0;
+                    h++;
+                }
+                show_time.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
+            }
+            ));
+        }
+
+
+
+
+        private void OnTimeEvent(object sender, ElapsedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

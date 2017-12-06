@@ -64,9 +64,10 @@ namespace WindowsFormsApp1
                     ok = true;
                 }
             }
-            catch
+            catch (Exception e)
             {
                 ok = false;
+                Console.WriteLine(e);
             }
             return ok;
         }

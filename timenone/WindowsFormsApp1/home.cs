@@ -24,7 +24,15 @@ namespace WindowsFormsApp1
             InitializeComponent();
             timer1.Start();
         }
+        private void Form1_Resize(object sender, EventArgs e)
+        {
 
+        }
+        private void notifyIcon_Click(object sender, EventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             DateTime timenow1 = DateTime.Now;
@@ -42,7 +50,6 @@ namespace WindowsFormsApp1
             timer1.Start();
         }
         TimeSpan timeold= DateTime.Now.TimeOfDay;
-        string name_old="";
         List<string> name_5=new List<string> ();// string[] name_5;
         public bool Check_Notifications(TimeSpan timeinday, string name)
         {
@@ -138,7 +145,8 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            this.ShowInTaskbar = true;
+
             timenow.Text = DateTime.Now.ToLongTimeString();
            check_time(DateTime.Now);
         }
@@ -162,6 +170,7 @@ namespace WindowsFormsApp1
 
         private void add_Click(object sender, EventArgs e)
         {
+            //this.Opacity = 0.5;
             home a1 = new home();
             add_alert a = new add_alert();
             a.Show();
@@ -172,6 +181,18 @@ namespace WindowsFormsApp1
         {
             Timer_system a = new Timer_system();
             a.ShowDialog();
+        }
+
+        private void เปดแอพToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.ShowInTaskbar = true;
+            this.Show();
+           this.WindowState = FormWindowState.Normal;
+        }
+
+        private void timenow_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
