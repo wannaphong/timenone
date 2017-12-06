@@ -28,7 +28,6 @@ namespace WindowsFormsApp1
             public string Title { get; set; }
             public string H { get; set; }
             public string M { get; set; }
-            public string S { get; set; }
             public bool Sunday { get; set; }
             public bool Monday { get; set; }
             public bool Tuesday { get; set; }
@@ -38,7 +37,7 @@ namespace WindowsFormsApp1
             public bool Saturday { get; set; }
             public bool IsActive { get; set; }
         }
-        public bool add_data(string Title1,string H1,string M1,string S1,bool day1, bool day2, bool day3, bool day4, bool day5, bool day6, bool day7,bool IsActive1)
+        public bool add_data(string Title1,string H1,string M1,bool day1, bool day2, bool day3, bool day4, bool day5, bool day6, bool day7,bool IsActive1)
         {
             try
             {
@@ -50,7 +49,6 @@ namespace WindowsFormsApp1
                         Title = Title1,
                         H = H1,
                         M = M1,
-                        S = S1,
                         Sunday = day1,
                         Monday = day2,
                         Tuesday = day3,

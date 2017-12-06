@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
         {
             h.DropDownStyle = ComboBoxStyle.DropDownList; // ล็อค ไม่ให้กรอกข้อความได้
             m.DropDownStyle = ComboBoxStyle.DropDownList; // ล็อค ไม่ให้กรอกข้อความได้
-            S.DropDownStyle = ComboBoxStyle.DropDownList;
+            //S.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace WindowsFormsApp1
                 }
 
             }
-           db.add_data(note.Text,h.Text,m.Text,S.Text,d1,d2,d3,d4,d5,d6,d7, Enable.Checked);
+           db.add_data(note.Text,h.Text,m.Text,d1,d2,d3,d4,d5,d6,d7, Enable.Checked);
            MessageBox.Show("Ok");
         }
 
