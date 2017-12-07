@@ -105,6 +105,7 @@
     <Compile Include="set_time_countdown.Designer.cs">
       <DependentUpon>set_time_countdown.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sound.cs" />
     <Compile Include="Timer-system.cs">
       <SubType>Form</SubType>
     </Compile>

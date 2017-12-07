@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace WindowsFormsApp1
 {
     public partial class home : Form
@@ -96,28 +96,16 @@ namespace WindowsFormsApp1
         {
             if (Check_Notifications(timeinday, name) == true)
             {
+                 NotifyIcon notifyIcon = new NotifyIcon();
+                 notifyIcon.Icon = new System.Drawing.Icon(@"C:\Users\wannaphong\Documents\timenone\fzap_clock_sportstudio_design_Xaa_icon.ico");
+                 notifyIcon.Text = "สวัสดี";//string.Format(Properties.Resources.InstantNoteAppName, Constants.Application_Name);
+                 notifyIcon.Visible = true;
+                //string t = "แจ้งเตือนเวลา " + timeinday.ToString("HH:mm:ss");
+                  notifyIcon.ShowBalloonTip(16000, "แจ้งเตือนเวลา ", name, ToolTipIcon.Warning);
                 SoundPlayer my_wave_file = new SoundPlayer(@"C:\Users\wannaphong\Documents\timenone\timenone\funky-breakbeat_102bpm_F_major.wav");
-
-                /* if (outputDevice == null)
-                 {
-                     outputDevice = new WaveOutEvent();
-                     //outputDevice.PlaybackStopped += Notification.OnPlaybackStopped;
-                 }
-                 if (audioFile == null)
-                 {
-                     audioFile = new AudioFileReader(@"C:\Users\wannaphong\Documents\timenone\timenone\funky-breakbeat_102bpm_F_major.wav");
-                     outputDevice.Init(audioFile);
-                 }
-                 outputDevice.Play();*/
-                //outputDevice.get
                 my_wave_file.PlaySync();
-                my_wave_file.Stop();
-                my_wave_file = null;
-                MessageBox.Show(name);
-                
-                // DialogResult result = MessageBox.Show(name);
-                /*  outputDevice = null;
-                  audioFile = null;*/
+                notifyIcon.Visible = false;
+                notifyIcon.Dispose();
             }
         }
         private void check_time(DateTime s)
