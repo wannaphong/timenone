@@ -19,14 +19,37 @@ namespace WindowsFormsApp1
         
 
         private void buOK_Click(object sender, EventArgs e) { 
+
             Countdown.settime=0;
-            Countdown.settime =int.Parse(m.Text)*60000 + int.Parse(s.Text)* 1000;
-            MessageBox.Show((TimeSpan.FromMinutes(int.Parse(m.Text)).TotalMilliseconds + TimeSpan.FromSeconds(int.Parse(s.Text)).TotalMilliseconds).ToString());
+            if (m.Text == "" && s.Text == "") MessageBox.Show("กรุณากรอกข้อมูล");
+            else
+            {
+                if (m.Text == "") m.Text = "0";
+                else if (s.Text == "") s.Text = "0";
+                Countdown.settime = int.Parse(m.Text) * 60 + int.Parse(s.Text);
+                MessageBox.Show((TimeSpan.FromMinutes(int.Parse(m.Text)).TotalMilliseconds + TimeSpan.FromSeconds(int.Parse(s.Text)).TotalMilliseconds).ToString());
+            }
         }
 
         private void set_time_countdown_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void m_TextChanged(object sender, EventArgs e)
+        {
+            if (tools.check_num(m.Text) == false)
+            {
+                MessageBox.Show("กรูณากรอกตัวเลขเท่านั้น");
+            }
+        }
+
+        private void s_TextChanged(object sender, EventArgs e)
+        {
+            if (tools.check_num(s.Text) == false)
+            {
+                MessageBox.Show("กรูณากรอกตัวเลขเท่านั้น");
+            }
         }
     }
 }

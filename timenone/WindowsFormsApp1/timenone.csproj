@@ -112,6 +112,7 @@
     <Compile Include="Timer-system.Designer.cs">
       <DependentUpon>Timer-system.cs</DependentUpon>
     </Compile>
+    <Compile Include="tools.cs" />
     <EmbeddedResource Include="about.resx">
       <DependentUpon>about.cs</DependentUpon>
     </EmbeddedResource>

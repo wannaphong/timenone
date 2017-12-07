@@ -59,6 +59,7 @@
             this.m.Name = "m";
             this.m.Size = new System.Drawing.Size(100, 20);
             this.m.TabIndex = 2;
+            this.m.TextChanged += new System.EventHandler(this.m_TextChanged);
             // 
             // s
             // 
@@ -66,6 +67,7 @@
             this.s.Name = "s";
             this.s.Size = new System.Drawing.Size(100, 20);
             this.s.TabIndex = 3;
+            this.s.TextChanged += new System.EventHandler(this.s_TextChanged);
             // 
             // buOK
             // 
