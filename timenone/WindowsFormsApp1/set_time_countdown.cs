@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
 
         private void buOK_Click(object sender, EventArgs e) { 
             Countdown.settime=0;
-            Countdown.settime = TimeSpan.FromMinutes(int.Parse(m.Text)).TotalMilliseconds + TimeSpan.FromSeconds(int.Parse(s.Text)).TotalMilliseconds;
+            Countdown.settime =int.Parse(m.Text)*60000 + int.Parse(s.Text)* 1000;
             MessageBox.Show((TimeSpan.FromMinutes(int.Parse(m.Text)).TotalMilliseconds + TimeSpan.FromSeconds(int.Parse(s.Text)).TotalMilliseconds).ToString());
         }
 

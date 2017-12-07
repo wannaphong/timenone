@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class Countdown : Form
     {
-        public static double settime=60000;
+        public static double settime=0;
         public static bool run = false;
         public Countdown()
         {
@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
         {
             if (settime != 0&& run!=false)
             {
-                settime--;
+                settime-= 50;
                 label2.Text = dt.AddMilliseconds(settime).ToString("HH:mm:ss");
                 //label2.Text = settime / 60 + ":" + ((settime % 60) >= 10 ? (settime % 60).ToString() : "0" + settime % 60);
             }
@@ -40,12 +40,10 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(settime.ToString());
-                timer1 = new Timer();
             run = true;
             if (settime != 0)
             {
-                timer1.Interval = 1000;
+                //timer1.Interval = 1000;
                 timer1.Start();
                 timer1.Tick += new EventHandler(timer1_Tick);
             }

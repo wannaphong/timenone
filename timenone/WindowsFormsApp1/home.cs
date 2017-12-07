@@ -1,5 +1,4 @@
 ﻿using LiteDB;
-using NAudio.Wave;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +32,6 @@ namespace WindowsFormsApp1
             {
                 this.ShowInTaskbar = false;
                 this.Hide();
-                // Do some stuff
             }
         }
         private void notifyIcon_Click(object sender, EventArgs e)
@@ -101,17 +99,11 @@ namespace WindowsFormsApp1
                  notifyIcon.Icon = new System.Drawing.Icon(@"C:\Users\wannaphong\Documents\timenone\fzap_clock_sportstudio_design_Xaa_icon.ico");
                  notifyIcon.Text = "สวัสดี";//string.Format(Properties.Resources.InstantNoteAppName, Constants.Application_Name);
                  notifyIcon.Visible = true;
-                //string t = "แจ้งเตือนเวลา " + timeinday.ToString("HH:mm:ss");
                   notifyIcon.ShowBalloonTip(16000, "แจ้งเตือนเวลา ", name, ToolTipIcon.Warning);
                 SoundPlayer my_wave_file = new SoundPlayer(@"C:\Users\wannaphong\Documents\timenone\timenone\funky-breakbeat_102bpm_F_major.wav");
                 my_wave_file.PlaySync();
                 notifyIcon.Visible = false;
                 notifyIcon.Dispose();
-                /*this.Show();
-                alert.h = name;
-                alert.time = now;
-                alert a5 = new alert();
-                a5.ShowDialog();*/
             }
         }
         private void check_time(DateTime s)
