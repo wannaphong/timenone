@@ -12,9 +12,17 @@ namespace WindowsFormsApp1
 {
     public partial class alert : Form
     {
+        public static string h = "";
+        public static string time = "";
         public alert()
         {
             InitializeComponent();
+        }
+
+        private void alert_Load(object sender, EventArgs e)
+        {
+            timeok.Text = time;
+            n.Text = h;
         }
     }
 }

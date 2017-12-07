@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         public List<string> h = new List<string>();
         public List<string> m = new List<string>();
         public List<string> note = new List<string>();
-        string file = "";
+        string file = "",now;
         public home()
         {
             var db = new db();
@@ -45,6 +45,7 @@ namespace WindowsFormsApp1
         {
             DateTime timenow1 = DateTime.Now;
             timenow.Text = timenow1.ToString("HH:mm:ss");
+            now= timenow1.ToString("HH:mm");
             this.Text = "ขณะนี้เป็นเวลา "+ timenow1.ToString("HH:mm:ss");
             try
             {
@@ -106,6 +107,11 @@ namespace WindowsFormsApp1
                 my_wave_file.PlaySync();
                 notifyIcon.Visible = false;
                 notifyIcon.Dispose();
+                /*this.Show();
+                alert.h = name;
+                alert.time = now;
+                alert a5 = new alert();
+                a5.ShowDialog();*/
             }
         }
         private void check_time(DateTime s)

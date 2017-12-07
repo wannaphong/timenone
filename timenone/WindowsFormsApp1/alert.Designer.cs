@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.timeok = new System.Windows.Forms.Label();
+            this.n = new System.Windows.Forms.Label();
             this.OK = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -44,25 +44,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ขณะนี้เป็นเวลา";
             // 
-            // label2
+            // timeok
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(92, 100);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "06:00";
+            this.timeok.AutoSize = true;
+            this.timeok.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.timeok.Location = new System.Drawing.Point(92, 100);
+            this.timeok.Name = "timeok";
+            this.timeok.Size = new System.Drawing.Size(76, 29);
+            this.timeok.TabIndex = 1;
+            this.timeok.Text = "06:00";
             // 
-            // label3
+            // n
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label3.Location = new System.Drawing.Point(92, 161);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "ตื่นนอน";
+            this.n.AutoSize = true;
+            this.n.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.n.Location = new System.Drawing.Point(92, 161);
+            this.n.Name = "n";
+            this.n.Size = new System.Drawing.Size(74, 25);
+            this.n.TabIndex = 2;
+            this.n.Text = "ตื่นนอน";
             // 
             // OK
             // 
@@ -79,11 +79,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.OK);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.n);
+            this.Controls.Add(this.timeok);
             this.Controls.Add(this.label1);
             this.Name = "alert";
             this.Text = "alert";
+            this.Load += new System.EventHandler(this.alert_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,8 +93,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label timeok;
+        private System.Windows.Forms.Label n;
         private System.Windows.Forms.Button OK;
     }
 }
