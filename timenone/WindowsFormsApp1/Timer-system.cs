@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Timer_system : Form
     {
+        bool start = false;
         System.Timers.Timer t;
         int h, m, s;
         public Timer_system()
@@ -29,7 +30,8 @@ namespace WindowsFormsApp1
 
         private void bnStart_Click(object sender, EventArgs e)
         {
-            t.Start();
+            if (start == false) { t.Start(); bnStart.Text = "เริ่มใหม่"; }
+            else { t.Stop(); t.Enabled = false; t.Enabled = true ; t.Start(); }
         }
 
         private void bnP_Click(object sender, EventArgs e)
@@ -39,7 +41,8 @@ namespace WindowsFormsApp1
 
         private void bnStop_Click(object sender, EventArgs e)
         {
-            t.Stop();
+            t.Enabled = false;
+            show_time.Text = "00:00:00";
         }
 
         private void time_now_save_Click(object sender, EventArgs e)

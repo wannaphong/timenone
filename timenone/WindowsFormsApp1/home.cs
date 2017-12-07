@@ -218,6 +218,12 @@ namespace WindowsFormsApp1
 
         }
 
+        private void เพมการแจงเตอนToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            add_alert a = new add_alert();
+            a.Show();
+        }
+
         private void ออกจากโปรแกรมToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);

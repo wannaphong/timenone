@@ -30,7 +30,6 @@
         {
             this.show_time = new System.Windows.Forms.Label();
             this.bnStart = new System.Windows.Forms.Button();
-            this.bnStop = new System.Windows.Forms.Button();
             this.bnP = new System.Windows.Forms.Button();
             this.timebox = new System.Windows.Forms.TextBox();
             this.time_now_save = new System.Windows.Forms.Button();
@@ -52,23 +51,13 @@
             this.bnStart.Name = "bnStart";
             this.bnStart.Size = new System.Drawing.Size(75, 23);
             this.bnStart.TabIndex = 1;
-            this.bnStart.Text = "เริ่มใหม่";
+            this.bnStart.Text = "เริ่ม";
             this.bnStart.UseVisualStyleBackColor = true;
             this.bnStart.Click += new System.EventHandler(this.bnStart_Click);
             // 
-            // bnStop
-            // 
-            this.bnStop.Location = new System.Drawing.Point(182, 95);
-            this.bnStop.Name = "bnStop";
-            this.bnStop.Size = new System.Drawing.Size(75, 23);
-            this.bnStop.TabIndex = 2;
-            this.bnStop.Text = "หยุด";
-            this.bnStop.UseVisualStyleBackColor = true;
-            this.bnStop.Click += new System.EventHandler(this.bnStop_Click);
-            // 
             // bnP
             // 
-            this.bnP.Location = new System.Drawing.Point(44, 135);
+            this.bnP.Location = new System.Drawing.Point(169, 95);
             this.bnP.Name = "bnP";
             this.bnP.Size = new System.Drawing.Size(75, 23);
             this.bnP.TabIndex = 3;
@@ -88,7 +77,7 @@
             // 
             // time_now_save
             // 
-            this.time_now_save.Location = new System.Drawing.Point(138, 135);
+            this.time_now_save.Location = new System.Drawing.Point(93, 136);
             this.time_now_save.Name = "time_now_save";
             this.time_now_save.Size = new System.Drawing.Size(75, 23);
             this.time_now_save.TabIndex = 5;
@@ -104,7 +93,6 @@
             this.Controls.Add(this.time_now_save);
             this.Controls.Add(this.timebox);
             this.Controls.Add(this.bnP);
-            this.Controls.Add(this.bnStop);
             this.Controls.Add(this.bnStart);
             this.Controls.Add(this.show_time);
             this.Name = "Timer_system";
@@ -120,7 +108,6 @@
 
         private System.Windows.Forms.Label show_time;
         private System.Windows.Forms.Button bnStart;
-        private System.Windows.Forms.Button bnStop;
         private System.Windows.Forms.Button bnP;
         private System.Windows.Forms.TextBox timebox;
         private System.Windows.Forms.Button time_now_save;
