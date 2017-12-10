@@ -16,10 +16,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-        
-
-        private void buOK_Click(object sender, EventArgs e) { 
-
+        private void buOK_Click(object sender, EventArgs e) {
             Countdown.settime=0;
             if (m.Text == "" && s.Text == "") MessageBox.Show("กรุณากรอกข้อมูล");
             else
@@ -27,7 +24,7 @@ namespace WindowsFormsApp1
                 if (m.Text == "") m.Text = "0";
                 else if (s.Text == "") s.Text = "0";
                 Countdown.settime = int.Parse(m.Text) * 60 + int.Parse(s.Text);
-                MessageBox.Show((TimeSpan.FromMinutes(int.Parse(m.Text)).TotalMilliseconds + TimeSpan.FromSeconds(int.Parse(s.Text)).TotalMilliseconds).ToString());
+               // MessageBox.Show((TimeSpan.FromMinutes(int.Parse(m.Text)).TotalMilliseconds + TimeSpan.FromSeconds(int.Parse(s.Text)).TotalMilliseconds).ToString());
             }
         }
 

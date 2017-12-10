@@ -96,11 +96,12 @@ namespace WindowsFormsApp1
         {
             if (Check_Notifications(timeinday, name) == true)
             {
-                 NotifyIcon notifyIcon = new NotifyIcon();
+                String timenow= new DateTime(timeinday.Ticks).ToString("HH:mm");
+                NotifyIcon notifyIcon = new NotifyIcon();
                  notifyIcon.Icon = new System.Drawing.Icon(@"C:\Users\wannaphong\Documents\timenone\fzap_clock_sportstudio_design_Xaa_icon.ico");
                  notifyIcon.Text = "สวัสดี";//string.Format(Properties.Resources.InstantNoteAppName, Constants.Application_Name);
                  notifyIcon.Visible = true;
-                  notifyIcon.ShowBalloonTip(16000, "แจ้งเตือนเวลา ", name, ToolTipIcon.Warning);
+                  notifyIcon.ShowBalloonTip(16000, "แจ้งเตือนเวลา "+ timenow + " น.", name, ToolTipIcon.Warning);
                 SoundPlayer my_wave_file = new SoundPlayer(@"C:\Users\wannaphong\Documents\timenone\timenone\funky-breakbeat_102bpm_F_major.wav");
                 my_wave_file.PlaySync();
                 notifyIcon.Visible = false;

@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Timer_system : Form
     {
-        bool start = false;
+        bool start = false,P=false;
         System.Timers.Timer t;
         int h, m, s;
         public Timer_system()
@@ -30,13 +30,39 @@ namespace WindowsFormsApp1
 
         private void bnStart_Click(object sender, EventArgs e)
         {
-            if (start == false) { t.Start(); bnStart.Text = "เริ่มใหม่"; }
-            else { t.Stop(); t.Enabled = false; t.Enabled = true ; t.Start(); }
+            if (start == false)
+            {
+                timebox.Text = "";
+                h = 0;
+                m = 0;
+                s = 0;
+                t.Start();
+                bnStart.Text = "หยุด";
+                start = true;
+            }
+            else {
+                t.Stop();
+                start = false;
+                P = false;
+                bnP.Text = "หยุดชั่วคราว";
+                show_time.Text = "00:00:00";
+                bnStart.Text = "เริ่ม";
+            }
         }
 
         private void bnP_Click(object sender, EventArgs e)
         {
-            t.Stop();
+            if (P == false) {
+                t.Stop();
+                bnP.Text = "ดำเนินการต่อ";
+                P = true;
+            }
+            else
+            {
+                bnP.Text = "หยุดชั่วคราว";
+                P = false;
+                t.Start();
+            }
         }
 
         private void bnStop_Click(object sender, EventArgs e)
