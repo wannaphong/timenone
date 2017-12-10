@@ -23,8 +23,8 @@ namespace WindowsFormsApp1
             {
                 if (m.Text == "") m.Text = "0";
                 else if (s.Text == "") s.Text = "0";
-                Countdown.settime = int.Parse(m.Text) * 60 + int.Parse(s.Text);
-               // MessageBox.Show((TimeSpan.FromMinutes(int.Parse(m.Text)).TotalMilliseconds + TimeSpan.FromSeconds(int.Parse(s.Text)).TotalMilliseconds).ToString());
+                Countdown.settime = int.Parse(m.Text) * 3600 + int.Parse(s.Text) * 60;// * 1000;// int.Parse(m.Text) * 3600+ int.Parse(s.Text)*60;// * 1000;
+                MessageBox.Show("เวลาที่จะนับถอยหลัง : "+(Countdown.settime).ToString());
             }
         }
 

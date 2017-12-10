@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-        DateTime dt = new DateTime();
+        
         private void Countdown_Load(object sender, EventArgs e)
         {
 
@@ -29,12 +29,20 @@ namespace WindowsFormsApp1
             if (run!=false && settime>0)
             {
                 settime--;
-                label2.Text = dt.AddSeconds(settime).ToString("HH:mm:ss");
-                //label2.Text = settime / 60 + ":" + ((settime % 60) >= 10 ? (settime % 60).ToString() : "0" + settime % 60);
+                label2.Text =  Math.Ceiling(settime / 60) + ":" + ((settime % 60) >= 10 ? (settime % 60).ToString() : "0" + settime % 60);
+                //label2.Text = new DateTime().AddSeconds(settime).ToString("HH:mm:ss");
+                if (label2.Text == "00:00:00")
+                {
+                    button1.Text = "เริ่มใหม่";
+                    timer1.Enabled = false;
+                    run = false;
+                }
+                //
             }
-                else
+            else
                 {
                     label2.Text = "00:00:00";
+                    run = false;
                 }
         }
 
@@ -43,6 +51,7 @@ namespace WindowsFormsApp1
             run = true;
             if (settime != 0)
             {
+                timer1 = new System.Windows.Forms.Timer();
                 timer1.Interval = 1;//int.Parse(settime.ToString());
                 timer1.Tick += new EventHandler(timer1_Tick);
                 timer1.Enabled = true;
@@ -51,6 +60,7 @@ namespace WindowsFormsApp1
             else
             {
                 label2.Text = "00:00:00";
+                MessageBox.Show("กรุณาตั้งค่าเวลานับถอยหลัง");
             }
            
         }
