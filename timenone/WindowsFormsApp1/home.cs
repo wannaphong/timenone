@@ -18,6 +18,7 @@ namespace WindowsFormsApp1
         public List<string> m = new List<string>();
         public List<string> note = new List<string>();
         string file = "",now;
+        Task task1;
         public home()
         {
             var db = new db();
@@ -47,7 +48,7 @@ namespace WindowsFormsApp1
             this.Text = "ขณะนี้เป็นเวลา "+ timenow1.ToString("HH:mm:ss");
             try
             {
-                check_time(timenow1);
+               task1 = Task.Factory.StartNew(() => check_time(timenow1));
 
             }
             catch
@@ -104,6 +105,7 @@ namespace WindowsFormsApp1
                 my_wave_file.PlaySync();
                 notifyIcon.Visible = false;
                 notifyIcon.Dispose();
+                task1.Dispose();
             }
         }
         private void check_time(DateTime s)

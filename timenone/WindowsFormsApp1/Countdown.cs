@@ -26,10 +26,10 @@ namespace WindowsFormsApp1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (settime != 0&& run!=false)
+            if (run!=false && settime>0)
             {
-                settime-= 50;
-                label2.Text = dt.AddMilliseconds(settime).ToString("HH:mm:ss");
+                settime--;
+                label2.Text = dt.AddSeconds(settime).ToString("HH:mm:ss");
                 //label2.Text = settime / 60 + ":" + ((settime % 60) >= 10 ? (settime % 60).ToString() : "0" + settime % 60);
             }
                 else
@@ -43,9 +43,10 @@ namespace WindowsFormsApp1
             run = true;
             if (settime != 0)
             {
-                //timer1.Interval = 1000;
-                timer1.Start();
+                timer1.Interval = 1;//int.Parse(settime.ToString());
                 timer1.Tick += new EventHandler(timer1_Tick);
+                timer1.Enabled = true;
+                //timer1.Start();
             }
             else
             {
@@ -56,6 +57,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            label2.Text = "00:00:00";
             timer1.Stop();
             settime = 0;
             run = false;
