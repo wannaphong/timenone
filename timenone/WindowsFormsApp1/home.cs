@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace WindowsFormsApp1
@@ -92,10 +93,35 @@ namespace WindowsFormsApp1
             }
             return v;
         }
+        static string[] SplitWords(string s,string rule)
+        {
+            return Regex.Split(s, rule);
+        }
         private void show_Notifications(TimeSpan timeinday, string name)
         {
             if (Check_Notifications(timeinday, name) == true)
             {
+                string[] list= SplitWords(name, @",code123 ");
+                string[] list2 = SplitWords(name, @",code123none ");
+                if (list.Length == 2|| list2.Length==2)
+                {
+                    if (list2.Length == 2)
+                    {
+                        System.Diagnostics.Process process = new System.Diagnostics.Process();
+                        System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                        startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                        startInfo.FileName = "cmd.exe";
+                        startInfo.Arguments = "/c " + list[1];
+                        process.StartInfo = startInfo;
+                        process.Start();
+                    }
+                    else
+                    {
+                        string strCmdText = "/c " + list[1];
+                        System.Diagnostics.Process.Start("CMD.exe", strCmdText);
+                    }
+                    name = list[0];
+                }
                 String timenow= new DateTime(timeinday.Ticks).ToString("HH:mm");
                 NotifyIcon notifyIcon = new NotifyIcon();
                  notifyIcon.Icon = new System.Drawing.Icon(@"C:\Users\wannaphong\Documents\timenone\fzap_clock_sportstudio_design_Xaa_icon.ico");
@@ -153,7 +179,6 @@ namespace WindowsFormsApp1
                                     if (order.Saturday == true) show_Notifications(timeOfDay, order.Title);
                                     break;
                             }
-
                         }
                     }
                 }
