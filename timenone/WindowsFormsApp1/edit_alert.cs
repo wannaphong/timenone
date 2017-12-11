@@ -54,6 +54,7 @@ namespace WindowsFormsApp1
             source.DataSource = list;
             dataGridView1.DataSource = source;
             dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void edit_alert_Load(object sender, EventArgs e)
