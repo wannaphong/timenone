@@ -69,9 +69,10 @@
             // 
             // note
             // 
-            this.note.Location = new System.Drawing.Point(100, 157);
+            this.note.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.note.Location = new System.Drawing.Point(100, 150);
             this.note.Name = "note";
-            this.note.Size = new System.Drawing.Size(121, 20);
+            this.note.Size = new System.Drawing.Size(121, 26);
             this.note.TabIndex = 5;
             // 
             // save
@@ -96,6 +97,7 @@
             // 
             // h
             // 
+            this.h.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.h.FormattingEnabled = true;
             this.h.Items.AddRange(new object[] {
             "0",
@@ -124,11 +126,12 @@
             "23"});
             this.h.Location = new System.Drawing.Point(100, 58);
             this.h.Name = "h";
-            this.h.Size = new System.Drawing.Size(121, 21);
+            this.h.Size = new System.Drawing.Size(121, 28);
             this.h.TabIndex = 8;
             // 
             // m
             // 
+            this.m.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.m.FormattingEnabled = true;
             this.m.Items.AddRange(new object[] {
             "0",
@@ -193,7 +196,7 @@
             "59"});
             this.m.Location = new System.Drawing.Point(100, 100);
             this.m.Name = "m";
-            this.m.Size = new System.Drawing.Size(121, 21);
+            this.m.Size = new System.Drawing.Size(121, 28);
             this.m.TabIndex = 9;
             // 
             // days
@@ -240,7 +243,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "add_alert";
-            this.Text = "add_alert";
+            this.Text = "เพิ่มการแจ้งเตือน";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.add_alert_FormClosing);
             this.Load += new System.EventHandler(this.add_alert_Load);
             this.ResumeLayout(false);

@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
     {
         bool start = false,P=false;
         System.Timers.Timer t;
-        int h, m, s;
+        int h, m, s,num=1;
         public Timer_system()
         {
             InitializeComponent();
@@ -47,6 +47,7 @@ namespace WindowsFormsApp1
                 bnP.Text = "หยุดชั่วคราว";
                 show_time.Text = "00:00:00";
                 bnStart.Text = "เริ่ม";
+                num = 1;
             }
         }
 
@@ -73,7 +74,8 @@ namespace WindowsFormsApp1
 
         private void time_now_save_Click(object sender, EventArgs e)
         {
-            timebox.Text += string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'))+"\r\n";
+            timebox.Text += string.Format("รอบที่ {3} : {0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'),num.ToString())+"\r\n";
+            num++;
         }
 
         private void OnTimeEvent1(object sender,System.Timers.ElapsedEventArgs e)
