@@ -98,6 +98,7 @@ namespace WindowsFormsApp1
         {
             return Regex.Split(s, rule);
         }
+        NotifyIcon notifyIcon = new NotifyIcon();
         private void show_Notifications(TimeSpan timeinday, string name)
         {
             if (Check_Notifications(timeinday, name) == true)
@@ -147,7 +148,7 @@ namespace WindowsFormsApp1
                     name = "\r\n" + "คำสั่งพิเศษ : " + code;
                 }
                 String timenow= new DateTime(timeinday.Ticks).ToString("HH:mm");
-                NotifyIcon notifyIcon = new NotifyIcon();
+                
                  notifyIcon.Icon = new System.Drawing.Icon(@"C:\Users\wannaphong\Documents\timenone\fzap_clock_sportstudio_design_Xaa_icon.ico");
                  notifyIcon.Text = "สวัสดี";//string.Format(Properties.Resources.InstantNoteAppName, Constants.Application_Name);
                  notifyIcon.Visible = true;
@@ -218,6 +219,7 @@ namespace WindowsFormsApp1
 
         private void ออกจากโปรแกรมToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            notifyIcon.Visible = false;
             Environment.Exit(0);// ออกจากโปรแกรม
         }
 
@@ -304,6 +306,7 @@ namespace WindowsFormsApp1
 
         private void ออกจากโปรแกรมToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            notifyIcon.Visible = false;
             Environment.Exit(0);
         }
     }
