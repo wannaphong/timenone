@@ -42,8 +42,7 @@ namespace WindowsFormsApp1
                  .Find(x => x.IsActive == true || x.IsActive == false);
                 foreach (var c in query)
                 {
-                    list.Add(new MyStruct(c.Id, c.Title, c.H, c.M, c.IsActive));
-                }
+                    list.Add(new MyStruct(c.Id, c.Title, c.H, c.M, c.IsActive));                }
             }
             source.DataSource = list;
             dataGridView1.DataSource = source;
@@ -51,7 +50,7 @@ namespace WindowsFormsApp1
 
         private void edit_alert_Load(object sender, EventArgs e)
         {
-            update.Visible = false;
+           // update.Visible = false;
             DisplayData();
         }
         class MyStruct
@@ -75,8 +74,18 @@ namespace WindowsFormsApp1
 
         private void update_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            using (var db2 = new LiteDatabase(file))
             {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    var productsDb = db2.GetCollection<db.Notifications>("Notifications");
+                    var productToUpdate = productsDb.Find(p => p.Id == int.Parse(row.Cells[0].Value.ToString())).First();
+                    productToUpdate.Title = row.Cells[1].Value.ToString(); // Title
+                    productToUpdate.H= row.Cells[2].Value.ToString();
+                    productToUpdate.M=row.Cells[3].Value.ToString();
+                    productToUpdate.IsActive= bool.Parse(row.Cells[4].Value.ToString());
+                    productsDb.Update(productToUpdate);
+                }
             }
         }
 
