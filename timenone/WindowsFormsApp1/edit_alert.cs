@@ -126,6 +126,8 @@ namespace WindowsFormsApp1
                     productToUpdate.Saturday = bool.Parse(row.Cells[11].Value.ToString());
                     productsDb.Update(productToUpdate);
                 }
+                MessageBox.Show("อัพเดตข้อมูลเรียบร้อย");
+                DisplayData();
             }
         }
 

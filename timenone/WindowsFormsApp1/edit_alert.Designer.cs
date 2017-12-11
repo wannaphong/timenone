@@ -48,21 +48,21 @@
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(435, 34);
+            this.update.Location = new System.Drawing.Point(403, 34);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(75, 23);
+            this.update.Size = new System.Drawing.Size(116, 34);
             this.update.TabIndex = 1;
-            this.update.Text = "Update";
+            this.update.Text = "อัพเดตข้อมูล";
             this.update.UseVisualStyleBackColor = true;
             this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // del
             // 
-            this.del.Location = new System.Drawing.Point(282, 45);
+            this.del.Location = new System.Drawing.Point(260, 34);
             this.del.Name = "del";
-            this.del.Size = new System.Drawing.Size(75, 23);
+            this.del.Size = new System.Drawing.Size(114, 34);
             this.del.TabIndex = 2;
-            this.del.Text = "del";
+            this.del.Text = "ลบการแจ้งเตือน";
             this.del.UseVisualStyleBackColor = true;
             this.del.Click += new System.EventHandler(this.del_Click);
             // 
