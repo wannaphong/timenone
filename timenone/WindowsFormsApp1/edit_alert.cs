@@ -51,6 +51,7 @@ namespace WindowsFormsApp1
 
         private void edit_alert_Load(object sender, EventArgs e)
         {
+            update.Visible = false;
             DisplayData();
         }
         class MyStruct

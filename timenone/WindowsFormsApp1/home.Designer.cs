@@ -49,6 +49,7 @@
             this.ออกจากโปรแกรมToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.นาฬกานบถอยหลงToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ลบการแจงเตอนToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStripHome.SuspendLayout();
             this.SuspendLayout();
@@ -160,7 +161,8 @@
             // การแจงเตอนToolStripMenuItem
             // 
             this.การแจงเตอนToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.เพมการแจงเตอนToolStripMenuItem});
+            this.เพมการแจงเตอนToolStripMenuItem,
+            this.ลบการแจงเตอนToolStripMenuItem});
             this.การแจงเตอนToolStripMenuItem.Name = "การแจงเตอนToolStripMenuItem";
             this.การแจงเตอนToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.การแจงเตอนToolStripMenuItem.Text = "การแจ้งเตือน";
@@ -204,6 +206,13 @@
             this.นาฬกานบถอยหลงToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
             this.นาฬกานบถอยหลงToolStripMenuItem1.Text = "นาฬิกานับถอยหลัง";
             this.นาฬกานบถอยหลงToolStripMenuItem1.Click += new System.EventHandler(this.นาฬกานบถอยหลงToolStripMenuItem1_Click);
+            // 
+            // ลบการแจงเตอนToolStripMenuItem
+            // 
+            this.ลบการแจงเตอนToolStripMenuItem.Name = "ลบการแจงเตอนToolStripMenuItem";
+            this.ลบการแจงเตอนToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ลบการแจงเตอนToolStripMenuItem.Text = "ลบการแจ้งเตือน";
+            this.ลบการแจงเตอนToolStripMenuItem.Click += new System.EventHandler(this.ลบการแจงเตอนToolStripMenuItem_Click);
             // 
             // home
             // 
@@ -250,5 +259,6 @@
         private System.Windows.Forms.ToolStripMenuItem นาฬกาจบเวลาToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem เกยวกบโปรแกรมToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem นาฬกานบถอยหลงToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ลบการแจงเตอนToolStripMenuItem;
     }
 }
