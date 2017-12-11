@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -107,13 +108,11 @@ namespace WindowsFormsApp1
                 {
                     if (list2.Length == 2)
                     {
-                        System.Diagnostics.Process process = new System.Diagnostics.Process();
-                        System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-                        startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-                        startInfo.FileName = "cmd.exe";
-                        startInfo.Arguments = "/c " + list[1];
-                        process.StartInfo = startInfo;
-                        process.Start();
+                        Process proc = new Process();
+                        proc.StartInfo.FileName = "CMD.exe";
+                        proc.StartInfo.Arguments = "/c "+list2[1];
+                        proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        proc.Start();
                     }
                     else
                     {
