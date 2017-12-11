@@ -105,7 +105,8 @@ namespace WindowsFormsApp1
                 SoundPlayer my_wave_file = new SoundPlayer(@"C:\Users\wannaphong\Documents\timenone\timenone\funky-breakbeat_102bpm_F_major.wav");
                 my_wave_file.PlaySync();
                 notifyIcon.Visible = false;
-                notifyIcon.Dispose();
+                MessageBox.Show(name, "แจ้งเตือนเวลา " + timenow + " น.",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               notifyIcon.Dispose();
                 task1.Dispose();
             }
         }
