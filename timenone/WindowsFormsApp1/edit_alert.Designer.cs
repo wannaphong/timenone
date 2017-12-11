@@ -31,15 +31,17 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.update = new System.Windows.Forms.Button();
             this.del = new System.Windows.Forms.Button();
+            this.add_alert_bn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 89);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 74);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(596, 298);
+            this.dataGridView1.ShowCellErrors = false;
+            this.dataGridView1.Size = new System.Drawing.Size(1045, 360);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
@@ -63,11 +65,22 @@
             this.del.UseVisualStyleBackColor = true;
             this.del.Click += new System.EventHandler(this.del_Click);
             // 
+            // add_alert_bn
+            // 
+            this.add_alert_bn.Location = new System.Drawing.Point(105, 34);
+            this.add_alert_bn.Name = "add_alert_bn";
+            this.add_alert_bn.Size = new System.Drawing.Size(128, 34);
+            this.add_alert_bn.TabIndex = 3;
+            this.add_alert_bn.Text = "เพิ่มการแจ้งเตือน";
+            this.add_alert_bn.UseVisualStyleBackColor = true;
+            this.add_alert_bn.Click += new System.EventHandler(this.add_alert_bn_Click);
+            // 
             // edit_alert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 399);
+            this.ClientSize = new System.Drawing.Size(1049, 437);
+            this.Controls.Add(this.add_alert_bn);
             this.Controls.Add(this.del);
             this.Controls.Add(this.update);
             this.Controls.Add(this.dataGridView1);
@@ -84,5 +97,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button update;
         private System.Windows.Forms.Button del;
+        private System.Windows.Forms.Button add_alert_bn;
     }
 }

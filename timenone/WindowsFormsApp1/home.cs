@@ -104,6 +104,7 @@ namespace WindowsFormsApp1
             {
                 string[] list= SplitWords(name, @",code123 ");
                 string[] list2 = SplitWords(name, @",code123none ");
+                string code="";
                 if (list.Length == 2|| list2.Length==2)
                 {
                     if (list2.Length == 2)
@@ -113,13 +114,37 @@ namespace WindowsFormsApp1
                         proc.StartInfo.Arguments = "/c "+list2[1];
                         proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                         proc.Start();
+                        name = list2[0];
+                        code = list2[1];
                     }
-                    else
+                    else if(list.Length == 2)
                     {
                         string strCmdText = "/c " + list[1];
                         System.Diagnostics.Process.Start("CMD.exe", strCmdText);
+                        name = list[0];
+                        code = list[1];
                     }
-                    name = list[0];
+                    name += "\r\n"+"คำสั่งพิเศษ : "+code;
+                }
+                else if(Regex.IsMatch(name, @"\,code123 ")|| Regex.IsMatch(name, @"\,code123none "))
+                {
+                    
+                    if (Regex.IsMatch(name, @"\,code123 "))
+                    {
+                        string strCmdText = "/c " + SplitWords(name, @",code123 ")[0];
+                        System.Diagnostics.Process.Start("CMD.exe", strCmdText);
+                        code = SplitWords(name, @",code123 ")[0];
+                    }
+                    else if(Regex.IsMatch(name, @"\,code123none "))
+                    {
+                        Process proc = new Process();
+                        proc.StartInfo.FileName = "CMD.exe";
+                        proc.StartInfo.Arguments = "/c " + SplitWords(name, @",code123none ")[0];
+                        proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        proc.Start();
+                        code = SplitWords(name, @",code123none ")[0];
+                    }
+                    name = "\r\n" + "คำสั่งพิเศษ : " + code;
                 }
                 String timenow= new DateTime(timeinday.Ticks).ToString("HH:mm");
                 NotifyIcon notifyIcon = new NotifyIcon();
@@ -260,6 +285,18 @@ namespace WindowsFormsApp1
         }
 
         private void ลบการแจงเตอนToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            edit_alert a = new edit_alert();
+            a.Show();
+        }
+
+        private void เพมการแจงเตอนToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            add_alert a = new add_alert();
+            a.Show();
+        }
+
+        private void แกไขการแจงเตอนToolStripMenuItem_Click(object sender, EventArgs e)
         {
             edit_alert a = new edit_alert();
             a.Show();
