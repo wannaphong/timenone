@@ -42,13 +42,13 @@
             this.notifyHome = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStripHome = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.เปดแอพToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ออกจากโปรแกรมToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.นาฬกาจบเวลาToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.นาฬกาจบเวลาToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.เกยวกบโปรแกรมToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.การแจงเตอนToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.เพมการแจงเตอนToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.นาฬกาจบเวลาToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.เกยวกบโปรแกรมToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ออกจากโปรแกรมToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.นาฬกานบถอยหลงToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStripHome.SuspendLayout();
             this.SuspendLayout();
@@ -144,55 +144,25 @@
             this.เปดแอพToolStripMenuItem,
             this.การแจงเตอนToolStripMenuItem,
             this.นาฬกาจบเวลาToolStripMenuItem1,
-            this.นาฬกาจบเวลาToolStripMenuItem2,
+            this.นาฬกานบถอยหลงToolStripMenuItem1,
             this.เกยวกบโปรแกรมToolStripMenuItem1,
             this.ออกจากโปรแกรมToolStripMenuItem1});
             this.contextMenuStripHome.Name = "contextMenuStripHome";
-            this.contextMenuStripHome.Size = new System.Drawing.Size(153, 158);
+            this.contextMenuStripHome.Size = new System.Drawing.Size(158, 158);
             // 
             // เปดแอพToolStripMenuItem
             // 
             this.เปดแอพToolStripMenuItem.Name = "เปดแอพToolStripMenuItem";
-            this.เปดแอพToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.เปดแอพToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.เปดแอพToolStripMenuItem.Text = "เปิดแอพ";
             this.เปดแอพToolStripMenuItem.Click += new System.EventHandler(this.เปดแอพToolStripMenuItem_Click);
-            // 
-            // ออกจากโปรแกรมToolStripMenuItem1
-            // 
-            this.ออกจากโปรแกรมToolStripMenuItem1.Name = "ออกจากโปรแกรมToolStripMenuItem1";
-            this.ออกจากโปรแกรมToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.ออกจากโปรแกรมToolStripMenuItem1.Text = "ออกจากโปรแกรม";
-            this.ออกจากโปรแกรมToolStripMenuItem1.Click += new System.EventHandler(this.ออกจากโปรแกรมToolStripMenuItem1_Click);
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
-            // นาฬกาจบเวลาToolStripMenuItem1
-            // 
-            this.นาฬกาจบเวลาToolStripMenuItem1.Name = "นาฬกาจบเวลาToolStripMenuItem1";
-            this.นาฬกาจบเวลาToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.นาฬกาจบเวลาToolStripMenuItem1.Text = "นาฬิกาจับเวลา";
-            // 
-            // นาฬกาจบเวลาToolStripMenuItem2
-            // 
-            this.นาฬกาจบเวลาToolStripMenuItem2.Name = "นาฬกาจบเวลาToolStripMenuItem2";
-            this.นาฬกาจบเวลาToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.นาฬกาจบเวลาToolStripMenuItem2.Text = "นาฬิกาจับเวลา";
-            // 
-            // เกยวกบโปรแกรมToolStripMenuItem1
-            // 
-            this.เกยวกบโปรแกรมToolStripMenuItem1.Name = "เกยวกบโปรแกรมToolStripMenuItem1";
-            this.เกยวกบโปรแกรมToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.เกยวกบโปรแกรมToolStripMenuItem1.Text = "เกี่ยวกับโปรแกรม";
             // 
             // การแจงเตอนToolStripMenuItem
             // 
             this.การแจงเตอนToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.เพมการแจงเตอนToolStripMenuItem});
             this.การแจงเตอนToolStripMenuItem.Name = "การแจงเตอนToolStripMenuItem";
-            this.การแจงเตอนToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.การแจงเตอนToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.การแจงเตอนToolStripMenuItem.Text = "การแจ้งเตือน";
             // 
             // เพมการแจงเตอนToolStripMenuItem
@@ -201,6 +171,39 @@
             this.เพมการแจงเตอนToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.เพมการแจงเตอนToolStripMenuItem.Text = "เพิ่มการแจ้งเตือน";
             this.เพมการแจงเตอนToolStripMenuItem.Click += new System.EventHandler(this.เพมการแจงเตอนToolStripMenuItem_Click);
+            // 
+            // นาฬกาจบเวลาToolStripMenuItem1
+            // 
+            this.นาฬกาจบเวลาToolStripMenuItem1.Name = "นาฬกาจบเวลาToolStripMenuItem1";
+            this.นาฬกาจบเวลาToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.นาฬกาจบเวลาToolStripMenuItem1.Text = "นาฬิกาจับเวลา";
+            this.นาฬกาจบเวลาToolStripMenuItem1.Click += new System.EventHandler(this.นาฬกาจบเวลาToolStripMenuItem1_Click);
+            // 
+            // เกยวกบโปรแกรมToolStripMenuItem1
+            // 
+            this.เกยวกบโปรแกรมToolStripMenuItem1.Name = "เกยวกบโปรแกรมToolStripMenuItem1";
+            this.เกยวกบโปรแกรมToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.เกยวกบโปรแกรมToolStripMenuItem1.Text = "เกี่ยวกับโปรแกรม";
+            this.เกยวกบโปรแกรมToolStripMenuItem1.Click += new System.EventHandler(this.เกยวกบโปรแกรมToolStripMenuItem1_Click);
+            // 
+            // ออกจากโปรแกรมToolStripMenuItem1
+            // 
+            this.ออกจากโปรแกรมToolStripMenuItem1.Name = "ออกจากโปรแกรมToolStripMenuItem1";
+            this.ออกจากโปรแกรมToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.ออกจากโปรแกรมToolStripMenuItem1.Text = "ออกจากโปรแกรม";
+            this.ออกจากโปรแกรมToolStripMenuItem1.Click += new System.EventHandler(this.ออกจากโปรแกรมToolStripMenuItem1_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
+            // นาฬกานบถอยหลงToolStripMenuItem1
+            // 
+            this.นาฬกานบถอยหลงToolStripMenuItem1.Name = "นาฬกานบถอยหลงToolStripMenuItem1";
+            this.นาฬกานบถอยหลงToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.นาฬกานบถอยหลงToolStripMenuItem1.Text = "นาฬิกานับถอยหลัง";
+            this.นาฬกานบถอยหลงToolStripMenuItem1.Click += new System.EventHandler(this.นาฬกานบถอยหลงToolStripMenuItem1_Click);
             // 
             // home
             // 
@@ -245,7 +248,7 @@
         private System.Windows.Forms.ToolStripMenuItem การแจงเตอนToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem เพมการแจงเตอนToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem นาฬกาจบเวลาToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem นาฬกาจบเวลาToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem เกยวกบโปรแกรมToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem นาฬกานบถอยหลงToolStripMenuItem1;
     }
 }

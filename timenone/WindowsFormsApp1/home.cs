@@ -219,6 +219,24 @@ namespace WindowsFormsApp1
             a.Show();
         }
 
+        private void นาฬกาจบเวลาToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Timer_system a = new Timer_system();
+            a.Show();
+        }
+
+        private void เกยวกบโปรแกรมToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            about a = new about();
+            a.Show();
+        }
+
+        private void นาฬกานบถอยหลงToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Countdown a = new Countdown();
+            a.Show();
+        }
+
         private void ออกจากโปรแกรมToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
