@@ -156,15 +156,12 @@ namespace WindowsFormsApp1
                         }
                     }
                 }
-                
-                // MessageBox.Show(day.ToString()+query.ToArray().Length.ToString());            }
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.ShowInTaskbar = true;
-
             timenow.Text = DateTime.Now.ToLongTimeString();
            check_time(DateTime.Now);
         }

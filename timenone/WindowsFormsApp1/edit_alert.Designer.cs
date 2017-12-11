@@ -28,20 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.update = new System.Windows.Forms.Button();
+            this.del = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(39, 89);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(596, 298);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            // 
+            // update
+            // 
+            this.update.Location = new System.Drawing.Point(435, 34);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(75, 23);
+            this.update.TabIndex = 1;
+            this.update.Text = "Update";
+            this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
+            // 
+            // del
+            // 
+            this.del.Location = new System.Drawing.Point(282, 45);
+            this.del.Name = "del";
+            this.del.Size = new System.Drawing.Size(75, 23);
+            this.del.TabIndex = 2;
+            this.del.Text = "del";
+            this.del.UseVisualStyleBackColor = true;
+            this.del.Click += new System.EventHandler(this.del_Click);
             // 
             // edit_alert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 399);
+            this.Controls.Add(this.del);
+            this.Controls.Add(this.update);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "edit_alert";
             this.Text = "แก้ไขการแจ้งเตือน";
             this.Load += new System.EventHandler(this.edit_alert_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button update;
+        private System.Windows.Forms.Button del;
     }
 }

@@ -48,7 +48,6 @@ namespace WindowsFormsApp1
         }
         private void run_time()
         {
-            int i = 0;
             double u = settime;
             DateTime time = DateTime.Now;
             DateTime time2 = DateTime.Now.AddSeconds(settime);
