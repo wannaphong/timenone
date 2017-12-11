@@ -95,9 +95,10 @@
             this.Controls.Add(this.bnP);
             this.Controls.Add(this.bnStart);
             this.Controls.Add(this.show_time);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Timer_system";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Timer_system";
+            this.Text = "นาฬิกาจับเวลา";
             this.Load += new System.EventHandler(this.Timer_system_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
