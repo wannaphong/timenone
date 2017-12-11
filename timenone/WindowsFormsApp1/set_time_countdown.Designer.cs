@@ -91,7 +91,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "set_time_countdown";
-            this.Text = "set_time_countdown";
+            this.Text = "ตั้งค่าเวลานับถอยหลัง";
             this.Load += new System.EventHandler(this.set_time_countdown_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
