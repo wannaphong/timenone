@@ -61,13 +61,13 @@ namespace WindowsFormsApp1
         }
         TimeSpan timeold= DateTime.Now.TimeOfDay;
         List<string> name_5=new List<string> ();
+        bool v = true;
         public bool Check_Notifications(TimeSpan timeinday, string name)
         {
-            bool v = true;
             if (timeold.Equals(timeinday)!=false) {
                 timeold = timeinday;
-                name_5.Clear();
-                v = true;
+                name_5 = new List<string>();
+                v = false;
             }
             else
             {
@@ -75,6 +75,7 @@ namespace WindowsFormsApp1
                 {
                     int i = 0;
                     string[] name_51 = name_5.ToArray();
+                    string result = name_5.FirstOrDefault(x => x == name);
                     while (i< name_51.Length)
                     {
                         if(name_51[i] == name)
@@ -84,6 +85,7 @@ namespace WindowsFormsApp1
                         }
                         i++;
                     }
+                    if(v==true)
                     name_5.Add(name);
                 }
                 else
@@ -121,7 +123,7 @@ namespace WindowsFormsApp1
                     else if(list.Length == 2)
                     {
                         string strCmdText = "/c " + list[1];
-                        System.Diagnostics.Process.Start("CMD.exe", strCmdText);
+                        Process.Start("CMD.exe", strCmdText);
                         name = list[0];
                         code = list[1];
                     }
@@ -156,7 +158,7 @@ namespace WindowsFormsApp1
                 my_wave_file.PlaySync();
                 notifyIcon.Visible = false;
                 MessageBox.Show(name, "แจ้งเตือนเวลา " + timenow + " น.",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-               notifyIcon.Dispose();
+                notifyIcon.Dispose();
                 task1.Dispose();
             }
         }
@@ -212,7 +214,7 @@ namespace WindowsFormsApp1
         {
             this.ShowInTaskbar = true; // กำหนดให้โชว์ใน Taskbar ได้
             timenow.Text = DateTime.Now.ToLongTimeString(); // กำหนดข้อความใน timenow เป็น DateTime.Now.ToLongTimeString() เวลา ณ ขณะนี้
-            check_time(DateTime.Now); // เรียกใช้ check_time โดยใช้ค่า DateTime.Now
+            //check_time(DateTime.Now); // เรียกใช้ check_time โดยใช้ค่า DateTime.Now
         }
 
         private void ออกจากโปรแกรมToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก ออกจากโปรแกรม ใน ToolStripMenuItem
