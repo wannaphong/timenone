@@ -65,7 +65,7 @@ namespace timenone
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
 
-        private void edit_alert_Load(object sender, EventArgs e)
+        private void edit_alert_Load(object sender, EventArgs e) // เมื่อ Form นี้ถูกโหลดขึ้นมา
         {
             DisplayData(); // เรียกใช้ method ชื่อ DisplayData
         }

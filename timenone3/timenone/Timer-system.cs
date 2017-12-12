@@ -21,11 +21,11 @@ namespace timenone
             InitializeComponent();
         }
 
-        private void Timer_system_Load(object sender, EventArgs e)
+        private void Timer_system_Load(object sender, EventArgs e) // เมื่อ Form นี้ถูกโหลดขึ้นมา
         {
-            t = new System.Timers.Timer();
-            t.Interval = 1000;
-            t.Elapsed += OnTimeEvent1;
+            t = new System.Timers.Timer(); // ให้ t แทน System.Timers.Timer()
+            t.Interval = 1000; // กำหนดช่วงของ t ให้เท่ากับ 1000 มิลลิวินาที หรือ 1 วินาที
+            t.Elapsed += OnTimeEvent1;// กำหนด Elapsed ให้เป็นเหตุการณ์ใน OnTimeEvent1
         }
 
         private void bnStart_Click(object sender, EventArgs e)
@@ -40,10 +40,10 @@ namespace timenone
                 bnStart.Text = "หยุด";
                 start = true;
             }
-            else {
-                t.Stop();
-                start = false;
-                P = false;
+            else { // กรณีไม่เข้าเงื่อนไขข้างบน
+                t.Stop(); // ให้หยุดการทำงาน t
+                start = false; // ให้ start เป็น false
+                P = false; // ให้ P เป็น false
                 bnP.Text = "หยุดชั่วคราว";
                 show_time.Text = "00:00:00";
                 bnStart.Text = "เริ่ม";

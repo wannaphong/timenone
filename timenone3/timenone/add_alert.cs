@@ -29,7 +29,7 @@ namespace timenone
             }
             Enable.Checked = false;
         }
-        private void add_alert_Load(object sender, EventArgs e)
+        private void add_alert_Load(object sender, EventArgs e) // เมื่อ Form นี้ถูกโหลดขึ้นมา
         {
             h.SelectedIndex = 0; // ประกาศค่าเริ่มต้นของ h ให้เลือกตำแหน่งที่ 0
             m.SelectedIndex = 0; // ประกาศค่าเริ่มต้นของ m ให้เลือกตำแหน่งที่ 0
@@ -37,10 +37,10 @@ namespace timenone
             m.DropDownStyle = ComboBoxStyle.DropDownList; // ล็อค ไม่ให้กรอกข้อความได้
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void save_Click(object sender, EventArgs e) // เมื่อกดปุ่ม save
         {
             var db = new db();
-            string[] d = {"วันอาทิตย์","วันจันทร์","วันอังคาร","วันพุธ","วันพฤหัสบดี","วันศุกร์","วันเสาร์"};
+            string[] d = {"วันอาทิตย์","วันจันทร์","วันอังคาร","วันพุธ","วันพฤหัสบดี","วันศุกร์","วันเสาร์"}; // ประกาศ string[] ชื่อ d แทนวันทั้ง 7 วันในภาษาไทย
             bool d1=false, d2 = false, d3 = false, d4 = false, d5 = false, d6 = false, d7 = false;
             foreach (string item in days.CheckedItems)
             {
