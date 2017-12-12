@@ -11,7 +11,7 @@ namespace timenone
 {
     public partial class edit_alert : Form
     {
-        int ID;
+        int ID; // ประกาศตัวแปรข้อมูลชนิด int ชื่อ ID
         string file = new db().file_db().ToString();
         public edit_alert()
         {
@@ -21,11 +21,11 @@ namespace timenone
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
         }
-        public void DisplayData()
+        public void DisplayData() // ประกาศ method ชื่อ DisplayData แบบ public โดยไม่มีคืนค่า
         {
-            List<MyStruct> list = new List<MyStruct> { };
+            List<MyStruct> list = new List<MyStruct> { }; // ประกาศ List ชื่อ list ใช้เก็บวัตถุของ class ชื่อ MyStruct
             var source = new BindingSource();
-            using (var db2 = new LiteDatabase(file))
+            using (var db2 = new LiteDatabase(file)) // เรียกใช้งานฐานจาก LiteDatabase(ที่ตั้งไฟล์) แล้วเก็บวัตถุไว้ในตัวแปร db2
             {
                 var orders = db2.GetCollection<db.Notifications>("Notifications");
 
@@ -49,9 +49,9 @@ namespace timenone
                     list.Add(new MyStruct(c.Id, c.Title, c.H, c.M, c.IsActive,c.Sunday,c.Monday,c.Tuesday,c.Wednesday,c.Thursday,c.Friday,c.Saturday));                }
             }
             source.DataSource = list;
-            dataGridView1.DataSource = source;
-            dataGridView1.Columns[0].ReadOnly = true;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.DataSource = source; // กำหนดแหล่งข้อมูลของ dataGridView1 ให้เป็นตัวแปร source
+            dataGridView1.Columns[0].ReadOnly = true; // กำหนดให้ Columns แรก (ID) ให้อ่านได้อย่างเดียว
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; // กำหนดให้ปรับขนาด dataGridView1 แบบ Auto
 
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
@@ -69,7 +69,7 @@ namespace timenone
         {
             DisplayData(); // เรียกใช้ method ชื่อ DisplayData
         }
-        class MyStruct
+        class MyStruct // ประกาศ class ชื่อ MyStruct
         {
             public int ID { get; set; }
             public string Title { get; set; }
@@ -103,7 +103,7 @@ namespace timenone
 
         private void update_Click(object sender, EventArgs e)
         {
-            using (var db2 = new LiteDatabase(file))
+            using (var db2 = new LiteDatabase(file)) // เรียกใช้งานฐานจาก LiteDatabase(ที่ตั้งไฟล์) แล้วเก็บวัตถุไว้ในตัวแปร db2
             {
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {

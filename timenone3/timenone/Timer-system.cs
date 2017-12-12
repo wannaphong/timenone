@@ -51,31 +51,31 @@ namespace timenone
             }
         }
 
-        private void bnP_Click(object sender, EventArgs e)
+        private void bnP_Click(object sender, EventArgs e) // เมื่อคลิกปุ่ม bnP
         {
-            if (P == false) {
-                t.Stop();
-                bnP.Text = "ดำเนินการต่อ";
-                P = true;
+            if (P == false) { // กรณี P เป็น false
+                t.Stop(); // ให้หยุดการทำงานของ t
+                bnP.Text = "ดำเนินการต่อ"; // เปลี่ยนข้อความของ bnP ให้เป็น ดำเนินการต่อ
+                P = true; // ให้ P เป็น True
             }
-            else
+            else // กรณีไม่เข้าเงื่อนไขข้างบน
             {
-                bnP.Text = "หยุดชั่วคราว";
-                P = false;
-                t.Start();
+                bnP.Text = "หยุดชั่วคราว";// เปลี่ยนข้อความของ bnP ให้เป็น หยุดชั่วคราว
+                P = false;// ให้ P เป็น false
+                t.Start();// เริ่มการทำงาน t
             }
         }
 
-        private void bnStop_Click(object sender, EventArgs e)
+        private void bnStop_Click(object sender, EventArgs e) // เมื่อคลิกปุ่ม bnStop
         {
-            t.Enabled = false;
-            show_time.Text = "00:00:00";
+            t.Enabled = false; // กำหนดให้ปิดการทำงาน t
+            show_time.Text = "00:00:00"; // set ค่าข้อความใน show_time ให้เป็น 00:00:00
         }
 
-        private void time_now_save_Click(object sender, EventArgs e)
+        private void time_now_save_Click(object sender, EventArgs e) // เมื่อคลิกปุ่ม time_now_save
         {
             timebox.Text += string.Format("รอบที่ {3} : {0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'),num.ToString())+"\r\n";
-            num++;
+            num++; // เพิ่มค่า num อีก 1
         }
 
         private void OnTimeEvent1(object sender,System.Timers.ElapsedEventArgs e)
