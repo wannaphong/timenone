@@ -1,8 +1,6 @@
 ﻿using LiteDB;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -12,7 +10,7 @@ namespace timenone
     public partial class edit_alert : Form
     {
         int ID; // ประกาศตัวแปรข้อมูลชนิด int ชื่อ ID
-        string file = new db().file_db().ToString();
+        string file = new db().file_db().ToString(); // ประกาศตัวแปร file ซึ่งเป็นตัวแปรชนิดข้อมูล string เก็บ file_db() จาก db แล้วแปลงเป็นสตริง
         public edit_alert()
         {
             InitializeComponent();
@@ -30,7 +28,7 @@ namespace timenone
                 var orders = db2.GetCollection<db.Notifications>("Notifications");
 
                 // When query Order, includes references
-                var query = orders//.Include(S => timeOfDay.Seconds.ToString())
+                var query = orders
                     .Include(x => x.Id)
                     .Include(x => x.Title)
                     .Include(x => x.H)
@@ -139,7 +137,7 @@ namespace timenone
                  .Find(x => x.IsActive == true || x.IsActive == false);
                 orders.Delete(Query.EQ("_id", ID));
             }
-            DisplayData();
+            DisplayData(); // เรียกใช้ method ชื่อ DisplayData
         }
 
         private void add_alert_bn_Click(object sender, EventArgs e)

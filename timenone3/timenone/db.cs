@@ -31,13 +31,13 @@ namespace timenone
             public bool Saturday { get; set; } // ประกาศ Saturday เป็นข้อมูลชนิด bool
             public bool IsActive { get; set; } // ประกาศ IsActive เป็นข้อมูลชนิด bool
         }
-        public bool add_data(string Title1,string H1,string M1,bool day1, bool day2, bool day3, bool day4, bool day5, bool day6, bool day7,bool IsActive1)
+        public bool add_data(string Title1,string H1,string M1,bool day1, bool day2, bool day3, bool day4, bool day5, bool day6, bool day7,bool IsActive1) //ประกาศ method ชื่อ add_data แบบ public รับ string Title1,string H1,string M1,bool day1, bool day2, bool day3, bool day4, bool day5, bool day6, bool day7,bool IsActive1
         {
-            try
+            try // เรียกใช้ try
             {
                 using (var db = new LiteDatabase(file_db())) // เรียกใช้งานฐานจาก LiteDatabase(ที่ตั้งไฟล์) แล้วเก็บวัตถุไว้ในตัวแปร db
                 {
-                    var col = db.GetCollection<Notifications>("Notifications");
+                    var col = db.GetCollection<Notifications>("Notifications"); // ประกาศตัวแปร col แทน db.GetCollection<Notifications>("Notifications")
                     var data = new Notifications
                     {
                         Title = Title1,
@@ -52,14 +52,14 @@ namespace timenone
                         Saturday = day7,
                         IsActive = IsActive1
                     };
-                    col.Insert(data);
-                    ok = true;
+                    col.Insert(data); // เพิ่มข้อมูลลงฐานข้อมูล
+                    ok = true; // ให้ ok เป็น true
                 }
             }
-            catch (Exception e)
+            catch (Exception e) // กรณีมีข้อผิดพลาด ให้เก็บรายละเอียดของข้อมูลผิดพลาดไว้ใน e
             {
-                ok = false;
-                Console.WriteLine(e);
+                ok = false; // ให้ ok เป็น false
+                Console.WriteLine(e); // แสดงข้อผิดพลาดที่ได้จาก e ใน Console
             }
             return ok; // คืนค่า ok
         }
