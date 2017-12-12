@@ -35,7 +35,7 @@ namespace timenone
         {
             try
             {
-                using (var db = new LiteDatabase(file_db()))
+                using (var db = new LiteDatabase(file_db())) // เรียกใช้งานฐานจาก LiteDatabase(ที่ตั้งไฟล์) แล้วเก็บวัตถุไว้ในตัวแปร db
                 {
                     var col = db.GetCollection<Notifications>("Notifications");
                     var data = new Notifications
@@ -61,7 +61,7 @@ namespace timenone
                 ok = false;
                 Console.WriteLine(e);
             }
-            return ok;
+            return ok; // คืนค่า ok
         }
     }
 }

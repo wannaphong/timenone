@@ -5,8 +5,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace timenone
@@ -25,7 +23,6 @@ namespace timenone
         }
         public void DisplayData()
         {
-            
             List<MyStruct> list = new List<MyStruct> { };
             var source = new BindingSource();
             using (var db2 = new LiteDatabase(file))
@@ -70,8 +67,7 @@ namespace timenone
 
         private void edit_alert_Load(object sender, EventArgs e)
         {
-           // update.Visible = false;
-            DisplayData();
+            DisplayData(); // เรียกใช้ method ชื่อ DisplayData
         }
         class MyStruct
         {
@@ -127,7 +123,7 @@ namespace timenone
                     productsDb.Update(productToUpdate);
                 }
                 MessageBox.Show("อัพเดตข้อมูลเรียบร้อย");
-                DisplayData();
+                DisplayData(); // เรียกใช้ method ชื่อ DisplayData
             }
         }
 
@@ -148,9 +144,9 @@ namespace timenone
 
         private void add_alert_bn_Click(object sender, EventArgs e)
         {
-            add_alert a = new add_alert();
-            a.ShowDialog();
-            DisplayData();
+            add_alert a = new add_alert(); // ประกาศตัวแปร a แทนวัตถุ add_alert
+            a.ShowDialog(); // กำหนดให้โชว์แบบ ShowDialog คือ โชว์ได้หน้าต่างเดียวและใช้งานโปรแกรมได้เฉพาะหน้าต่างที่โชว์อยู่
+            DisplayData(); // เรียกใช้ method ชื่อ DisplayData
         }
     }
 }

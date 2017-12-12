@@ -31,11 +31,10 @@ namespace timenone
         }
         private void add_alert_Load(object sender, EventArgs e)
         {
-            h.SelectedIndex = 0;
-            m.SelectedIndex = 0;
+            h.SelectedIndex = 0; // ประกาศค่าเริ่มต้นของ h ให้เลือกตำแหน่งที่ 0
+            m.SelectedIndex = 0; // ประกาศค่าเริ่มต้นของ m ให้เลือกตำแหน่งที่ 0
             h.DropDownStyle = ComboBoxStyle.DropDownList; // ล็อค ไม่ให้กรอกข้อความได้
             m.DropDownStyle = ComboBoxStyle.DropDownList; // ล็อค ไม่ให้กรอกข้อความได้
-            //S.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -68,8 +67,8 @@ namespace timenone
 
         private void open_f1_Click(object sender, EventArgs e)
         {
-            home h = new home();
-            h.Show();
+            home h = new home(); // ประกาศตัวแปร h แทนวัตถุ home
+            h.Show();// โชว์ home 
         }
     }
 }

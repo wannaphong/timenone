@@ -1,14 +1,9 @@
-﻿using LiteDB;
+﻿using LiteDB; // เรียกใช้ LiteDB ซึ่งเป็นไลบารีฐานข้อมูล
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Media;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,9 +11,6 @@ namespace timenone
 {
     public partial class home : Form
     {
-        public List<string> h = new List<string>();
-        public List<string> m = new List<string>();
-        public List<string> note = new List<string>();
         string file = "",now;
         Task task1;
         public home()
@@ -30,7 +22,6 @@ namespace timenone
         }
         private void Form1_Resize(object sender, EventArgs e) // เมื่อ Form นี้มีการปรับขนาด
         {
-
             if (WindowState == FormWindowState.Minimized) // ถ้ากดปุ่มย่อหน้าจอ
             {
                 this.ShowInTaskbar = false; // กำหนดไม่ให้โชว์ใน Taskbar
@@ -56,7 +47,6 @@ namespace timenone
             {
 
             }
-            //timer1.Start();
         }
         TimeSpan timeold= DateTime.Now.TimeOfDay;
         List<string> name_5=new List<string> ();
@@ -100,16 +90,16 @@ namespace timenone
             return Regex.Split(s, rule); // ใช้ Regex ในการแบ่งข้อความด้วยคำสั่ง Regex.Split โดย s คือ ข้อความ ส่วน rule คือ กฎในการแบ่งข้อความ
         }
         NotifyIcon notifyIcon = new NotifyIcon(); // ประกาศตัวแปร notifyIcon แทนวัตถุ NotifyIcon
-        private void show_Notifications(TimeSpan timeinday, string name)
+        private void show_Notifications(TimeSpan timeinday, string name) // ประกาศ method ชื่อ show_Notifications โดยไม่มีการคืนค่ากลับ โดยรับข้อมูล TimeSpan timeinday และ string name
         {
-            if (Check_Notifications(timeinday, name) == true)
+            if (Check_Notifications(timeinday, name) == true) // เรียกใช้ method ชื่อ Check_Notifications โดยส่งข้อมูล timeinday และ name คืนค่า boolean แล้วเช็คว่าเป็น true หรือไม่ ถ้าเป็น ให้ทำตามคำสั่งในนี้
             {
-                string[] list = SplitWords(name, @",code123 ");
-                string[] list2 = SplitWords(name, @",code123none ");
-                string code = "";
-                if (list.Length == 2 || list2.Length == 2)
+                string[] list = SplitWords(name, @",code123 "); // เรียกใช้ method SplitWords ในการแบ่งข้อความ เป็น string[] เก็บไว้ใน list
+                string[] list2 = SplitWords(name, @",code123none "); // เรียกใช้ method SplitWords ในการแบ่งข้อความ เป็น string[] เก็บไว้ใน list2
+                string code = "";// ประกาศตัวแปร code ชนิดข้อมูล string มีค่าเริ่มต้นเป็น ""
+                if (list.Length == 2 || list2.Length == 2) // ถ้า list ยาวเท่ากับ 2 หรือ list2 ยาวเท่ากับ 2
                 {
-                    if (list2.Length == 2)
+                    if (list2.Length == 2) // ถ้า list2 ยาวเท่ากับ 2
                     {
                         Process proc = new Process();
                         proc.StartInfo.FileName = "CMD.exe";
@@ -119,10 +109,10 @@ namespace timenone
                         name = list2[0];
                         code = list2[1];
                     }
-                    else if (list.Length == 2)
+                    else if (list.Length == 2) // ถ้า list ยาวเท่ากับ 2
                     {
                         string strCmdText = "/c " + list[1];
-                        System.Diagnostics.Process.Start("CMD.exe", strCmdText);
+                        Process.Start("CMD.exe", strCmdText);
                         name = list[0];
                         code = list[1];
                     }
@@ -130,7 +120,6 @@ namespace timenone
                 }
                 else if (Regex.IsMatch(name, @"\,code123 ") || Regex.IsMatch(name, @"\,code123none "))
                 {
-
                     if (Regex.IsMatch(name, @"\,code123 "))
                     {
                         string strCmdText = "/c " + SplitWords(name, @",code123 ")[0];
@@ -146,12 +135,12 @@ namespace timenone
                         proc.Start();
                         code = SplitWords(name, @",code123none ")[0];
                     }
-                    name = "\r\n" + "คำสั่งพิเศษ : " + code;
+                    name = "\r\n" + "คำสั่งพิเศษ : " + code; // เพิ่ม "คำสั่งพิเศษ :  code" เข้าไปใน name
                 }
-                String timenow = new DateTime(timeinday.Ticks).ToString("HH:mm");
+                String timenow = new DateTime(timeinday.Ticks).ToString("HH:mm"); // แปลงเวลาจาก timeinday.Ticks ให้เป็น string ชั่วโมง:นาที แล้วเก็บไว้ในตัวแปร timenow ซึ่งเป็นตัวแปรชนิด string
                 NotifyIcon notifyIcon = new NotifyIcon();
                 notifyIcon.Icon = new System.Drawing.Icon(@"C:\Users\wannaphong\Documents\timenone\fzap_clock_sportstudio_design_Xaa_icon.ico");
-                notifyIcon.Text = "สวัสดี";//string.Format(Properties.Resources.InstantNoteAppName, Constants.Application_Name);
+                notifyIcon.Text = "สวัสดี";
                 notifyIcon.Visible = true;
                 notifyIcon.ShowBalloonTip(16000, "แจ้งเตือนเวลา " + timenow + " น.", name, ToolTipIcon.Warning);
                 SoundPlayer my_wave_file = new SoundPlayer(@"C:\Users\wannaphong\Documents\timenone\timenone\funky-breakbeat_102bpm_F_major.wav");
@@ -186,25 +175,25 @@ namespace timenone
                             {
                                 switch (day)
                                 {
-                                    case "Sunday":
+                                    case "Sunday": // กรณีเป็นวันอาทิตย์
                                         if (order.Sunday == true) show_Notifications(timeOfDay, order.Title);
                                         break;
-                                    case "Monday":
+                                    case "Monday": // กรณีเป็นวันจันทร์
                                         if (order.Monday == true) show_Notifications(timeOfDay, order.Title);
                                         break;
-                                    case "Tuesday":
+                                    case "Tuesday": // กรณีเป็นวันอังคาร
                                         if (order.Tuesday == true) show_Notifications(timeOfDay, order.Title);
                                         break;
-                                    case "Wednesday":
+                                    case "Wednesday": // กรณีเป็นวันพุธ
                                         if (order.Wednesday == true) show_Notifications(timeOfDay, order.Title);
                                         break;
-                                    case "Thursday":
+                                    case "Thursday":// กรณีเป็นวันพฤหัสบดี
                                         if (order.Thursday == true) show_Notifications(timeOfDay, order.Title);
                                         break;
-                                    case "Friday":
+                                    case "Friday":// กรณีเป็นวันศุกร์
                                         if (order.Friday == true) show_Notifications(timeOfDay, order.Title);
                                         break;
-                                    case "Saturday":
+                                    case "Saturday":// กรณีเป็นวันเสาร์
                                         if (order.Saturday == true) show_Notifications(timeOfDay, order.Title);
                                         break;
                                 }
@@ -213,9 +202,9 @@ namespace timenone
                     }
                 }
             }
-            else
+            else // กรณีไม่เข้าเงื่อนไขข้างบน
             {
-                name_5.Clear();
+                name_5.Clear(); // ล้างข้อมูลใน name_5
             }
 
         }
