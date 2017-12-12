@@ -50,7 +50,6 @@ namespace timenone
                 num = 1;
             }
         }
-
         private void bnP_Click(object sender, EventArgs e) // เมื่อคลิกปุ่ม bnP
         {
             if (P == false) { // กรณี P เป็น false
@@ -65,19 +64,16 @@ namespace timenone
                 t.Start();// เริ่มการทำงาน t
             }
         }
-
         private void bnStop_Click(object sender, EventArgs e) // เมื่อคลิกปุ่ม bnStop
         {
             t.Enabled = false; // กำหนดให้ปิดการทำงาน t
             show_time.Text = "00:00:00"; // set ค่าข้อความใน show_time ให้เป็น 00:00:00
         }
-
         private void time_now_save_Click(object sender, EventArgs e) // เมื่อคลิกปุ่ม time_now_save
         {
             timebox.Text += string.Format("รอบที่ {3} : {0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'),num.ToString())+"\r\n";
             num++; // เพิ่มค่า num อีก 1
         }
-
         private void OnTimeEvent1(object sender,System.Timers.ElapsedEventArgs e)
         {
             Invoke(new Action(() =>
@@ -96,14 +92,6 @@ namespace timenone
                 show_time.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
             }
             ));
-        }
-
-
-
-
-        private void OnTimeEvent(object sender, ElapsedEventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }
