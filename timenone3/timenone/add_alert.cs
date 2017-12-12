@@ -16,22 +16,23 @@ namespace WindowsFormsApp1
         public add_alert()
         {
             InitializeComponent();
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.add_alert_FormClosing);
-        }
+         }
 
         private void clean_Click(object sender, EventArgs e)
         {
-            h.Refresh();
-            m.Refresh();
+            h.SelectedIndex = 0;
+            m.SelectedIndex = 0;
             note.Text = "";
+            foreach (int i in days.CheckedIndices)
+            {
+                days.SetItemCheckState(i, CheckState.Unchecked);
+            }
+            Enable.Checked = false;
         }
-        private void add_alert_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //home.ActiveForm.Opacity = 1.0;
-        }
-
         private void add_alert_Load(object sender, EventArgs e)
         {
+            h.SelectedIndex = 0;
+            m.SelectedIndex = 0;
             h.DropDownStyle = ComboBoxStyle.DropDownList; // ล็อค ไม่ให้กรอกข้อความได้
             m.DropDownStyle = ComboBoxStyle.DropDownList; // ล็อค ไม่ให้กรอกข้อความได้
             //S.DropDownStyle = ComboBoxStyle.DropDownList;

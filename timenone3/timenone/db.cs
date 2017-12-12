@@ -15,12 +15,11 @@ namespace WindowsFormsApp1
 {
     class db
     {
-        //private string path_file=""+ "db.timenone";
-        private bool ok;
-        public string name_db= @"MyData.db";
+        private bool ok; // ประกาศตัวแปร ok เป็น bool
+        public string name_db= Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\timenone.db";
         public string file_db()
         {
-            return @"MyData.db";
+            return name_db;
         }
         public class Notifications
         {

@@ -66,12 +66,6 @@
     <Compile Include="add_alert.Designer.cs">
       <DependentUpon>add_alert.cs</DependentUpon>
     </Compile>
-    <Compile Include="alert.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="alert.Designer.cs">
-      <DependentUpon>alert.cs</DependentUpon>
-    </Compile>
     <Compile Include="Countdown.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,12 +84,6 @@
     </Compile>
     <Compile Include="home.Designer.cs">
       <DependentUpon>home.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Notification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Notification.Designer.cs">
-      <DependentUpon>Notification.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,9 +107,6 @@
     <EmbeddedResource Include="add_alert.resx">
       <DependentUpon>add_alert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="alert.resx">
-      <DependentUpon>alert.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Countdown.resx">
       <DependentUpon>Countdown.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,9 +115,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="home.resx">
       <DependentUpon>home.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Notification.resx">
-      <DependentUpon>Notification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

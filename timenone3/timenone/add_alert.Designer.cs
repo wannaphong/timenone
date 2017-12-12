@@ -244,7 +244,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "add_alert";
             this.Text = "เพิ่มการแจ้งเตือน";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.add_alert_FormClosing);
+            //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.add_alert_FormClosing);
             this.Load += new System.EventHandler(this.add_alert_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

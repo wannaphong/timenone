@@ -28,13 +28,13 @@ namespace WindowsFormsApp1
             InitializeComponent();
             timer1.Start();
         }
-        private void Form1_Resize(object sender, EventArgs e)
+        private void Form1_Resize(object sender, EventArgs e) // เมื่อ Form นี้มีการปรับขนาด
         {
 
-            if (WindowState == FormWindowState.Minimized)
+            if (WindowState == FormWindowState.Minimized) // ถ้ากดปุ่มย่อหน้าจอ
             {
-                this.ShowInTaskbar = false;
-                this.Hide();
+                this.ShowInTaskbar = false; // กำหนดไม่ให้โชว์ใน Taskbar
+                this.Hide(); // ซ่อน Form นี้
             }
         }
         private void notifyIcon_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
             timer1.Start();
         }
         TimeSpan timeold= DateTime.Now.TimeOfDay;
-        List<string> name_5=new List<string> ();// string[] name_5;
+        List<string> name_5=new List<string> ();
         public bool Check_Notifications(TimeSpan timeinday, string name)
         {
             bool v = true;
@@ -94,11 +94,11 @@ namespace WindowsFormsApp1
             }
             return v;
         }
-        static string[] SplitWords(string s,string rule)
+        static string[] SplitWords(string s,string rule) // ประกาศ method ชื่อ SplitWords เป็น static โดยมีการรับค่าสตริง 2 ค่า คือ s และ rule
         {
             return Regex.Split(s, rule); // ใช้ Regex ในการแบ่งข้อความด้วยคำสั่ง Regex.Split โดย s คือ ข้อความ ส่วน rule คือ กฎในการแบ่งข้อความ
         }
-        NotifyIcon notifyIcon = new NotifyIcon();
+        NotifyIcon notifyIcon = new NotifyIcon(); // ประกาศตัวแปร notifyIcon แทนวัตถุ NotifyIcon
         private void show_Notifications(TimeSpan timeinday, string name)
         {
             if (Check_Notifications(timeinday, name) == true)
@@ -148,12 +148,11 @@ namespace WindowsFormsApp1
                     name = "\r\n" + "คำสั่งพิเศษ : " + code;
                 }
                 String timenow= new DateTime(timeinday.Ticks).ToString("HH:mm");
-                
-                 notifyIcon.Icon = new System.Drawing.Icon(@"C:\Users\wannaphong\Documents\timenone\fzap_clock_sportstudio_design_Xaa_icon.ico");
-                 notifyIcon.Text = "สวัสดี";//string.Format(Properties.Resources.InstantNoteAppName, Constants.Application_Name);
-                 notifyIcon.Visible = true;
-                  notifyIcon.ShowBalloonTip(16000, "แจ้งเตือนเวลา "+ timenow + " น.", name, ToolTipIcon.Warning);
-                SoundPlayer my_wave_file = new SoundPlayer(@"C:\Users\wannaphong\Documents\timenone\timenone\funky-breakbeat_102bpm_F_major.wav");
+                notifyIcon.Icon = new System.Drawing.Icon(Application.StartupPath+@"\fzap_clock_sportstudio_design_Xaa_icon.ico");
+                notifyIcon.Text = "สวัสดี";
+                notifyIcon.Visible = true;
+                notifyIcon.ShowBalloonTip(16000, "แจ้งเตือนเวลา "+ timenow + " น.", name, ToolTipIcon.Warning);
+                SoundPlayer my_wave_file = new SoundPlayer(Application.StartupPath + @"\funky-breakbeat_102bpm_F_major.wav");
                 my_wave_file.PlaySync();
                 notifyIcon.Visible = false;
                 MessageBox.Show(name, "แจ้งเตือนเวลา " + timenow + " น.",MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -163,10 +162,9 @@ namespace WindowsFormsApp1
         }
         private void check_time(DateTime s)
         {
-            TimeSpan timeOfDay = s.TimeOfDay;
+            TimeSpan timeOfDay = s.TimeOfDay; // ประกาศตัวแปร timeOfDay เป็นตัวแปรวัตถุ TimeSpan เก็บข้อมูล s.TimeOfDay เก็บเวลาของวัน
             var day = s.DayOfWeek.ToString();
             var time = new db.Notifications();
-           //MessageBox.Show(day+timeOfDay.Hours.ToString() + timeOfDay.Minutes.ToString() + timeOfDay.Seconds.ToString());
             using (var db2 = new LiteDatabase(file))
             {
                 var orders = db2.GetCollection<db.Notifications>("Notifications");
@@ -210,32 +208,32 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e) // เมื่อ Form นี้เริ่มทำงาน
         {
-            this.ShowInTaskbar = true;
-            timenow.Text = DateTime.Now.ToLongTimeString();
-           check_time(DateTime.Now);
+            this.ShowInTaskbar = true; // กำหนดให้โชว์ใน Taskbar ได้
+            timenow.Text = DateTime.Now.ToLongTimeString(); // กำหนดข้อความใน timenow เป็น DateTime.Now.ToLongTimeString() เวลา ณ ขณะนี้
+            check_time(DateTime.Now); // เรียกใช้ check_time โดยใช้ค่า DateTime.Now
         }
 
-        private void ออกจากโปรแกรมToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ออกจากโปรแกรมToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก ออกจากโปรแกรม ใน ToolStripMenuItem
         {
-            notifyIcon.Visible = false;
+            notifyIcon.Visible = false; // ปิดการมองเห็น notifyIcon ในแถบ taskbar
             Environment.Exit(0);// ออกจากโปรแกรม
         }
 
-        private void เกยวกบโปรแกรมToolStripMenuItem_Click(object sender, EventArgs e)
+        private void เกยวกบโปรแกรมToolStripMenuItem_Click(object sender, EventArgs e)  // เมื่อคลิก เกี่ยวกับโปรแกรม ใน ToolStripMenuItem
         {
             about about = new about(); // ประกาศตัวแปร about แทนวัตถุ about
             about.ShowDialog(); // แสดง about
         }
 
-        private void นาฬกานบถอยหลงToolStripMenuItem_Click(object sender, EventArgs e)
+        private void นาฬกานบถอยหลงToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก นาฬิกานับถอยหลัง ใน ToolStripMenuItem
         {
             Countdown cd = new Countdown(); // ประกาศตัวแปร cd แทนวัตถุ Countdown
             cd.Show(); // แสดง Countdown
         }
 
-        private void add_Click(object sender, EventArgs e)
+        private void add_Click(object sender, EventArgs e) // เมื่อคลิกปุ่ม add
         {
             home a1 = new home(); // ประกาศตัวแปร a1 แทนวัตถุ home
             add_alert a = new add_alert();// ประกาศตัวแปร a แทนวัตถุ add_alert
@@ -243,17 +241,17 @@ namespace WindowsFormsApp1
             a1.Close(); // ปิด home
         }
 
-        private void นาฬกาจบเวลาToolStripMenuItem_Click(object sender, EventArgs e)
+        private void นาฬกาจบเวลาToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก นาฬิกาจับเวลา ใน ToolStripMenuItem
         {
             Timer_system a = new Timer_system(); // ประกาศตัวแปร a แทนวัตถุ Timer_system
             a.ShowDialog();// แสดง Timer_system
         }
 
-        private void เปดแอพToolStripMenuItem_Click(object sender, EventArgs e)
+        private void เปดแอพToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก เปิดแอพ ใน ToolStripMenuItem
         {
-            this.ShowInTaskbar = true;
-            this.Show();
-           this.WindowState = FormWindowState.Normal;
+            this.ShowInTaskbar = true; // กำหนดให้โชว์ใน Taskbar ได้
+            this.Show(); // โชว์ home
+           this.WindowState = FormWindowState.Normal; // กำหนดหน้าต่างปกติ
         }
 
         private void timenow_Click(object sender, EventArgs e)
@@ -261,51 +259,51 @@ namespace WindowsFormsApp1
 
         }
 
-        private void เพมการแจงเตอนToolStripMenuItem_Click(object sender, EventArgs e)
+        private void เพมการแจงเตอนToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก เพิ่มการแจ้งเตือน ใน ToolStripMenuItem
         {
             add_alert a = new add_alert(); // ประกาศตัวแปร a แทนวัตถุ add_alert
             a.Show(); // แสดง add_alert
         }
 
-        private void นาฬกาจบเวลาToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void นาฬกาจบเวลาToolStripMenuItem1_Click(object sender, EventArgs e) // เมื่อคลิก นาฬิกาจับเวลา ใน ToolStripMenuItem1
         {
             Timer_system a = new Timer_system(); // ประกาศตัวแปร a แทนวัตถุ
             a.Show();
         }
 
-        private void เกยวกบโปรแกรมToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void เกยวกบโปรแกรมToolStripMenuItem1_Click(object sender, EventArgs e) // เมื่อคลิก เกี่ยวกับโปรแกรม ใน ToolStripMenuItem1
         {
             about a = new about(); // ประกาศตัวแปร a แทนวัตถุ about
             a.Show(); // แสดง about
         }
 
-        private void นาฬกานบถอยหลงToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void นาฬกานบถอยหลงToolStripMenuItem1_Click(object sender, EventArgs e) // เมื่อคลิก นาฬิกานับถอยหลัง ใน ToolStripMenuItem1
         {
             Countdown a = new Countdown(); // ประกาศตัวแปร a แทนวัตถุ Countdown
             a.Show(); // แสดง Countdown
         }
 
-        private void ลบการแจงเตอนToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ลบการแจงเตอนToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก แก้ไขการแจ้งเตือน ใน ToolStripMenuItem
         {
             edit_alert a = new edit_alert(); // ประกาศตัวแปร a แทนวัตถุ edit_alert
             a.Show(); // แสดง edit_alert
         }
 
-        private void เพมการแจงเตอนToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void เพมการแจงเตอนToolStripMenuItem1_Click(object sender, EventArgs e) // เมื่อคลิก แก้ไขการแจ้งเตือน ใน ToolStripMenuItem1
         {
             add_alert a = new add_alert(); // ประกาศตัวแปร a แทนวัตถุ add_alert
             a.Show(); // แสดง add_alert
         }
 
-        private void แกไขการแจงเตอนToolStripMenuItem_Click(object sender, EventArgs e)
+        private void แกไขการแจงเตอนToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก แก้ไขการแจ้งเตือน ใน ToolStripMenuItem
         {
             edit_alert a = new edit_alert(); // ประกาศตัวแปร a แทนวัตถุ edit_alert
             a.Show(); // แสดง edit_alert
         }
 
-        private void ออกจากโปรแกรมToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void ออกจากโปรแกรมToolStripMenuItem1_Click(object sender, EventArgs e) // เมื่อคลิก ออกจากโปรแกรม ใน ToolStripMenuItem1
         {
-            notifyIcon.Visible = false; // ปิดการมองเห็นในแถบ taskbar
+            notifyIcon.Visible = false; // ปิดการมองเห็น notifyIcon ในแถบ taskbar
             Environment.Exit(0); // ออกจากโปรแกรม
         }
     }
