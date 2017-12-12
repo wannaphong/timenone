@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace timenone
 {
     partial class set_time_countdown
     {

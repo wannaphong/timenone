@@ -6,7 +6,7 @@
 using LiteDB;
 using System;
 
-namespace WindowsFormsApp1
+namespace timenone
 {
     class db
     {

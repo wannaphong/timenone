@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace timenone
 {
     public partial class set_time_countdown : Form
     {

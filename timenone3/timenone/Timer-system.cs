@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace timenone
 {
     public partial class Timer_system : Form
     {
