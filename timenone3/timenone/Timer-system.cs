@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
 using System.Windows.Forms;
 
 namespace timenone
 {
     public partial class Timer_system : Form
     {
-        bool start = false,P=false;
-        System.Timers.Timer t;
-        int h, m, s,num=1;
+        bool start = false,P=false; // ประกาศตัวแปรชนิด bool ชื่อ  start และ P โดย start = false ส่วน P=false
+        System.Timers.Timer t; // ประกาศตัวแปร t แทนวัตถุ System.Timers.Timer
+        int h, m, s,num=1; // ประกาศตัวแปรชนิด int ชื่อ  h, m, s และ num โดย num มีค่าเริ่มต้นเท่ากับ 1
         public Timer_system()
         {
             InitializeComponent();
@@ -71,25 +63,25 @@ namespace timenone
         }
         private void time_now_save_Click(object sender, EventArgs e) // เมื่อคลิกปุ่ม time_now_save
         {
-            timebox.Text += string.Format("รอบที่ {3} : {0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'),num.ToString())+"\r\n";
+            timebox.Text += string.Format("รอบที่ {3} : {0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'),num.ToString())+"\r\n"; //เพิ่มข้อความใน timebox ให้เป็น รอบที่ รอบ : ชั่วโมง:นาที:วินาที โดยให้ข้อมูลมี 2 หลัก เช่น 01 เป็นต้น
             num++; // เพิ่มค่า num อีก 1
         }
-        private void OnTimeEvent1(object sender,System.Timers.ElapsedEventArgs e)
+        private void OnTimeEvent1(object sender,System.Timers.ElapsedEventArgs e) // ประกาศ method ชื่อ OnTimeEvent1
         {
-            Invoke(new Action(() =>
+            Invoke(new Action(() => // ให้เรียกใช้งานการดำเนินการในคำสั่งนี้
             {
-                s += 1;
-                if (s == 60)
+                s++; // บวกค่า s เพิ่มอีก 1
+                if (s == 60) // ถ้า s เท่ากับ 60
                 {
-                    s = 0;
-                    m++;
+                    s = 0;// ให้ s เท่ากับ 0
+                    m++;//เพิ่มค่า m อีก 1
                 }
-                if (m == 60)
+                if (m == 60) // ถ้า m เท่ากับ 60
                 {
-                    m = 0;
-                    h++;
+                    m = 0; // ให้ m เท่ากับ 0
+                    h++; // ให้ h เพิ่มค่าอีก 1
                 }
-                show_time.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
+                show_time.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0')); //กำหนดข้อความใน show_time ให้เป็น ชั่วโมง:นาที:วินาที โดยให้ข้อมูลมี 2 หลัก เช่น 01 เป็นต้น
             }
             ));
         }
