@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace timenone
 {
-    public partial class Form1 : Form
+    public partial class home : Form
     {
-        public Form1()
+        public home()
         {
             InitializeComponent();
             SidePanel.Height = button1.Height;
@@ -38,7 +38,7 @@ namespace timenone
             //Please dont forget to Subscribe... :) :) :) 
         }
         
-        private void Form1_Load(object sender, EventArgs e)
+        private void home_Load(object sender, EventArgs e)
         {
 
         }
@@ -47,14 +47,14 @@ namespace timenone
         private Point dragCursorPoint;
         private Point dragFormPoint;
 
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        private void home_MouseDown(object sender, MouseEventArgs e)
         {
             dragging = true;
             dragCursorPoint = Cursor.Position;
             dragFormPoint = this.Location;
         }
 
-        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        private void home_MouseMove(object sender, MouseEventArgs e)
         {
             if (dragging)
             {
@@ -63,7 +63,7 @@ namespace timenone
             }
         }
 
-        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        private void home_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
         }
@@ -71,6 +71,20 @@ namespace timenone
         private void close_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void index_Click(object sender, EventArgs e)
+        {
+            //SidePanel.Height =index.Height;
+            SidePanel.Top = index.Top;
+            firstCustomControl1.BringToFront();
+        }
+
+        private void opencountdown_Click(object sender, EventArgs e)
+        {
+            //SidePanel.Height = index.Height;
+            SidePanel.Top = index.Top;
+            mySecondCustmControl1.BringToFront();
         }
     }
 }

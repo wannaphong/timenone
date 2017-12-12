@@ -1,6 +1,6 @@
 ﻿namespace timenone
 {
-    partial class Form1
+    partial class home
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
             this.panel1 = new System.Windows.Forms.Panel();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
@@ -45,14 +45,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.close = new System.Windows.Forms.Button();
             this.firstCustomControl1 = new timenone.FirstCustomControl();
             this.mySecondCustmControl1 = new timenone.MySecondCustmControl();
+            this.index = new System.Windows.Forms.Button();
+            this.opencountdown = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,7 +60,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.panel1.Controls.Add(this.SidePanel);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
@@ -73,15 +71,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(203, 583);
+            this.panel1.Size = new System.Drawing.Size(203, 556);
             this.panel1.TabIndex = 0;
             // 
             // SidePanel
             // 
             this.SidePanel.BackColor = System.Drawing.Color.Gold;
-            this.SidePanel.Location = new System.Drawing.Point(1, 61);
+            this.SidePanel.Location = new System.Drawing.Point(552, 59);
             this.SidePanel.Name = "SidePanel";
-            this.SidePanel.Size = new System.Drawing.Size(10, 54);
+            this.SidePanel.Size = new System.Drawing.Size(75, 10);
             this.SidePanel.TabIndex = 4;
             // 
             // button7
@@ -275,51 +273,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "TimeNone : ทามนั้น";
             // 
-            // button8
-            // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(677, 20);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(36, 34);
-            this.button8.TabIndex = 4;
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(719, 20);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(36, 34);
-            this.button9.TabIndex = 4;
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(761, 20);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(36, 34);
-            this.button10.TabIndex = 4;
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // button11
             // 
             this.button11.FlatAppearance.BorderSize = 0;
@@ -370,43 +323,69 @@
             // 
             this.firstCustomControl1.Location = new System.Drawing.Point(209, 156);
             this.firstCustomControl1.Name = "firstCustomControl1";
-            this.firstCustomControl1.Size = new System.Drawing.Size(805, 423);
+            this.firstCustomControl1.Size = new System.Drawing.Size(805, 356);
             this.firstCustomControl1.TabIndex = 5;
             // 
             // mySecondCustmControl1
             // 
             this.mySecondCustmControl1.Location = new System.Drawing.Point(208, 156);
             this.mySecondCustmControl1.Name = "mySecondCustmControl1";
-            this.mySecondCustmControl1.Size = new System.Drawing.Size(818, 406);
+            this.mySecondCustmControl1.Size = new System.Drawing.Size(818, 377);
             this.mySecondCustmControl1.TabIndex = 6;
             // 
-            // Form1
+            // index
+            // 
+            this.index.FlatAppearance.BorderSize = 0;
+            this.index.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.index.Font = new System.Drawing.Font("TH Sarabun New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.index.Location = new System.Drawing.Point(552, 22);
+            this.index.Name = "index";
+            this.index.Size = new System.Drawing.Size(75, 35);
+            this.index.TabIndex = 7;
+            this.index.Text = "หน้าหลัก";
+            this.index.UseVisualStyleBackColor = true;
+            this.index.Click += new System.EventHandler(this.index_Click);
+            // 
+            // opencountdown
+            // 
+            this.opencountdown.FlatAppearance.BorderSize = 0;
+            this.opencountdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.opencountdown.Font = new System.Drawing.Font("TH Sarabun New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.opencountdown.Location = new System.Drawing.Point(633, 22);
+            this.opencountdown.Name = "opencountdown";
+            this.opencountdown.Size = new System.Drawing.Size(75, 35);
+            this.opencountdown.TabIndex = 8;
+            this.opencountdown.Text = "นับถอยหลัง";
+            this.opencountdown.UseVisualStyleBackColor = true;
+            this.opencountdown.Click += new System.EventHandler(this.opencountdown_Click);
+            // 
+            // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1026, 583);
+            this.ClientSize = new System.Drawing.Size(1026, 556);
+            this.Controls.Add(this.opencountdown);
+            this.Controls.Add(this.SidePanel);
+            this.Controls.Add(this.index);
             this.Controls.Add(this.mySecondCustmControl1);
             this.Controls.Add(this.firstCustomControl1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.close);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
+            this.Text = "home";
+            this.Load += new System.EventHandler(this.home_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.home_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.home_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.home_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -434,14 +413,13 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button close;
         private FirstCustomControl firstCustomControl1;
         private MySecondCustmControl mySecondCustmControl1;
+        private System.Windows.Forms.Button index;
+        private System.Windows.Forms.Button opencountdown;
     }
 }
 
