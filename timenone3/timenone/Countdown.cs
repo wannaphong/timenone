@@ -17,7 +17,7 @@ namespace timenone
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e) // กรณี timer1 มีเลื่อนเวลา
         {
             if (run!=false && settime>0) // กรณี run ไม่เป็น false และ settime มากกว่า 0
             {
@@ -51,9 +51,7 @@ namespace timenone
                 label2.Text = "00:00:00";// ให้ข้อความของ label2 เป็น "00:00:00"
                 MessageBox.Show("กรุณาตั้งค่าเวลานับถอยหลัง");// ขึ้น MessageBox โดยมีข้อความ "กรุณาตั้งค่าเวลานับถอยหลัง"
             }
-           
         }
-
         private void button2_Click(object sender, EventArgs e) // เมื่อคลิก button2 หรือปุ่ม ยกเลิก
         {
             label2.Text = "00:00:00"; // ให้ข้อความของ label2 เป็น "00:00:00"

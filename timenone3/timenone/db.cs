@@ -8,7 +8,7 @@ using System;
 
 namespace timenone
 {
-    class db
+    class db // ประกาศ class ชื่อ db
     {
         private bool ok; // ประกาศตัวแปร ok เป็น bool
         public string name_db= Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\timenone.db"; // กำหนดตัวแปร name_db เก็บ path ที่ใช้เก็บ timenone.db ใน MyDocuments
@@ -38,19 +38,19 @@ namespace timenone
                 using (var db = new LiteDatabase(file_db())) // เรียกใช้งานฐานจาก LiteDatabase(ที่ตั้งไฟล์) แล้วเก็บวัตถุไว้ในตัวแปร db
                 {
                     var col = db.GetCollection<Notifications>("Notifications"); // ประกาศตัวแปร col แทน db.GetCollection<Notifications>("Notifications")
-                    var data = new Notifications
+                    var data = new Notifications // กำหนดตัวแปร data ให้แทน Notifications
                     {
-                        Title = Title1,
-                        H = H1,
-                        M = M1,
-                        Sunday = day1,
-                        Monday = day2,
-                        Tuesday = day3,
-                        Wednesday = day4,
-                        Thursday = day5,
-                        Friday = day6,
-                        Saturday = day7,
-                        IsActive = IsActive1
+                        Title = Title1, // ให้ Title = Title1
+                        H = H1,// ให้ H = H1
+                        M = M1,// ให้ M = M1
+                        Sunday = day1,// ให้ Sunday = day1
+                        Monday = day2,// ให้ Monday = day2
+                        Tuesday = day3,// ให้ Tuesday = day3
+                        Wednesday = day4,// ให้ Wednesday = day4
+                        Thursday = day5,// ให้ Thursday = day5
+                        Friday = day6,// ให้ Friday = day6
+                        Saturday = day7,// ให้ Saturday = day7
+                        IsActive = IsActive1// ให้ IsActive = IsActive1
                     };
                     col.Insert(data); // เพิ่มข้อมูลลงฐานข้อมูล
                     ok = true; // ให้ ok เป็น true
