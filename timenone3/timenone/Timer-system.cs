@@ -28,26 +28,26 @@ namespace timenone
             t.Elapsed += OnTimeEvent1;// กำหนด Elapsed ให้เป็นเหตุการณ์ใน OnTimeEvent1
         }
 
-        private void bnStart_Click(object sender, EventArgs e)
+        private void bnStart_Click(object sender, EventArgs e) // กรณีคลิก bnStart
         {
-            if (start == false)
+            if (start == false) // ถ้า start เป็น false
             {
-                timebox.Text = "";
-                h = 0;
-                m = 0;
-                s = 0;
-                t.Start();
-                bnStart.Text = "หยุด";
-                start = true;
+                timebox.Text = "";// ให้ข้อความของ timebox ว่างเปล่า
+                h = 0; // ให้ h เป้น 0
+                m = 0; // ให้ m เป็น 0
+                s = 0; // ให้ s เป็น 0
+                t.Start(); // ให้เริ่มการทำงานของ t
+                bnStart.Text = "หยุด";// ให้ข้อความของ bnStart เป็น "หยุด"
+                start = true;//ให้ start เป็น true
             }
             else { // กรณีไม่เข้าเงื่อนไขข้างบน
                 t.Stop(); // ให้หยุดการทำงาน t
                 start = false; // ให้ start เป็น false
                 P = false; // ให้ P เป็น false
-                bnP.Text = "หยุดชั่วคราว";
-                show_time.Text = "00:00:00";
-                bnStart.Text = "เริ่ม";
-                num = 1;
+                bnP.Text = "หยุดชั่วคราว"; // ให้ข้อความของ bnP เป็น "หยุดชั่วคราว"
+                show_time.Text = "00:00:00"; // ให้ข้อความใน show_time เป็น "00:00:00"
+                bnStart.Text = "เริ่ม"; // ให้ข้อความของ bnStart เป็น "เริ่ม"
+                num = 1; // ให้ num เท่ากับ 1
             }
         }
         private void bnP_Click(object sender, EventArgs e) // เมื่อคลิกปุ่ม bnP
