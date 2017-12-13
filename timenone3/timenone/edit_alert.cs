@@ -41,8 +41,8 @@ namespace timenone
                     .Include(x => x.Thursday)
                     .Include(x => x.Friday)
                     .Include(x => x.Saturday)
-                 .Find(x => x.IsActive == true || x.IsActive == false);
-                foreach (var c in query)
+                 .Find(x => x.IsActive == true || x.IsActive == false); // ค้นหาข้อมูล ถ้า IsActive เป็น true หรือ false
+                foreach (var c in query) // ลูปข้อมูลทีละตัวใน query เก้บไว้ใน c
                 {
                     list.Add(new MyStruct(c.Id, c.Title, c.H, c.M, c.IsActive,c.Sunday,c.Monday,c.Tuesday,c.Wednesday,c.Thursday,c.Friday,c.Saturday));                }
             }
@@ -84,18 +84,18 @@ namespace timenone
 
             public MyStruct(int Id, string title, string h, string m, bool isActive,bool sunday,bool monday,bool tuesday,bool wednesday,bool thursday,bool friday,bool saturday)
             {
-                ID = Id;
-                Title = title;
-                H = h;
-                M = m;
-                IsActive = isActive;
-                Sunday = sunday;
-                Monday = monday;
-                Tuesday = tuesday;
-                Wednesday = wednesday;
-                Thursday = thursday;
-                Friday = friday;
-                Saturday = saturday;
+                ID = Id; // ให้ ID = Id
+                Title = title; // ให้ Title = title
+                H = h; // ให้ H = h
+                M = m; // ให้ M = m
+                IsActive = isActive; // ให้ IsActive = isActive
+                Sunday = sunday; // ให้ Sunday = sunday
+                Monday = monday; // ให้ Monday = monday
+                Tuesday = tuesday; // ให้ Tuesday = tuesday
+                Wednesday = wednesday; // ให้ Wednesday = wednesday
+                Thursday = thursday; // ให้ Thursday = thursday
+                Friday = friday; // ให้ Friday = friday
+                Saturday = saturday; // ให้ Saturday = saturday
             }
         }
 
@@ -120,12 +120,12 @@ namespace timenone
                     productToUpdate.Saturday = bool.Parse(row.Cells[11].Value.ToString());
                     productsDb.Update(productToUpdate);
                 }
-                MessageBox.Show("อัพเดตข้อมูลเรียบร้อย");
+                MessageBox.Show("อัพเดตข้อมูลเรียบร้อย"); // โชว์ MessageBox ว่า "อัพเดตข้อมูลเรียบร้อย"
                 DisplayData(); // เรียกใช้ method ชื่อ DisplayData
             }
         }
 
-        private void del_Click(object sender, EventArgs e)
+        private void del_Click(object sender, EventArgs e) // เมื่อคลิกปุ่ม del
         {
             using (var db2 = new LiteDatabase(file))
             {
