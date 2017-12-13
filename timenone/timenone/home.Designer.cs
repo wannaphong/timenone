@@ -64,10 +64,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.timenow.AutoSize = true;
-            this.timenow.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.timenow.Location = new System.Drawing.Point(79, 87);
+            this.timenow.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.timenow.Location = new System.Drawing.Point(60, 87);
             this.timenow.Name = "timenow";
-            this.timenow.Size = new System.Drawing.Size(158, 55);
+            this.timenow.Size = new System.Drawing.Size(210, 73);
             this.timenow.TabIndex = 0;
             this.timenow.Text = "label1";
             this.timenow.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,7 +164,7 @@
             // 
             this.notifyHome.ContextMenuStrip = this.contextMenuStripHome;
             this.notifyHome.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyHome.Icon")));
-            this.notifyHome.Text = "Ok";
+            this.notifyHome.Text = "TimeNone";
             this.notifyHome.Visible = true;
             // 
             // contextMenuStripHome

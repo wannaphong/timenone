@@ -129,6 +129,7 @@ namespace timenone
                 SoundPlayer my_wave_file = new SoundPlayer(Application.StartupPath + @"\funky-breakbeat_102bpm_F_major.wav"); // กำหนด path ที่จะเล่นไฟล์เสียงแจ้งเตือน
                 my_wave_file.PlaySync(); // ให้เล่นไฟล์เสียง
                 MessageBox.Show(name, "แจ้งเตือนเวลา " + timenow + " น.", MessageBoxButtons.OK, MessageBoxIcon.Warning); // โชว์ MessageBox ขึ้น  แจ้งเตือนเวลา ...
+                notifyIcon2.Dispose(); // ปิดการทำงาน notifyIcon2
                 task1.Dispose();// ทิ้งข้อมูล task1
             }
         }
