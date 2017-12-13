@@ -127,11 +127,13 @@ namespace timenone
                 notifyIcon.Text = "แจ้งเตือนเวลา " + timenow + " น."; // ให้ข้อความใน notifyIcon เป็น แจ้งเตือนเวลา ...
                 notifyIcon.Visible = true; // เปิดการมองเห็นของ notifyIcon
                 notifyIcon.ShowBalloonTip(16000, "แจ้งเตือนเวลา " + timenow + " น.", name, ToolTipIcon.Warning); // ให้แสดง notifyIcon โดยโชว์ข้อมูล แจ้งเตือนเวลา ... แบบ Warning โดยโชว์เป็นเวลา 16000 มิลลิวินาที
+               
                 SoundPlayer my_wave_file = new SoundPlayer(Application.StartupPath + @"\funky-breakbeat_102bpm_F_major.wav"); // กำหนด path ที่จะเล่นไฟล์เสียงแจ้งเตือน
+
+                /* notifyIcon.Visible = false; // ปิดการมองเห็นของ notifyIcon
+                 notifyIcon.Dispose(); // ทิ้งข้อมูล notifyIcon*/
                 my_wave_file.PlaySync(); // ให้เล่นไฟล์เสียง
-                notifyIcon.Visible = false; // ปิดการมองเห็นของ notifyIcon
                 MessageBox.Show(name, "แจ้งเตือนเวลา " + timenow + " น.", MessageBoxButtons.OK, MessageBoxIcon.Warning); // โชว์ MessageBox ขึ้น  แจ้งเตือนเวลา ...
-                notifyIcon.Dispose(); // ทิ้งข้อมูล notifyIcon
                 task1.Dispose();// ทิ้งข้อมูล task1
             }
         }
