@@ -21,5 +21,10 @@ namespace timenone
         {
             
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/wannaphongcom/timenone"); // เปิดหน้าเว็บ
+        }
     }
 }

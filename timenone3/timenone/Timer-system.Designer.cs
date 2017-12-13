@@ -59,7 +59,7 @@
             // 
             this.bnP.Location = new System.Drawing.Point(169, 95);
             this.bnP.Name = "bnP";
-            this.bnP.Size = new System.Drawing.Size(75, 23);
+            this.bnP.Size = new System.Drawing.Size(90, 23);
             this.bnP.TabIndex = 3;
             this.bnP.Text = "หยุดชั่วคราว";
             this.bnP.UseVisualStyleBackColor = true;
