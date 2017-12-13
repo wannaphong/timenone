@@ -11,14 +11,14 @@ namespace timenone
 {
     public partial class home : Form
     {
-        string file = "",now;
-        Task task1;
+        string file = "",now; // ประกาศตัวแปร file และ now เป็นข้อมูลชนิด string โดย file มีค่าเริ่มต้นว่างเปล่า
+        Task task1; // ประกาศตัวแปร task1 เป็นวัตถุ Task
         public home()
         {
-            var db = new db();
-            file = new db().file_db().ToString();
+            var db = new db(); // ประกาศตัวแปร db แทนวัตถุ db
+            file = new db().file_db().ToString(); // ดึงข้อมูลจาก db().file_db() แล้วเก็บไว้ใน file
             InitializeComponent();
-            timer1.Start();
+            timer1.Start(); // ให้เริ่มต้นการทำงาน timer1
         }
         private void Form1_Resize(object sender, EventArgs e) // เมื่อ Form นี้มีการปรับขนาด
         {
@@ -28,24 +28,24 @@ namespace timenone
                 this.Hide(); // ซ่อน Form นี้
             }
         }
-        private void notifyIcon_Click(object sender, EventArgs e)
+        private void notifyIcon_Click(object sender, EventArgs e) // เมื่อคลิก notifyIcon
         {
-            this.Show();
-            this.WindowState = FormWindowState.Normal;
+            this.Show(); // ให้โชว์หน้าต่าง
+            this.WindowState = FormWindowState.Normal; // ให้หน้าต่างปกติ
         }
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e) // เหตุการณ์เมื่อ timer1 มีการขยับเวลา
         {
-            DateTime timenow1 = DateTime.Now;
-            timenow.Text = timenow1.ToString("HH:mm:ss");
-            now= timenow1.ToString("HH:mm");
-            this.Text = "ขณะนี้เป็นเวลา "+ timenow1.ToString("HH:mm:ss");
-            try
+            DateTime timenow1 = DateTime.Now; // ประกาศตัวแปร timenow1 แทน DateTime.Now
+            timenow.Text = timenow1.ToString("HH:mm:ss"); // ให้แปลง timenow1 เป็น ชั่วโมง:นาที:วินาที แล้วนำไปแสดงผลที่ timenow
+            now = timenow1.ToString("HH:mm");// ให้แปลง timenow1 เป็น ชั่วโมง:นาที แล้วเก็บไว้ใน now
+            this.Text = "ขณะนี้เป็นเวลา "+ timenow1.ToString("HH:mm:ss"); // แสดงที่ข้อมูลที่ชื่อโปรแกรมโดยเป็น "ขณะนี้เป็นเวลา " ตามด้วย ชั่วโมง:นาที:วินาที
+            try // ทดลองโค้ด
             {
-               task1 = Task.Factory.StartNew(() => check_time(timenow1));
+               task1 = Task.Factory.StartNew(() => check_time(timenow1)); // ให้รัน method check_time() อีก thread หนึ่ง
             }
-            catch
+            catch(Exception x) // ถ้า error ให้เก็บรายละเอียดไว้ใน e
             {
-
+                MessageBox.Show(x.ToString()); // แสดง MessageBox โชว์รายละเอียดที่ error
             }
         }
         TimeSpan timeold= DateTime.Now.TimeOfDay; // ประกาศตัวแปร timeold แทนวัตถุ DateTime.Now.TimeOfDay
@@ -53,36 +53,36 @@ namespace timenone
         public bool Check_Notifications(TimeSpan timeinday, string name) // ประกาศ method ชื่อ Check_Notifications โดยรับค่า TimeSpan และ string ใช้เช็คการแจ้งเตือน
         {
             bool v = true; // ประกาศตัวแปร v เป็นข้อมูลชนิด bool มีค่าเริ่มต้นเป็น true
-            if ((timeold.TotalSeconds == timeinday.TotalSeconds) != false)
+            if ((timeold.TotalSeconds == timeinday.TotalSeconds) != false) // กรณีที่เวลา timeold ไม่เท่ากับ timeinday
             {
-                timeold = timeinday;
-                name_5 = new List<string>();
-                v = true;
+                timeold = timeinday; // ให้ timeold เก็บค่า  timeinday
+                name_5 = new List<string>(); // ให้แทนที่ข้อมูล name_5 ด้วย List<string>()
+                v = true; // ให้ v เป็น true
             }
-            else
+            else // กรณีไม่เข้าเงื่อนไขข้างบน
             {
-                if (name_5.ToArray().Length != 0)
+                if (name_5.ToArray().Length != 0) // ถ้า name_5 พอแปลงเป็น Array ยาวไม่เท่ากับ 0
                 {
-                    int i = 0;
-                    string[] name_51 = name_5.ToArray();
-                    while (i < name_51.Length)
+                    int i = 0; // ประกาศตัวแปร i เป็นข้อมูลชนิด int มีค่าเริ่มต้น 0
+                    string[] name_51 = name_5.ToArray();// name_5 พอแปลงเป็น Array แล้วเก็บไว้ใน name_51
+                    while (i < name_51.Length) // ถ้า i น้อยกว่าความยาวของ name_51
                     {
-                        if (name_51[i] == name)
+                        if (name_51[i] == name) // ถ้า name_51 ที่ i เท่ากับ name
                         {
-                            v = false;
-                            break;
+                            v = false; // ให้ v เป็น false
+                            break; // ออกจากการลูป
                         }
-                        i++;
+                        i++; // เพิ่มค่า i อีก 1
                     }
-                    name_5.Add(name);
+                    name_5.Add(name); // เพิ่มข้อมูลลงใน name_5
                 }
-                else
+                else // กรณีไม่เข้าเงื่อนไขข้างบน
                 {
-                    v = true;
-                    name_5.Add(name);
+                    v = true; // ให้ v เป็น true
+                    name_5.Add(name); // เพิ่มข้อมูลลงใน name_5
                 }
             }
-            return v;
+            return v; // คืนค่า v
         }
         static string[] SplitWords(string s,string rule) // ประกาศ method ชื่อ SplitWords เป็น static โดยมีการรับค่าสตริง 2 ค่า คือ s และ rule
         {
@@ -119,63 +119,63 @@ namespace timenone
                 }
                 String timenow = new DateTime(timeinday.Ticks).ToString("HH:mm"); // แปลงเวลาจาก timeinday.Ticks ให้เป็น string ชั่วโมง:นาที แล้วเก็บไว้ในตัวแปร timenow ซึ่งเป็นตัวแปรชนิด string
                 NotifyIcon notifyIcon = new NotifyIcon(); // ประกาศตัวแปร notifyIcon แทนวัตถุ NotifyIcon
-                notifyIcon.Icon = new System.Drawing.Icon(@"C:\Users\wannaphong\Documents\timenone\fzap_clock_sportstudio_design_Xaa_icon.ico");
-                notifyIcon.Text = "สวัสดี";
-                notifyIcon.Visible = true;
-                notifyIcon.ShowBalloonTip(16000, "แจ้งเตือนเวลา " + timenow + " น.", name, ToolTipIcon.Warning);
-                SoundPlayer my_wave_file = new SoundPlayer(@"C:\Users\wannaphong\Documents\timenone\timenone\funky-breakbeat_102bpm_F_major.wav");
-                my_wave_file.PlaySync();
-                notifyIcon.Visible = false;
-                MessageBox.Show(name, "แจ้งเตือนเวลา " + timenow + " น.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                notifyIcon.Dispose();
-                task1.Dispose();
+                notifyIcon.Icon = new System.Drawing.Icon(Application.StartupPath+ @"\fzap_clock_sportstudio_design_Xaa_icon.ico"); // กำหนด Icon ที่จะแสดงของ notifyIcon
+                notifyIcon.Text = "แจ้งเตือนเวลา " + timenow + " น."; // ให้ข้อความใน notifyIcon เป็น แจ้งเตือนเวลา ...
+                notifyIcon.Visible = true; // เปิดการมองเห็นของ notifyIcon
+                notifyIcon.ShowBalloonTip(16000, "แจ้งเตือนเวลา " + timenow + " น.", name, ToolTipIcon.Warning); // ให้แสดง notifyIcon โดยโชว์ข้อมูล แจ้งเตือนเวลา ... แบบ Warning โดยโชว์เป็นเวลา 16000 มิลลิวินาที
+                SoundPlayer my_wave_file = new SoundPlayer(Application.StartupPath + @"\funky-breakbeat_102bpm_F_major.wav"); // กำหนด path ที่จะเล่นไฟล์เสียงแจ้งเตือน
+                my_wave_file.PlaySync(); // ให้เล่นไฟล์เสียง
+                notifyIcon.Visible = false; // ปิดการมองเห็นของ notifyIcon
+                MessageBox.Show(name, "แจ้งเตือนเวลา " + timenow + " น.", MessageBoxButtons.OK, MessageBoxIcon.Warning); // โชว์ MessageBox ขึ้น  แจ้งเตือนเวลา ...
+                notifyIcon.Dispose(); // ทิ้งข้อมูล notifyIcon
+                task1.Dispose();// ทิ้งข้อมูล task1
             }
         }
-        public TimeSpan timeOfDayOld = new TimeSpan(0, 0, 0);
-        public void check_time(DateTime s)
+        public TimeSpan timeOfDayOld = new TimeSpan(0, 0, 0); // ประกาศตัวแปร timeOfDayOld เป็นข้อมูลชนิด TimeSpan โดยเก็บข้อมูล TimeSpan เวลา 00:00:00
+        public void check_time(DateTime s) // ประกาศ method ชื่อ check_time โดยรับข้อมูล DateTime
         {
-            TimeSpan timeOfDay = DateTime.Now.TimeOfDay;
-            if (timeOfDayOld.ToString(@"hh\:mm") != timeOfDay.ToString(@"hh\:mm"))
+            TimeSpan timeOfDay = DateTime.Now.TimeOfDay; // ประกาศตัวแปร timeOfDay แทน DateTime.Now.TimeOfDay
+            if (timeOfDayOld.ToString(@"hh\:mm") != timeOfDay.ToString(@"hh\:mm")) // ให้เปรียบเทียบ timeOfDayOld กับ timeOfDay ถ้าไม่เท่ากัน
             {
-                timeOfDayOld = timeOfDay;
-                var day = s.DayOfWeek.ToString();
-                var time = new db.Notifications();
+                timeOfDayOld = timeOfDay; // ให้ timeOfDayOld เท่ากับ  timeOfDay
+                var day = s.DayOfWeek.ToString();// ประกาศตัวแปร day แทน s.DayOfWeek
+                var time = new db.Notifications(); // ประกาศตัวแปร time แทน db.Notifications
                 using (var db2 = new LiteDatabase(file))
                 {
-                    var orders = db2.GetCollection<db.Notifications>("Notifications");
+                    var orders = db2.GetCollection<db.Notifications>("Notifications"); // ประกาศตัวแปร orders แทน db.GetCollection<Notifications>("Notifications")
 
-                    // When query Order, includes references
-                    var query = orders//.Include(S => timeOfDay.Seconds.ToString())
-                        .Find(x => x.H == timeOfDay.Hours.ToString() && x.M == timeOfDay.Minutes.ToString());
-                    if (query.ToArray().Length != 0)
+                    // ทำการ query กับ Order, เรียกใช้แทนการอ้างอิง
+                    var query = orders
+                        .Find(x => x.H == timeOfDay.Hours.ToString() && x.M == timeOfDay.Minutes.ToString()); // ค้นหาข้อมูลถ้า H ตรงกับ timeOfDay.Hours และ M ตรงกับ timeOfDay.Minutes
+                    if (query.ToArray().Length != 0) // ถ้า query.ToArray() แล้วยาวไม่เท่ากับ 0
                     {
-                        foreach (var order in query)
+                        foreach (var order in query) // ลูป query ทีละตัวเก็บไว้ใน order
                         {
-                            if (order.IsActive == true)
+                            if (order.IsActive == true) // ถ้า IsActive เป็น true
                             {
-                                switch (day)
+                                switch (day) // เช็คเงื่อนไขวันโดยใช้ตัวแปร day ด้วย switch case
                                 {
                                     case "Sunday": // กรณีเป็นวันอาทิตย์
-                                        if (order.Sunday == true) show_Notifications(timeOfDay, order.Title);
-                                        break;
+                                        if (order.Sunday == true) show_Notifications(timeOfDay, order.Title); // ถ้า order.Sunday เป็นจริง (คือเปิดใช้งาน) ให้ใช้ method  show_Notifications ส่งค่า timeOfDay, order.Title
+                                        break; // ออก
                                     case "Monday": // กรณีเป็นวันจันทร์
-                                        if (order.Monday == true) show_Notifications(timeOfDay, order.Title);
-                                        break;
+                                        if (order.Monday == true) show_Notifications(timeOfDay, order.Title);// ถ้า order.Monday เป็นจริง (คือเปิดใช้งาน) ให้ใช้ method  show_Notifications ส่งค่า timeOfDay, order.Title
+                                        break;// ออก
                                     case "Tuesday": // กรณีเป็นวันอังคาร
-                                        if (order.Tuesday == true) show_Notifications(timeOfDay, order.Title);
-                                        break;
+                                        if (order.Tuesday == true) show_Notifications(timeOfDay, order.Title);// ถ้า order.Tuesday เป็นจริง (คือเปิดใช้งาน) ให้ใช้ method  show_Notifications ส่งค่า timeOfDay, order.Title
+                                        break;// ออก
                                     case "Wednesday": // กรณีเป็นวันพุธ
-                                        if (order.Wednesday == true) show_Notifications(timeOfDay, order.Title);
-                                        break;
+                                        if (order.Wednesday == true) show_Notifications(timeOfDay, order.Title);// ถ้า order.Wednesday เป็นจริง (คือเปิดใช้งาน) ให้ใช้ method  show_Notifications ส่งค่า timeOfDay, order.Title
+                                        break;// ออก
                                     case "Thursday":// กรณีเป็นวันพฤหัสบดี
-                                        if (order.Thursday == true) show_Notifications(timeOfDay, order.Title);
-                                        break;
+                                        if (order.Thursday == true) show_Notifications(timeOfDay, order.Title);// ถ้า order.Thursday เป็นจริง (คือเปิดใช้งาน) ให้ใช้ method  show_Notifications ส่งค่า timeOfDay, order.Title
+                                        break;// ออก
                                     case "Friday":// กรณีเป็นวันศุกร์
-                                        if (order.Friday == true) show_Notifications(timeOfDay, order.Title);
-                                        break;
+                                        if (order.Friday == true) show_Notifications(timeOfDay, order.Title);// ถ้า order.Friday เป็นจริง (คือเปิดใช้งาน) ให้ใช้ method  show_Notifications ส่งค่า timeOfDay, order.Title
+                                        break;// ออก
                                     case "Saturday":// กรณีเป็นวันเสาร์
-                                        if (order.Saturday == true) show_Notifications(timeOfDay, order.Title);
-                                        break;
+                                        if (order.Saturday == true) show_Notifications(timeOfDay, order.Title);// ถ้า order.Saturday เป็นจริง (คือเปิดใช้งาน) ให้ใช้ method  show_Notifications ส่งค่า timeOfDay, order.Title
+                                        break;// ออก
                                 }
                             }
                         }
