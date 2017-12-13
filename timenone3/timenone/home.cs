@@ -12,7 +12,7 @@ namespace timenone
     public partial class home : Form
     {
         string file = "",now; // ประกาศตัวแปร file และ now เป็นข้อมูลชนิด string โดย file มีค่าเริ่มต้นว่างเปล่า
-        Task task1; // ประกาศตัวแปร task1 เป็นวัตถุ Task
+        Task task1=null; // ประกาศตัวแปร task1 เป็นวัตถุ Task โดยมีค่าเริ่มต้น null
         public home()
         {
             var db = new db(); // ประกาศตัวแปร db แทนวัตถุ db
@@ -41,7 +41,11 @@ namespace timenone
             this.Text = "ขณะนี้เป็นเวลา "+ timenow1.ToString("HH:mm:ss"); // แสดงที่ข้อมูลที่ชื่อโปรแกรมโดยเป็น "ขณะนี้เป็นเวลา " ตามด้วย ชั่วโมง:นาที:วินาที
             try // ทดลองโค้ด
             {
-               task1 = Task.Factory.StartNew(() => check_time(timenow1)); // ให้รัน method check_time() อีก thread หนึ่ง
+                if (task1 != null)
+                { // ถ้า task1 ไม่เป็นค่า null
+                    if (task1.Status.ToString() != "Running") // ถ้าสถานะ task1 ไม่เป็น "Running"
+                        task1 = Task.Factory.StartNew(() => check_time(timenow1)); // ให้รัน method check_time() อีก thread หนึ่ง
+                }
             }
             catch(Exception x) // ถ้า error ให้เก็บรายละเอียดไว้ใน e
             {
@@ -56,7 +60,7 @@ namespace timenone
             if ((timeold.TotalSeconds == timeinday.TotalSeconds) != false) // กรณีที่เวลา timeold ไม่เท่ากับ timeinday
             {
                 timeold = timeinday; // ให้ timeold เก็บค่า  timeinday
-                //name_5 = new List<string>(); // ให้แทนที่ข้อมูล name_5 ด้วย List<string>()
+                name_5 = new List<string>(); // ให้แทนที่ข้อมูล name_5 ด้วย List<string>()
                 v = true; // ให้ v เป็น true
             }
             else // กรณีไม่เข้าเงื่อนไขข้างบน
