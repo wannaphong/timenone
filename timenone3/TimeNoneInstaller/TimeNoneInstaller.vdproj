@@ -16,13 +16,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1B35BDAA4FEE8178CE8C930A08F7A2B6"
-        "OwnerKey" = "8:_D120FADCA43F4C81A134AE8299D62354"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_54D2AA4A035736030FD60D64F005BE25"
+        "MsmKey" = "8:_17E79475FBC675E79471F4A125DCF737"
         "OwnerKey" = "8:_D120FADCA43F4C81A134AE8299D62354"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -46,6 +40,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_F71845A503FA7C355C248978F28EC066"
+        "OwnerKey" = "8:_D120FADCA43F4C81A134AE8299D62354"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_FD32E835CBB64B2182E3F4CA86FA1CE2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -59,13 +59,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1B35BDAA4FEE8178CE8C930A08F7A2B6"
+        "OwnerKey" = "8:_F71845A503FA7C355C248978F28EC066"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_54D2AA4A035736030FD60D64F005BE25"
+        "OwnerKey" = "8:_17E79475FBC675E79471F4A125DCF737"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -93,6 +93,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
         "Release"
@@ -117,6 +125,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -147,45 +163,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1B35BDAA4FEE8178CE8C930A08F7A2B6"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:LiteDB, Version=4.0.0.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_1B35BDAA4FEE8178CE8C930A08F7A2B6"
-                    {
-                    "Name" = "8:LiteDB.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:LiteDB.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EFDBF1ADD549BDBE535D3BA3263238"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_54D2AA4A035736030FD60D64F005BE25"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_17E79475FBC675E79471F4A125DCF737"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_54D2AA4A035736030FD60D64F005BE25"
+                    "_17E79475FBC675E79471F4A125DCF737"
                     {
                     "Name" = "8:System.Net.Http.dll"
                     "Attributes" = "3:512"
@@ -247,6 +232,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F71845A503FA7C355C248978F28EC066"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:LiteDB, Version=4.0.0.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_F71845A503FA7C355C248978F28EC066"
+                    {
+                    "Name" = "8:LiteDB.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:LiteDB.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_37EFDBF1ADD549BDBE535D3BA3263238"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FD32E835CBB64B2182E3F4CA86FA1CE2"
@@ -325,15 +341,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TimeNoneInstaller"
-        "ProductCode" = "8:{D5FB4AFB-CCC9-4A7A-B77C-AC03AB8972D3}"
-        "PackageCode" = "8:{3593BED9-3DBE-42D8-B4B1-DD874F7E601B}"
+        "ProductCode" = "8:{8146F0A1-992A-4DF9-AFD5-08FE6BF2F530}"
+        "PackageCode" = "8:{79A4956B-2636-4A56-985F-9DB1C08F2BFE}"
         "UpgradeCode" = "8:{FF96267D-267C-475C-96CD-0DF115126181}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.2"
         "Manufacturer" = "8:Wannaphong Phatthiyaphaibun"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
