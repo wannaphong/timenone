@@ -48,7 +48,7 @@ namespace timenone
 
             }
         }
-        TimeSpan timeold= DateTime.Now.TimeOfDay;
+        TimeSpan timeold= DateTime.Now.TimeOfDay; // ประกาศตัวแปร timeold แทนวัตถุ DateTime.Now.TimeOfDay
         List<string> name_5=new List<string> ();
         bool v = true;
         public bool Check_Notifications(TimeSpan timeinday, string name)
@@ -101,44 +101,25 @@ namespace timenone
                 {
                     if (list2.Length == 2) // ถ้า list2 ยาวเท่ากับ 2
                     {
-                        Process proc = new Process();
-                        proc.StartInfo.FileName = "CMD.exe";
-                        proc.StartInfo.Arguments = "/c " + list2[1];
-                        proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                        proc.Start();
-                        name = list2[0];
-                        code = list2[1];
+                        Process proc = new Process(); // ประกาศตัวแปร proc แทนวัตถุ Process
+                        proc.StartInfo.FileName = "CMD.exe"; // กำหนดไฟล์คำสั่งที่จะทำงาน คือ CMD
+                        proc.StartInfo.Arguments = "/c " + list2[1]; // กำหนดคำสั่งสำหรับสั่งงาน
+                        proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;  // ให้ซ่อนหน้าต่างการทำงาน
+                        proc.Start(); // ให้เริ่มการทำงาน proc
+                        name = list2[0]; // ให้ name เก็บ list2[0]
+                        code = list2[1];// ให้ code เก็บ list2[1]
                     }
                     else if (list.Length == 2) // ถ้า list ยาวเท่ากับ 2
                     {
-                        string strCmdText = "/c " + list[1];
-                        Process.Start("CMD.exe", strCmdText);
-                        name = list[0];
-                        code = list[1];
+                        string strCmdText = "/c " + list[1];// กำหนดคำสั่งสำหรับสั่งงาน
+                        Process.Start("CMD.exe", strCmdText); // สั่งงาน
+                        name = list[0]; // ให้ name เก็บ list2[0]
+                        code = list[1];// ให้ code เก็บ list2[1]
                     }
-                    name += "\r\n" + "คำสั่งพิเศษ : " + code;
-                }
-                else if (Regex.IsMatch(name, @"\,code123 ") || Regex.IsMatch(name, @"\,code123none ")) // ถ้า "\,code123none " หรือ "\,code123 " match ตาม Regex แล้วเป็น true
-                {
-                    if (Regex.IsMatch(name, @"\,code123 ")) // ถ้า "\,code123 " match ตาม Regex แล้วเป็น true
-                    {
-                        string strCmdText = "/c " + SplitWords(name, @",code123 ")[0];
-                        System.Diagnostics.Process.Start("CMD.exe", strCmdText);
-                        code = SplitWords(name, @",code123 ")[0];
-                    }
-                    else if (Regex.IsMatch(name, @"\,code123none ")) // ถ้า "\,code123none " match ตาม Regex แล้วเป็น true
-                    {
-                        Process proc = new Process(); // ประกาศตัวแปร proc แทนวัตถุ Process
-                        proc.StartInfo.FileName = "CMD.exe"; // กำหนดไฟล์คำสั่งที่จะทำงาน คือ CMD
-                        proc.StartInfo.Arguments = "/c " + SplitWords(name, @",code123none ")[0]; // กำหนดคำสั่งสำหรับสั่งงาน
-                        proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden; // ให้ซ่อนหน้าต่างการทำงาน
-                        proc.Start(); // เรียกการทำงาน proc
-                        code = SplitWords(name, @",code123none ")[0]; // ทำการแบ่งคำด้วย , โดยใช้ SplitWords แล้วเอาเฉพาะ index แรก ไปเก็บไว้ใน code
-                    }
-                    name = "\r\n" + "คำสั่งพิเศษ : " + code; // เพิ่ม "คำสั่งพิเศษ :  code" เข้าไปใน name
+                    name += "\r\n" + "คำสั่งพิเศษ : " + code; // เพิ่ม "คำสั่งพิเศษ :  code" เข้าไปใน name
                 }
                 String timenow = new DateTime(timeinday.Ticks).ToString("HH:mm"); // แปลงเวลาจาก timeinday.Ticks ให้เป็น string ชั่วโมง:นาที แล้วเก็บไว้ในตัวแปร timenow ซึ่งเป็นตัวแปรชนิด string
-                NotifyIcon notifyIcon = new NotifyIcon();
+                NotifyIcon notifyIcon = new NotifyIcon(); // ประกาศตัวแปร notifyIcon แทนวัตถุ NotifyIcon
                 notifyIcon.Icon = new System.Drawing.Icon(@"C:\Users\wannaphong\Documents\timenone\fzap_clock_sportstudio_design_Xaa_icon.ico");
                 notifyIcon.Text = "สวัสดี";
                 notifyIcon.Visible = true;
