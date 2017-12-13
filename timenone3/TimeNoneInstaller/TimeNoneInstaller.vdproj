@@ -11,6 +11,7 @@
 "SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
 "SccProvider" = "8:"
+"BackwardsCompatibleGUIDGeneration" = "8:TRUE"
     "Hierarchy"
     {
         "Entry"
@@ -27,32 +28,26 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B0A209844C5A4A8ABCB05B73E84D4038"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BFFAEFEE5B094BABB732AE3E1C3A8D79"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_D120FADCA43F4C81A134AE8299D62354"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_FAB87967FD144EFDA6CD18DB3BEBAFB5"
+        "MsmKey" = "8:_EA21F8A540504FF491D4FC60F8E0742B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_54D2AA4A035736030FD60D64F005BE25"
+        "MsmKey" = "8:_EFEA5D6E23794409A4E44F5F8AA4B4AC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FD32E835CBB64B2182E3F4CA86FA1CE2"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -65,6 +60,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_1B35BDAA4FEE8178CE8C930A08F7A2B6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_54D2AA4A035736030FD60D64F005BE25"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -85,6 +86,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -101,6 +110,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -192,10 +209,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B0A209844C5A4A8ABCB05B73E84D4038"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EA21F8A540504FF491D4FC60F8E0742B"
             {
-            "SourcePath" = "8:..\\timenone\\bin\\Debug\\funky-breakbeat_102bpm_F_major.wav"
-            "TargetName" = "8:funky-breakbeat_102bpm_F_major.wav"
+            "SourcePath" = "8:..\\timenone\\bin\\Debug\\fzap_clock_sportstudio_design_Xaa_icon.ico"
+            "TargetName" = "8:fzap_clock_sportstudio_design_Xaa_icon.ico"
             "Tag" = "8:"
             "Folder" = "8:_37EFDBF1ADD549BDBE535D3BA3263238"
             "Condition" = "8:"
@@ -212,7 +229,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BFFAEFEE5B094BABB732AE3E1C3A8D79"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EFEA5D6E23794409A4E44F5F8AA4B4AC"
             {
             "SourcePath" = "8:..\\timenone\\bin\\Debug\\fzap_clock_sportstudio_design.png"
             "TargetName" = "8:fzap_clock_sportstudio_design.png"
@@ -232,10 +249,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FAB87967FD144EFDA6CD18DB3BEBAFB5"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FD32E835CBB64B2182E3F4CA86FA1CE2"
             {
-            "SourcePath" = "8:..\\timenone\\bin\\Debug\\fzap_clock_sportstudio_design_Xaa_icon.ico"
-            "TargetName" = "8:fzap_clock_sportstudio_design_Xaa_icon.ico"
+            "SourcePath" = "8:..\\timenone\\bin\\Debug\\funky-breakbeat_102bpm_F_major.wav"
+            "TargetName" = "8:funky-breakbeat_102bpm_F_major.wav"
             "Tag" = "8:"
             "Folder" = "8:_37EFDBF1ADD549BDBE535D3BA3263238"
             "Condition" = "8:"
@@ -317,7 +334,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Wannaphong Phatthiyaphaibun"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:TimeNone"
@@ -440,7 +457,7 @@
             "Target" = "8:_D120FADCA43F4C81A134AE8299D62354"
             "Folder" = "8:_22620ACC523E4EDA84C682ACB6FAE740"
             "WorkingFolder" = "8:_37EFDBF1ADD549BDBE535D3BA3263238"
-            "Icon" = "8:_FAB87967FD144EFDA6CD18DB3BEBAFB5"
+            "Icon" = "8:_EA21F8A540504FF491D4FC60F8E0742B"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E780541268E041A6BFC3E87CC7067DA1"
@@ -454,7 +471,7 @@
             "Target" = "8:_D120FADCA43F4C81A134AE8299D62354"
             "Folder" = "8:_AE2A900C434345189A5C1E819CD29AE0"
             "WorkingFolder" = "8:_37EFDBF1ADD549BDBE535D3BA3263238"
-            "Icon" = "8:_FAB87967FD144EFDA6CD18DB3BEBAFB5"
+            "Icon" = "8:_EA21F8A540504FF491D4FC60F8E0742B"
             "Feature" = "8:"
             }
         }
