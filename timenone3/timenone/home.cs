@@ -39,6 +39,7 @@ namespace timenone
             timenow.Text = timenow1.ToString("HH:mm:ss"); // ให้แปลง timenow1 เป็น ชั่วโมง:นาที:วินาที แล้วนำไปแสดงผลที่ timenow
             now = timenow1.ToString("HH:mm");// ให้แปลง timenow1 เป็น ชั่วโมง:นาที แล้วเก็บไว้ใน now
             this.Text = "ขณะนี้เป็นเวลา "+ timenow1.ToString("HH:mm:ss"); // แสดงที่ข้อมูลที่ชื่อโปรแกรมโดยเป็น "ขณะนี้เป็นเวลา " ตามด้วย ชั่วโมง:นาที:วินาที
+            day_time.Text = DateTime.Now.ToString("d/M/yyyy"); // ให้โชว์ วัน/เดือน/ปี ใน day_time
             try // ทดลองโค้ด
             {
                 if (task1 != null)

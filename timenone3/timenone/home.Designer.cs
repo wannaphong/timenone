@@ -53,6 +53,7 @@
             this.เกยวกบโปรแกรมToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ออกจากโปรแกรมToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.day_time = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStripHome.SuspendLayout();
             this.SuspendLayout();
@@ -241,11 +242,22 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // day_time
+            // 
+            this.day_time.AutoSize = true;
+            this.day_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.day_time.Location = new System.Drawing.Point(110, 207);
+            this.day_time.Name = "day_time";
+            this.day_time.Size = new System.Drawing.Size(106, 37);
+            this.day_time.TabIndex = 3;
+            this.day_time.Text = "label1";
+            // 
             // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(406, 377);
+            this.Controls.Add(this.day_time);
             this.Controls.Add(this.add);
             this.Controls.Add(this.timenow);
             this.Controls.Add(this.menuStrip1);
@@ -290,5 +302,6 @@
         private System.Windows.Forms.ToolStripMenuItem การแจงเตอนToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem เพมการแจงเตอนToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem แกไขการแจงเตอนToolStripMenuItem;
+        private System.Windows.Forms.Label day_time;
     }
 }
