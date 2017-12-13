@@ -42,11 +42,9 @@ namespace timenone
             day_time.Text = DateTime.Now.ToString("d/M/yyyy"); // ให้โชว์ วัน/เดือน/ปี ใน day_time
             try // ทดลองโค้ด
             {
-                if (task1 != null)
-                { // ถ้า task1 ไม่เป็นค่า null
-                    if (task1.Status.ToString() != "Running") // ถ้าสถานะ task1 ไม่เป็น "Running"
+                
                         task1 = Task.Factory.StartNew(() => check_time(timenow1)); // ให้รัน method check_time() อีก thread หนึ่ง
-                }
+                
             }
             catch(Exception x) // ถ้า error ให้เก็บรายละเอียดไว้ใน e
             {
@@ -93,7 +91,6 @@ namespace timenone
         {
             return Regex.Split(s, rule); // ใช้ Regex ในการแบ่งข้อความด้วยคำสั่ง Regex.Split โดย s คือ ข้อความ ส่วน rule คือ กฎในการแบ่งข้อความ
         }
-        NotifyIcon notifyIcon = new NotifyIcon(); // ประกาศตัวแปร notifyIcon แทนวัตถุ NotifyIcon
         private void show_Notifications(TimeSpan timeinday, string name) // ประกาศ method ชื่อ show_Notifications โดยไม่มีการคืนค่ากลับ โดยรับข้อมูล TimeSpan timeinday และ string name
         {
             if (Check_Notifications(timeinday, name) == true) // เรียกใช้ method ชื่อ Check_Notifications โดยส่งข้อมูล timeinday และ name คืนค่า boolean แล้วเช็คว่าเป็น true หรือไม่ ถ้าเป็น ให้ทำตามคำสั่งในนี้
@@ -123,16 +120,13 @@ namespace timenone
                     name += "\r\n" + "คำสั่งพิเศษ : " + code; // เพิ่ม "คำสั่งพิเศษ :  code" เข้าไปใน name
                 }
                 String timenow = new DateTime(timeinday.Ticks).ToString("HH:mm"); // แปลงเวลาจาก timeinday.Ticks ให้เป็น string ชั่วโมง:นาที แล้วเก็บไว้ในตัวแปร timenow ซึ่งเป็นตัวแปรชนิด string
-                NotifyIcon notifyIcon = new NotifyIcon(); // ประกาศตัวแปร notifyIcon แทนวัตถุ NotifyIcon
-                notifyIcon.Icon = new System.Drawing.Icon(Application.StartupPath+ @"\fzap_clock_sportstudio_design_Xaa_icon.ico"); // กำหนด Icon ที่จะแสดงของ notifyIcon
-                notifyIcon.Text = "แจ้งเตือนเวลา " + timenow + " น."; // ให้ข้อความใน notifyIcon เป็น แจ้งเตือนเวลา ...
-                notifyIcon.Visible = true; // เปิดการมองเห็นของ notifyIcon
-                notifyIcon.ShowBalloonTip(16000, "แจ้งเตือนเวลา " + timenow + " น.", name, ToolTipIcon.Warning); // ให้แสดง notifyIcon โดยโชว์ข้อมูล แจ้งเตือนเวลา ... แบบ Warning โดยโชว์เป็นเวลา 16000 มิลลิวินาที
+                NotifyIcon notifyIcon2 = new NotifyIcon(); // ประกาศตัวแปร notifyIcon แทนวัตถุ NotifyIcon
+                notifyIcon2.Icon = new System.Drawing.Icon(Application.StartupPath+ @"\fzap_clock_sportstudio_design_Xaa_icon.ico"); // กำหนด Icon ที่จะแสดงของ notifyIcon
+                notifyIcon2.Text = "แจ้งเตือนเวลา " + timenow + " น."; // ให้ข้อความใน notifyIcon เป็น แจ้งเตือนเวลา ...
+                notifyIcon2.Visible = true; // เปิดการมองเห็นของ notifyIcon
+                notifyIcon2.ShowBalloonTip(16000, "แจ้งเตือนเวลา " + timenow + " น.", name, ToolTipIcon.Warning); // ให้แสดง notifyIcon โดยโชว์ข้อมูล แจ้งเตือนเวลา ... แบบ Warning โดยโชว์เป็นเวลา 16000 มิลลิวินาที
                
                 SoundPlayer my_wave_file = new SoundPlayer(Application.StartupPath + @"\funky-breakbeat_102bpm_F_major.wav"); // กำหนด path ที่จะเล่นไฟล์เสียงแจ้งเตือน
-
-                /* notifyIcon.Visible = false; // ปิดการมองเห็นของ notifyIcon
-                 notifyIcon.Dispose(); // ทิ้งข้อมูล notifyIcon*/
                 my_wave_file.PlaySync(); // ให้เล่นไฟล์เสียง
                 MessageBox.Show(name, "แจ้งเตือนเวลา " + timenow + " น.", MessageBoxButtons.OK, MessageBoxIcon.Warning); // โชว์ MessageBox ขึ้น  แจ้งเตือนเวลา ...
                 task1.Dispose();// ทิ้งข้อมูล task1
@@ -142,7 +136,7 @@ namespace timenone
         public void check_time(DateTime s) // ประกาศ method ชื่อ check_time โดยรับข้อมูล DateTime
         {
             TimeSpan timeOfDay = DateTime.Now.TimeOfDay; // ประกาศตัวแปร timeOfDay แทน DateTime.Now.TimeOfDay
-            if (timeOfDayOld.ToString(@"hh\:mm") != timeOfDay.ToString(@"hh\:mm")) // ให้เปรียบเทียบ timeOfDayOld กับ timeOfDay ถ้าไม่เท่ากัน
+           if (timeOfDayOld.ToString(@"hh\:mm") != timeOfDay.ToString(@"hh\:mm")) // ให้เปรียบเทียบ timeOfDayOld กับ timeOfDay ถ้าไม่เท่ากัน
             {
                 timeOfDayOld = timeOfDay; // ให้ timeOfDayOld เท่ากับ  timeOfDay
                 var day = s.DayOfWeek.ToString();// ประกาศตัวแปร day แทน s.DayOfWeek
@@ -191,9 +185,9 @@ namespace timenone
             }
             else // กรณีไม่เข้าเงื่อนไขข้างบน
             {
-                name_5.Clear(); // ล้างข้อมูลใน name_5
+                name_5.Clear(); // ล้างข้อมูลใน name_5*
+                
             }
-
         }
 
 
@@ -205,7 +199,7 @@ namespace timenone
 
         private void ออกจากโปรแกรมToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก ออกจากโปรแกรม ใน ToolStripMenuItem
         {
-            notifyIcon.Visible = false; // ปิดการมองเห็น notifyIcon ในแถบ taskbar
+            notifyIcon1.Visible = false; // ปิดการมองเห็น notifyIcon ในแถบ taskbar
             Environment.Exit(0);// ออกจากโปรแกรม
         }
 
@@ -291,7 +285,7 @@ namespace timenone
 
         private void ออกจากโปรแกรมToolStripMenuItem1_Click(object sender, EventArgs e) // เมื่อคลิก ออกจากโปรแกรม ใน ToolStripMenuItem1
         {
-            notifyIcon.Visible = false; // ปิดการมองเห็น notifyIcon ในแถบ taskbar
+            notifyIcon1.Visible = false; // ปิดการมองเห็น notifyIcon ในแถบ taskbar
             Environment.Exit(0); // ออกจากโปรแกรม
         }
     }
