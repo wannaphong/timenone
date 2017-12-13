@@ -56,7 +56,7 @@ namespace timenone
             if ((timeold.TotalSeconds == timeinday.TotalSeconds) != false) // กรณีที่เวลา timeold ไม่เท่ากับ timeinday
             {
                 timeold = timeinday; // ให้ timeold เก็บค่า  timeinday
-                name_5 = new List<string>(); // ให้แทนที่ข้อมูล name_5 ด้วย List<string>()
+                //name_5 = new List<string>(); // ให้แทนที่ข้อมูล name_5 ด้วย List<string>()
                 v = true; // ให้ v เป็น true
             }
             else // กรณีไม่เข้าเงื่อนไขข้างบน
@@ -140,7 +140,7 @@ namespace timenone
                 timeOfDayOld = timeOfDay; // ให้ timeOfDayOld เท่ากับ  timeOfDay
                 var day = s.DayOfWeek.ToString();// ประกาศตัวแปร day แทน s.DayOfWeek
                 var time = new db.Notifications(); // ประกาศตัวแปร time แทน db.Notifications
-                using (var db2 = new LiteDatabase(file))
+                using (var db2 = new LiteDatabase(file)) // เรียกใช้ข้อมูลจากฐานข้อมูล
                 {
                     var orders = db2.GetCollection<db.Notifications>("Notifications"); // ประกาศตัวแปร orders แทน db.GetCollection<Notifications>("Notifications")
 
@@ -194,7 +194,6 @@ namespace timenone
         {
             this.ShowInTaskbar = true; // กำหนดให้โชว์ใน Taskbar ได้
             timenow.Text = DateTime.Now.ToLongTimeString(); // กำหนดข้อความใน timenow เป็น DateTime.Now.ToLongTimeString() เวลา ณ ขณะนี้
-            //check_time(DateTime.Now); // เรียกใช้ check_time โดยใช้ค่า DateTime.Now
         }
 
         private void ออกจากโปรแกรมToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก ออกจากโปรแกรม ใน ToolStripMenuItem
