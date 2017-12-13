@@ -49,11 +49,10 @@ namespace timenone
             }
         }
         TimeSpan timeold= DateTime.Now.TimeOfDay; // ประกาศตัวแปร timeold แทนวัตถุ DateTime.Now.TimeOfDay
-        List<string> name_5=new List<string> ();
-        bool v = true;
-        public bool Check_Notifications(TimeSpan timeinday, string name)
+        List<string> name_5=new List<string> (); // ประกาศตัวแปร name_5 เป็นข้อมูลชนิด List<string>
+        public bool Check_Notifications(TimeSpan timeinday, string name) // ประกาศ method ชื่อ Check_Notifications โดยรับค่า TimeSpan และ string ใช้เช็คการแจ้งเตือน
         {
-            bool v = true;
+            bool v = true; // ประกาศตัวแปร v เป็นข้อมูลชนิด bool มีค่าเริ่มต้นเป็น true
             if ((timeold.TotalSeconds == timeinday.TotalSeconds) != false)
             {
                 timeold = timeinday;
