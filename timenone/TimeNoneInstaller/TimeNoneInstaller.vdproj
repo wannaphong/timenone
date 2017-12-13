@@ -22,6 +22,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_39827BB7A3B12F0BC42233C35B945A0A"
+        "OwnerKey" = "8:_D120FADCA43F4C81A134AE8299D62354"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D120FADCA43F4C81A134AE8299D62354"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -40,12 +46,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F71845A503FA7C355C248978F28EC066"
-        "OwnerKey" = "8:_D120FADCA43F4C81A134AE8299D62354"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_FD32E835CBB64B2182E3F4CA86FA1CE2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -59,7 +59,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F71845A503FA7C355C248978F28EC066"
+        "OwnerKey" = "8:_39827BB7A3B12F0BC42233C35B945A0A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -194,6 +194,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_39827BB7A3B12F0BC42233C35B945A0A"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:LiteDB, Version=4.0.0.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_39827BB7A3B12F0BC42233C35B945A0A"
+                    {
+                    "Name" = "8:LiteDB.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:LiteDB.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_37EFDBF1ADD549BDBE535D3BA3263238"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EA21F8A540504FF491D4FC60F8E0742B"
             {
             "SourcePath" = "8:..\\timenone\\bin\\Debug\\fzap_clock_sportstudio_design_Xaa_icon.ico"
@@ -232,37 +263,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F71845A503FA7C355C248978F28EC066"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:LiteDB, Version=4.0.0.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_F71845A503FA7C355C248978F28EC066"
-                    {
-                    "Name" = "8:LiteDB.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:LiteDB.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_37EFDBF1ADD549BDBE535D3BA3263238"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FD32E835CBB64B2182E3F4CA86FA1CE2"
@@ -341,15 +341,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TimeNoneInstaller"
-        "ProductCode" = "8:{8146F0A1-992A-4DF9-AFD5-08FE6BF2F530}"
-        "PackageCode" = "8:{79A4956B-2636-4A56-985F-9DB1C08F2BFE}"
+        "ProductCode" = "8:{04A508EE-E0B0-4546-ADCF-1F128B610307}"
+        "PackageCode" = "8:{ABB65793-9542-4849-8AA2-1AF0164FF511}"
         "UpgradeCode" = "8:{FF96267D-267C-475C-96CD-0DF115126181}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.2"
+        "ProductVersion" = "8:1.1.0"
         "Manufacturer" = "8:Wannaphong Phatthiyaphaibun"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
