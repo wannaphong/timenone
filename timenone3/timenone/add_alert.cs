@@ -18,16 +18,16 @@ namespace timenone
             InitializeComponent();
          }
 
-        private void clean_Click(object sender, EventArgs e)
+        private void clean_Click(object sender, EventArgs e) // เมื่อคลิกปุ่ม clean
         {
             h.SelectedIndex = 0;
             m.SelectedIndex = 0;
-            note.Text = "";
+            note.Text = ""; // กำหนดให้ข้อความใน note ให้ว่างเปล่า
             foreach (int i in days.CheckedIndices)
             {
                 days.SetItemCheckState(i, CheckState.Unchecked);
             }
-            Enable.Checked = false;
+            Enable.Checked = false; // ให้ยกเลิกการเลือกของ Enable
         }
         private void add_alert_Load(object sender, EventArgs e) // เมื่อ Form นี้ถูกโหลดขึ้นมา
         {
@@ -61,11 +61,11 @@ namespace timenone
                 }
 
             }
-           db.add_data(note.Text,h.Text,m.Text,d1,d2,d3,d4,d5,d6,d7, Enable.Checked);
+           db.add_data(note.Text,h.Text,m.Text,d1,d2,d3,d4,d5,d6,d7, Enable.Checked); // เพิ่มข้อมูลลงฐานข้อมูล
            MessageBox.Show("Ok"); // โชว์ MessageBox ว่า "Ok"
         }
 
-        private void open_f1_Click(object sender, EventArgs e)
+        private void open_f1_Click(object sender, EventArgs e) // เมื่อคลิก open_f1
         {
             home h = new home(); // ประกาศตัวแปร h แทนวัตถุ home
             h.Show();// โชว์ home 
