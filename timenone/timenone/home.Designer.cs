@@ -28,368 +28,250 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.SidePanel = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.close = new System.Windows.Forms.Button();
-            this.firstCustomControl1 = new timenone.FirstCustomControl();
-            this.mySecondCustmControl1 = new timenone.MySecondCustmControl();
-            this.index = new System.Windows.Forms.Button();
-            this.opencountdown = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.timenow = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.เมนToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.การแจงเตอนToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.เพมการแจงเตอนToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.แกไขการแจงเตอนToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.นาฬกานบถอยหลงToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.นาฬกาจบเวลาToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ออกจากโปรแกรมToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.เกยวกบโปรแกรมToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.add = new System.Windows.Forms.Button();
+            this.notifyHome = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStripHome = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.เปดแอพToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.การแจงเตอนToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.เพมการแจงเตอนToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ลบการแจงเตอนToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.นาฬกาจบเวลาToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.นาฬกานบถอยหลงToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.เกยวกบโปรแกรมToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ออกจากโปรแกรมToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.day_time = new System.Windows.Forms.Label();
+            this.menuStrip1.SuspendLayout();
+            this.contextMenuStripHome.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // timenow
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button14);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(203, 556);
-            this.panel1.TabIndex = 0;
+            this.timenow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.timenow.AutoSize = true;
+            this.timenow.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.timenow.Location = new System.Drawing.Point(79, 87);
+            this.timenow.Name = "timenow";
+            this.timenow.Size = new System.Drawing.Size(158, 55);
+            this.timenow.TabIndex = 0;
+            this.timenow.Text = "label1";
+            this.timenow.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.timenow.Click += new System.EventHandler(this.timenow_Click);
             // 
-            // SidePanel
+            // timer1
             // 
-            this.SidePanel.BackColor = System.Drawing.Color.Gold;
-            this.SidePanel.Location = new System.Drawing.Point(552, 59);
-            this.SidePanel.Name = "SidePanel";
-            this.SidePanel.Size = new System.Drawing.Size(75, 10);
-            this.SidePanel.TabIndex = 4;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button7
+            // menuStrip1
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(12, 383);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(197, 54);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "       Customers";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button7.UseVisualStyleBackColor = true;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.เมนToolStripMenuItem,
+            this.เกยวกบโปรแกรมToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(406, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // button6
+            // เมนToolStripMenuItem
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(12, 329);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(197, 54);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "       Driver Payment";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = true;
+            this.เมนToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.การแจงเตอนToolStripMenuItem1,
+            this.นาฬกานบถอยหลงToolStripMenuItem,
+            this.นาฬกาจบเวลาToolStripMenuItem,
+            this.ออกจากโปรแกรมToolStripMenuItem});
+            this.เมนToolStripMenuItem.Name = "เมนToolStripMenuItem";
+            this.เมนToolStripMenuItem.Size = new System.Drawing.Size(36, 20);
+            this.เมนToolStripMenuItem.Text = "เมนู";
             // 
-            // button5
+            // การแจงเตอนToolStripMenuItem1
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(12, 275);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(197, 54);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "       Take Away";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = true;
+            this.การแจงเตอนToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.เพมการแจงเตอนToolStripMenuItem1,
+            this.แกไขการแจงเตอนToolStripMenuItem});
+            this.การแจงเตอนToolStripMenuItem1.Name = "การแจงเตอนToolStripMenuItem1";
+            this.การแจงเตอนToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.การแจงเตอนToolStripMenuItem1.Text = "การแจ้งเตือน";
             // 
-            // button4
+            // เพมการแจงเตอนToolStripMenuItem1
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(12, 221);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(197, 54);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "       Delivery";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.เพมการแจงเตอนToolStripMenuItem1.Name = "เพมการแจงเตอนToolStripMenuItem1";
+            this.เพมการแจงเตอนToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
+            this.เพมการแจงเตอนToolStripMenuItem1.Text = "เพิ่มการแจ้งเตือน";
+            this.เพมการแจงเตอนToolStripMenuItem1.Click += new System.EventHandler(this.เพมการแจงเตอนToolStripMenuItem1_Click);
             // 
-            // button3
+            // แกไขการแจงเตอนToolStripMenuItem
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(12, 167);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(197, 54);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "       Collection";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.แกไขการแจงเตอนToolStripMenuItem.Name = "แกไขการแจงเตอนToolStripMenuItem";
+            this.แกไขการแจงเตอนToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.แกไขการแจงเตอนToolStripMenuItem.Text = "แก้ไขการแจ้งเตือน";
+            this.แกไขการแจงเตอนToolStripMenuItem.Click += new System.EventHandler(this.แกไขการแจงเตอนToolStripMenuItem_Click);
             // 
-            // button14
+            // นาฬกานบถอยหลงToolStripMenuItem
             // 
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(3, 546);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(36, 34);
-            this.button14.TabIndex = 4;
-            this.button14.Text = "?";
-            this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button14.UseVisualStyleBackColor = true;
+            this.นาฬกานบถอยหลงToolStripMenuItem.Name = "นาฬกานบถอยหลงToolStripMenuItem";
+            this.นาฬกานบถอยหลงToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.นาฬกานบถอยหลงToolStripMenuItem.Text = "นาฬิกานับถอยหลัง";
+            this.นาฬกานบถอยหลงToolStripMenuItem.Click += new System.EventHandler(this.นาฬกานบถอยหลงToolStripMenuItem_Click);
             // 
-            // button2
+            // นาฬกาจบเวลาToolStripMenuItem
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(12, 113);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(197, 54);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "       Eat-In";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.นาฬกาจบเวลาToolStripMenuItem.Name = "นาฬกาจบเวลาToolStripMenuItem";
+            this.นาฬกาจบเวลาToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.นาฬกาจบเวลาToolStripMenuItem.Text = "นาฬิกาจับเวลา";
+            this.นาฬกาจบเวลาToolStripMenuItem.Click += new System.EventHandler(this.นาฬกาจบเวลาToolStripMenuItem_Click);
             // 
-            // button1
+            // ออกจากโปรแกรมToolStripMenuItem
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 54);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "       Home";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ออกจากโปรแกรมToolStripMenuItem.Name = "ออกจากโปรแกรมToolStripMenuItem";
+            this.ออกจากโปรแกรมToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.ออกจากโปรแกรมToolStripMenuItem.Text = "ออกจากโปรแกรม";
+            this.ออกจากโปรแกรมToolStripMenuItem.Click += new System.EventHandler(this.ออกจากโปรแกรมToolStripMenuItem_Click);
             // 
-            // panel2
+            // เกยวกบโปรแกรมToolStripMenuItem
             // 
-            this.panel2.BackColor = System.Drawing.Color.Yellow;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(203, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(823, 10);
-            this.panel2.TabIndex = 1;
+            this.เกยวกบโปรแกรมToolStripMenuItem.Name = "เกยวกบโปรแกรมToolStripMenuItem";
+            this.เกยวกบโปรแกรมToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.เกยวกบโปรแกรมToolStripMenuItem.Text = "เกี่ยวกับโปรแกรม";
+            this.เกยวกบโปรแกรมToolStripMenuItem.Click += new System.EventHandler(this.เกยวกบโปรแกรมToolStripMenuItem_Click);
             // 
-            // panel3
+            // add
             // 
-            this.panel3.BackColor = System.Drawing.Color.Orange;
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(243, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(111, 143);
-            this.panel3.TabIndex = 2;
+            this.add.Location = new System.Drawing.Point(137, 277);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(115, 34);
+            this.add.TabIndex = 2;
+            this.add.Text = "เพิ่มการแจ้งเตือน";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
-            // label3
+            // notifyHome
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(13, 108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "It\'s time.";
+            this.notifyHome.ContextMenuStrip = this.contextMenuStripHome;
+            this.notifyHome.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyHome.Icon")));
+            this.notifyHome.Text = "Ok";
+            this.notifyHome.Visible = true;
             // 
-            // label2
+            // contextMenuStripHome
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(9, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 19);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "TimeNone";
+            this.contextMenuStripHome.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.เปดแอพToolStripMenuItem,
+            this.การแจงเตอนToolStripMenuItem,
+            this.นาฬกาจบเวลาToolStripMenuItem1,
+            this.นาฬกานบถอยหลงToolStripMenuItem1,
+            this.เกยวกบโปรแกรมToolStripMenuItem1,
+            this.ออกจากโปรแกรมToolStripMenuItem1});
+            this.contextMenuStripHome.Name = "contextMenuStripHome";
+            this.contextMenuStripHome.Size = new System.Drawing.Size(158, 136);
             // 
-            // pictureBox1
+            // เปดแอพToolStripMenuItem
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(17, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.เปดแอพToolStripMenuItem.Name = "เปดแอพToolStripMenuItem";
+            this.เปดแอพToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.เปดแอพToolStripMenuItem.Text = "เปิดแอพ";
+            this.เปดแอพToolStripMenuItem.Click += new System.EventHandler(this.เปดแอพToolStripMenuItem_Click);
             // 
-            // label4
+            // การแจงเตอนToolStripMenuItem
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(360, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 21);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "TimeNone : ทามนั้น";
+            this.การแจงเตอนToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.เพมการแจงเตอนToolStripMenuItem,
+            this.ลบการแจงเตอนToolStripMenuItem});
+            this.การแจงเตอนToolStripMenuItem.Name = "การแจงเตอนToolStripMenuItem";
+            this.การแจงเตอนToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.การแจงเตอนToolStripMenuItem.Text = "การแจ้งเตือน";
             // 
-            // button11
+            // เพมการแจงเตอนToolStripMenuItem
             // 
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(890, 19);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(32, 35);
-            this.button11.TabIndex = 4;
-            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button11.UseVisualStyleBackColor = true;
+            this.เพมการแจงเตอนToolStripMenuItem.Name = "เพมการแจงเตอนToolStripMenuItem";
+            this.เพมการแจงเตอนToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.เพมการแจงเตอนToolStripMenuItem.Text = "เพิ่มการแจ้งเตือน";
+            this.เพมการแจงเตอนToolStripMenuItem.Click += new System.EventHandler(this.เพมการแจงเตอนToolStripMenuItem_Click);
             // 
-            // button12
+            // ลบการแจงเตอนToolStripMenuItem
             // 
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(928, 19);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(32, 35);
-            this.button12.TabIndex = 4;
-            this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button12.UseVisualStyleBackColor = true;
+            this.ลบการแจงเตอนToolStripMenuItem.Name = "ลบการแจงเตอนToolStripMenuItem";
+            this.ลบการแจงเตอนToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.ลบการแจงเตอนToolStripMenuItem.Text = "แก้ไขการแจ้งเตือน";
+            this.ลบการแจงเตอนToolStripMenuItem.Click += new System.EventHandler(this.ลบการแจงเตอนToolStripMenuItem_Click);
             // 
-            // close
+            // นาฬกาจบเวลาToolStripMenuItem1
             // 
-            this.close.FlatAppearance.BorderSize = 0;
-            this.close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.close.ForeColor = System.Drawing.Color.White;
-            this.close.Image = ((System.Drawing.Image)(resources.GetObject("close.Image")));
-            this.close.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.close.Location = new System.Drawing.Point(977, 19);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(32, 35);
-            this.close.TabIndex = 4;
-            this.close.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.close.UseVisualStyleBackColor = true;
-            this.close.Click += new System.EventHandler(this.close_Click);
+            this.นาฬกาจบเวลาToolStripMenuItem1.Name = "นาฬกาจบเวลาToolStripMenuItem1";
+            this.นาฬกาจบเวลาToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.นาฬกาจบเวลาToolStripMenuItem1.Text = "นาฬิกาจับเวลา";
+            this.นาฬกาจบเวลาToolStripMenuItem1.Click += new System.EventHandler(this.นาฬกาจบเวลาToolStripMenuItem1_Click);
             // 
-            // firstCustomControl1
+            // นาฬกานบถอยหลงToolStripMenuItem1
             // 
-            this.firstCustomControl1.Location = new System.Drawing.Point(209, 156);
-            this.firstCustomControl1.Name = "firstCustomControl1";
-            this.firstCustomControl1.Size = new System.Drawing.Size(805, 356);
-            this.firstCustomControl1.TabIndex = 5;
+            this.นาฬกานบถอยหลงToolStripMenuItem1.Name = "นาฬกานบถอยหลงToolStripMenuItem1";
+            this.นาฬกานบถอยหลงToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.นาฬกานบถอยหลงToolStripMenuItem1.Text = "นาฬิกานับถอยหลัง";
+            this.นาฬกานบถอยหลงToolStripMenuItem1.Click += new System.EventHandler(this.นาฬกานบถอยหลงToolStripMenuItem1_Click);
             // 
-            // mySecondCustmControl1
+            // เกยวกบโปรแกรมToolStripMenuItem1
             // 
-            this.mySecondCustmControl1.Location = new System.Drawing.Point(208, 156);
-            this.mySecondCustmControl1.Name = "mySecondCustmControl1";
-            this.mySecondCustmControl1.Size = new System.Drawing.Size(818, 377);
-            this.mySecondCustmControl1.TabIndex = 6;
+            this.เกยวกบโปรแกรมToolStripMenuItem1.Name = "เกยวกบโปรแกรมToolStripMenuItem1";
+            this.เกยวกบโปรแกรมToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.เกยวกบโปรแกรมToolStripMenuItem1.Text = "เกี่ยวกับโปรแกรม";
+            this.เกยวกบโปรแกรมToolStripMenuItem1.Click += new System.EventHandler(this.เกยวกบโปรแกรมToolStripMenuItem1_Click);
             // 
-            // index
+            // ออกจากโปรแกรมToolStripMenuItem1
             // 
-            this.index.FlatAppearance.BorderSize = 0;
-            this.index.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.index.Font = new System.Drawing.Font("TH Sarabun New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.index.Location = new System.Drawing.Point(552, 22);
-            this.index.Name = "index";
-            this.index.Size = new System.Drawing.Size(75, 35);
-            this.index.TabIndex = 7;
-            this.index.Text = "หน้าหลัก";
-            this.index.UseVisualStyleBackColor = true;
-            this.index.Click += new System.EventHandler(this.index_Click);
+            this.ออกจากโปรแกรมToolStripMenuItem1.Name = "ออกจากโปรแกรมToolStripMenuItem1";
+            this.ออกจากโปรแกรมToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.ออกจากโปรแกรมToolStripMenuItem1.Text = "ออกจากโปรแกรม";
+            this.ออกจากโปรแกรมToolStripMenuItem1.Click += new System.EventHandler(this.ออกจากโปรแกรมToolStripMenuItem1_Click);
             // 
-            // opencountdown
+            // notifyIcon1
             // 
-            this.opencountdown.FlatAppearance.BorderSize = 0;
-            this.opencountdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.opencountdown.Font = new System.Drawing.Font("TH Sarabun New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.opencountdown.Location = new System.Drawing.Point(633, 22);
-            this.opencountdown.Name = "opencountdown";
-            this.opencountdown.Size = new System.Drawing.Size(75, 35);
-            this.opencountdown.TabIndex = 8;
-            this.opencountdown.Text = "นับถอยหลัง";
-            this.opencountdown.UseVisualStyleBackColor = true;
-            this.opencountdown.Click += new System.EventHandler(this.opencountdown_Click);
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
+            // day_time
+            // 
+            this.day_time.AutoSize = true;
+            this.day_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.day_time.Location = new System.Drawing.Point(110, 207);
+            this.day_time.Name = "day_time";
+            this.day_time.Size = new System.Drawing.Size(106, 37);
+            this.day_time.TabIndex = 3;
+            this.day_time.Text = "label1";
             // 
             // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1026, 556);
-            this.Controls.Add(this.opencountdown);
-            this.Controls.Add(this.SidePanel);
-            this.Controls.Add(this.index);
-            this.Controls.Add(this.mySecondCustmControl1);
-            this.Controls.Add(this.firstCustomControl1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.close);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.ClientSize = new System.Drawing.Size(406, 377);
+            this.Controls.Add(this.day_time);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.timenow);
+            this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "home";
-            this.Load += new System.EventHandler(this.home_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.home_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.home_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.home_MouseUp);
-            this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.contextMenuStripHome.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,29 +279,29 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel SidePanel;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button close;
-        private FirstCustomControl firstCustomControl1;
-        private MySecondCustmControl mySecondCustmControl1;
-        private System.Windows.Forms.Button index;
-        private System.Windows.Forms.Button opencountdown;
+        private System.Windows.Forms.Label timenow;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem เมนToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem นาฬกาจบเวลาToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ออกจากโปรแกรมToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem เกยวกบโปรแกรมToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem นาฬกานบถอยหลงToolStripMenuItem;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.NotifyIcon notifyHome;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripHome;
+        private System.Windows.Forms.ToolStripMenuItem เปดแอพToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ออกจากโปรแกรมToolStripMenuItem1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ToolStripMenuItem การแจงเตอนToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem เพมการแจงเตอนToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem นาฬกาจบเวลาToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem เกยวกบโปรแกรมToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem นาฬกานบถอยหลงToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ลบการแจงเตอนToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem การแจงเตอนToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem เพมการแจงเตอนToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem แกไขการแจงเตอนToolStripMenuItem;
+        private System.Windows.Forms.Label day_time;
     }
 }
-
