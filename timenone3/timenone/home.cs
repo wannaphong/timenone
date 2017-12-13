@@ -118,22 +118,22 @@ namespace timenone
                     }
                     name += "\r\n" + "คำสั่งพิเศษ : " + code;
                 }
-                else if (Regex.IsMatch(name, @"\,code123 ") || Regex.IsMatch(name, @"\,code123none "))
+                else if (Regex.IsMatch(name, @"\,code123 ") || Regex.IsMatch(name, @"\,code123none ")) // ถ้า "\,code123none " หรือ "\,code123 " match ตาม Regex แล้วเป็น true
                 {
-                    if (Regex.IsMatch(name, @"\,code123 "))
+                    if (Regex.IsMatch(name, @"\,code123 ")) // ถ้า "\,code123 " match ตาม Regex แล้วเป็น true
                     {
                         string strCmdText = "/c " + SplitWords(name, @",code123 ")[0];
                         System.Diagnostics.Process.Start("CMD.exe", strCmdText);
                         code = SplitWords(name, @",code123 ")[0];
                     }
-                    else if (Regex.IsMatch(name, @"\,code123none "))
+                    else if (Regex.IsMatch(name, @"\,code123none ")) // ถ้า "\,code123none " match ตาม Regex แล้วเป็น true
                     {
-                        Process proc = new Process();
-                        proc.StartInfo.FileName = "CMD.exe";
-                        proc.StartInfo.Arguments = "/c " + SplitWords(name, @",code123none ")[0];
-                        proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                        proc.Start();
-                        code = SplitWords(name, @",code123none ")[0];
+                        Process proc = new Process(); // ประกาศตัวแปร proc แทนวัตถุ Process
+                        proc.StartInfo.FileName = "CMD.exe"; // กำหนดไฟล์คำสั่งที่จะทำงาน คือ CMD
+                        proc.StartInfo.Arguments = "/c " + SplitWords(name, @",code123none ")[0]; // กำหนดคำสั่งสำหรับสั่งงาน
+                        proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden; // ให้ซ่อนหน้าต่างการทำงาน
+                        proc.Start(); // เรียกการทำงาน proc
+                        code = SplitWords(name, @",code123none ")[0]; // ทำการแบ่งคำด้วย , โดยใช้ SplitWords แล้วเอาเฉพาะ index แรก ไปเก็บไว้ใน code
                     }
                     name = "\r\n" + "คำสั่งพิเศษ : " + code; // เพิ่ม "คำสั่งพิเศษ :  code" เข้าไปใน name
                 }

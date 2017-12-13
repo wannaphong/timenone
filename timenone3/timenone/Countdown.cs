@@ -5,8 +5,8 @@ namespace timenone
 {
     public partial class Countdown : Form
     {
-        public static double settime=0;
-        public static bool run = false;
+        public static double settime=0; // ประกาศตัวแปรชื่อ settime ชนิด double เป็น public และเป็น static
+        public static bool run = false; // ประกาศตัวแปรชื่อ run ชนิด bool เป็น public และเป็น static
         public Countdown()
         {
             InitializeComponent();
