@@ -51,16 +51,16 @@ namespace timenone
             dataGridView1.Columns[0].ReadOnly = true; // กำหนดให้ Columns แรก (ID) ให้อ่านได้อย่างเดียว
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; // กำหนดให้ปรับขนาด dataGridView1 แบบ Auto
 
-            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.BorderStyle = BorderStyle.None; // กำหนด dataGridView1 ไม่มีกรอบ
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
             dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BackgroundColor = Color.White; // กำหนดสีพื้นหลังใน dataGridView1 เป็น White
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // กำหนดสีหัว Column เป็นสีขาว
         }
 
         private void edit_alert_Load(object sender, EventArgs e) // เมื่อ Form นี้ถูกโหลดขึ้นมา
