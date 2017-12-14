@@ -32,8 +32,9 @@ namespace timenone
 
         private void save_Click(object sender, EventArgs e) // เมื่อกดปุ่ม save
         {
-            if (note.Text!="") {
-                var db = new db();
+            if (note.Text!="")
+            { // ถ้าข้อความใน note ไม่ว่างเปล่า
+                var db = new db(); // ประกาศตัวแปร db แทนวัตถุ db
                 string[] d = { "วันอาทิตย์", "วันจันทร์", "วันอังคาร", "วันพุธ", "วันพฤหัสบดี", "วันศุกร์", "วันเสาร์" }; // ประกาศ string[] ชื่อ d แทนวันทั้ง 7 วันในภาษาไทย
                 bool d1 = false, d2 = false, d3 = false, d4 = false, d5 = false, d6 = false, d7 = false; // ประกาศตัวแปรชนิด bool ชื่อ d1 - d7 ให้มีค่าเริ่มต้นเป็น false
                 foreach (string item in days.CheckedItems) // ลูปเอาค่า string ทีละตัวจาก days.CheckedItems เก็บไว้ใน item
@@ -58,7 +59,7 @@ namespace timenone
                 db.add_data(note.Text, h.Text, m.Text, d1, d2, d3, d4, d5, d6, d7, Enable.Checked); // เพิ่มข้อมูลลงฐานข้อมูล
                 MessageBox.Show("Ok"); // โชว์ MessageBox ว่า "Ok"
             }
-            else
+            else // ในกรณีไม่เข้าเงื่อนไขข้างบน
             {
                 MessageBox.Show("กรูณากรอกบันทึก");
             }
