@@ -38,10 +38,10 @@
             // show_time
             // 
             this.show_time.AutoSize = true;
-            this.show_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.show_time.Location = new System.Drawing.Point(88, 44);
+            this.show_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.show_time.Location = new System.Drawing.Point(77, 36);
             this.show_time.Name = "show_time";
-            this.show_time.Size = new System.Drawing.Size(96, 25);
+            this.show_time.Size = new System.Drawing.Size(127, 33);
             this.show_time.TabIndex = 0;
             this.show_time.Text = "00:00:00";
             // 
@@ -49,7 +49,7 @@
             // 
             this.bnStart.Location = new System.Drawing.Point(44, 95);
             this.bnStart.Name = "bnStart";
-            this.bnStart.Size = new System.Drawing.Size(75, 23);
+            this.bnStart.Size = new System.Drawing.Size(75, 35);
             this.bnStart.TabIndex = 1;
             this.bnStart.Text = "เริ่ม";
             this.bnStart.UseVisualStyleBackColor = true;
@@ -59,7 +59,7 @@
             // 
             this.bnP.Location = new System.Drawing.Point(169, 95);
             this.bnP.Name = "bnP";
-            this.bnP.Size = new System.Drawing.Size(90, 23);
+            this.bnP.Size = new System.Drawing.Size(90, 35);
             this.bnP.TabIndex = 3;
             this.bnP.Text = "หยุดชั่วคราว";
             this.bnP.UseVisualStyleBackColor = true;
@@ -77,9 +77,9 @@
             // 
             // time_now_save
             // 
-            this.time_now_save.Location = new System.Drawing.Point(93, 136);
+            this.time_now_save.Location = new System.Drawing.Point(96, 136);
             this.time_now_save.Name = "time_now_save";
-            this.time_now_save.Size = new System.Drawing.Size(75, 23);
+            this.time_now_save.Size = new System.Drawing.Size(91, 33);
             this.time_now_save.TabIndex = 5;
             this.time_now_save.Text = "แบ่งเวลา";
             this.time_now_save.UseVisualStyleBackColor = true;

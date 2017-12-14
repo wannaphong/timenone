@@ -75,9 +75,9 @@
             // 
             // buOK
             // 
-            this.buOK.Location = new System.Drawing.Point(99, 207);
+            this.buOK.Location = new System.Drawing.Point(81, 194);
             this.buOK.Name = "buOK";
-            this.buOK.Size = new System.Drawing.Size(75, 23);
+            this.buOK.Size = new System.Drawing.Size(108, 37);
             this.buOK.TabIndex = 6;
             this.buOK.Text = "บันทึก";
             this.buOK.UseVisualStyleBackColor = true;

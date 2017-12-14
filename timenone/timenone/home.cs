@@ -227,7 +227,7 @@ namespace timenone
         private void นาฬกาจบเวลาToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก นาฬิกาจับเวลา ใน ToolStripMenuItem
         {
             Timer_system a = new Timer_system(); // ประกาศตัวแปร a แทนวัตถุ Timer_system
-            a.ShowDialog();// แสดง Timer_system
+            a.Show();// แสดง Timer_system
         }
 
         private void เปดแอพToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก เปิดแอพ ใน ToolStripMenuItem
