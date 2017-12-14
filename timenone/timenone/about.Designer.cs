@@ -37,10 +37,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(54, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label1.Location = new System.Drawing.Point(73, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 25);
+            this.label1.Size = new System.Drawing.Size(207, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "เกี่ยวกับโปรแกรม";
             // 
@@ -48,12 +48,13 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(2, 57);
+            this.label2.Location = new System.Drawing.Point(28, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(278, 100);
             this.label2.TabIndex = 1;
             this.label2.Text = "เขียนโดย นาย วรรณพงษ์  ภัททิยไพบูลย์\r\nนักศึกษาชั้นปีที่ 1\r\nสาขาวิทยาการคอมพิวเตอร" +
-    "์และสารสนเทศ\r\nคณะวิทยาศาสตร์ประยุกต์และวิศวกรรมศาสตร์\r\nมหาวิทยาลัยขอนแก่น";
+    "์และสารสนเทศ\r\nคณะวิทยาศาสตร์ประยุกต์และวิศวกรรมศาสตร์\r\nมหาวิทยาลัยขอนแก่น วิทยาเ" +
+    "ขตหนองคาย";
             // 
             // label3
             // 
