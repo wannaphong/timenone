@@ -62,6 +62,7 @@ namespace timenone
 
         private void button3_Click(object sender, EventArgs e) // เมื่อคลิก button3 หรือ ปุ่ม ตั้งค่าเวลา
         {
+            this.Hide(); // ซ่อนหน้าต่าง
             set_time_countdown settimebox = new set_time_countdown(); // ประกาศตัวแปร settimebox แทน set_time_countdown
             settimebox.ShowDialog(); // แสดง set_time_countdown
         }
