@@ -66,7 +66,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(29, 149);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.Size = new System.Drawing.Size(118, 35);
             this.button1.TabIndex = 2;
             this.button1.Text = "นับถอยหลัง";
             this.button1.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(153, 149);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(95, 35);
             this.button2.TabIndex = 3;
             this.button2.Text = "ยกเลิก";
             this.button2.UseVisualStyleBackColor = true;
@@ -84,9 +84,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(105, 198);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button3.Location = new System.Drawing.Point(64, 199);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(139, 38);
             this.button3.TabIndex = 4;
             this.button3.Text = "ตั้งค่าเวลาใหม่";
             this.button3.UseVisualStyleBackColor = true;

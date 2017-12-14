@@ -45,6 +45,7 @@ namespace timenone
                 button1.Text = "กำลังนับถอยหลัง..."; // ให้ข้อความใน button1 เป็น "กำลังนับถอยหลัง..."
                 timer1.Enabled = true; // ให้เปิดการใช้งาน timer1
                 timer1.Start(); // ให้เริ่มการทำงาน timer1
+                button3.Text = "หยุดและตั้งค่าเวลาใหม่"; // เปลี่ยนข้อความใน button3
             }
             else // กรณีไม่เข้าเงื่อนไขข้างบน
             {
