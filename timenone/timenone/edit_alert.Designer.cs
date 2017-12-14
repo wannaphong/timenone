@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(edit_alert));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.update = new System.Windows.Forms.Button();
             this.del = new System.Windows.Forms.Button();
@@ -86,6 +87,8 @@
             this.Controls.Add(this.del);
             this.Controls.Add(this.update);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "edit_alert";
             this.Text = "แก้ไขการแจ้งเตือน";
             this.Load += new System.EventHandler(this.edit_alert_Load);
