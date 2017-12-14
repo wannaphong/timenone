@@ -88,6 +88,8 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "about";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "เกี่ยวกับโปรแกรม";
             this.Load += new System.EventHandler(this.about_Load);
             this.ResumeLayout(false);

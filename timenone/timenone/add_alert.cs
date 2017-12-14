@@ -57,11 +57,11 @@ namespace timenone
 
                 }
                 db.add_data(note.Text, h.Text, m.Text, d1, d2, d3, d4, d5, d6, d7, Enable.Checked); // เพิ่มข้อมูลลงฐานข้อมูล
-                MessageBox.Show("Ok"); // โชว์ MessageBox ว่า "Ok"
+                MessageBox.Show("บันทึกเรียบร้อย"); // โชว์ MessageBox ว่า "Ok"
             }
             else // ในกรณีไม่เข้าเงื่อนไขข้างบน
             {
-                MessageBox.Show("กรูณากรอกบันทึก");
+                MessageBox.Show("กรูณากรอกบันทึก"); // โชว์ให้กรอกข้อมูล
             }
         }
 

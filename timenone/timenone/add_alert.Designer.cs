@@ -38,39 +38,43 @@
             this.m = new System.Windows.Forms.ComboBox();
             this.days = new System.Windows.Forms.CheckedListBox();
             this.Enable = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 58);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label1.Location = new System.Drawing.Point(28, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(59, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "ชั่วโมง";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 100);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label2.Location = new System.Drawing.Point(28, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 13);
+            this.label2.Size = new System.Drawing.Size(46, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "นาที";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 157);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label3.Location = new System.Drawing.Point(28, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.Size = new System.Drawing.Size(60, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "บันทึก";
             // 
             // note
             // 
             this.note.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.note.Location = new System.Drawing.Point(100, 150);
+            this.note.Location = new System.Drawing.Point(100, 123);
             this.note.Name = "note";
             this.note.Size = new System.Drawing.Size(121, 26);
             this.note.TabIndex = 5;
@@ -124,7 +128,7 @@
             "21",
             "22",
             "23"});
-            this.h.Location = new System.Drawing.Point(100, 58);
+            this.h.Location = new System.Drawing.Point(100, 31);
             this.h.Name = "h";
             this.h.Size = new System.Drawing.Size(121, 28);
             this.h.TabIndex = 8;
@@ -194,13 +198,14 @@
             "57",
             "58",
             "59"});
-            this.m.Location = new System.Drawing.Point(100, 100);
+            this.m.Location = new System.Drawing.Point(100, 73);
             this.m.Name = "m";
             this.m.Size = new System.Drawing.Size(121, 28);
             this.m.TabIndex = 9;
             // 
             // days
             // 
+            this.days.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.days.FormattingEnabled = true;
             this.days.HorizontalScrollbar = true;
             this.days.Items.AddRange(new object[] {
@@ -211,26 +216,38 @@
             "วันพฤหัสบดี",
             "วันศุกร์",
             "วันเสาร์"});
-            this.days.Location = new System.Drawing.Point(83, 192);
+            this.days.Location = new System.Drawing.Point(99, 165);
             this.days.Name = "days";
-            this.days.Size = new System.Drawing.Size(134, 109);
+            this.days.Size = new System.Drawing.Size(129, 123);
             this.days.TabIndex = 12;
             // 
             // Enable
             // 
             this.Enable.AutoSize = true;
-            this.Enable.Location = new System.Drawing.Point(110, 308);
+            this.Enable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Enable.Location = new System.Drawing.Point(111, 300);
             this.Enable.Name = "Enable";
-            this.Enable.Size = new System.Drawing.Size(57, 17);
+            this.Enable.Size = new System.Drawing.Size(57, 20);
             this.Enable.TabIndex = 13;
             this.Enable.Text = "ใช้งาน";
             this.Enable.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label4.Location = new System.Drawing.Point(28, 165);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 24);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "วัน";
             // 
             // add_alert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(291, 379);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.Enable);
             this.Controls.Add(this.days);
             this.Controls.Add(this.m);
@@ -264,5 +281,6 @@
         private System.Windows.Forms.ComboBox m;
         private System.Windows.Forms.CheckedListBox days;
         private System.Windows.Forms.CheckBox Enable;
+        private System.Windows.Forms.Label label4;
     }
 }
