@@ -41,16 +41,16 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 74);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 53);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ShowCellErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(795, 360);
+            this.dataGridView1.Size = new System.Drawing.Size(795, 381);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(403, 34);
+            this.update.Location = new System.Drawing.Point(403, 13);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(116, 34);
             this.update.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             // del
             // 
-            this.del.Location = new System.Drawing.Point(260, 34);
+            this.del.Location = new System.Drawing.Point(260, 13);
             this.del.Name = "del";
             this.del.Size = new System.Drawing.Size(114, 34);
             this.del.TabIndex = 2;
@@ -70,7 +70,7 @@
             // 
             // add_alert_bn
             // 
-            this.add_alert_bn.Location = new System.Drawing.Point(105, 34);
+            this.add_alert_bn.Location = new System.Drawing.Point(105, 13);
             this.add_alert_bn.Name = "add_alert_bn";
             this.add_alert_bn.Size = new System.Drawing.Size(128, 34);
             this.add_alert_bn.TabIndex = 3;
