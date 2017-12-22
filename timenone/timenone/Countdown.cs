@@ -45,7 +45,6 @@ namespace timenone
                 button1.Text = "กำลังนับถอยหลัง..."; // ให้ข้อความใน button1 เป็น "กำลังนับถอยหลัง..."
                 timer1.Enabled = true; // ให้เปิดการใช้งาน timer1
                 timer1.Start(); // ให้เริ่มการทำงาน timer1
-                button3.Text = "หยุดและตั้งค่าเวลาใหม่"; // เปลี่ยนข้อความใน button3
             }
             else // กรณีไม่เข้าเงื่อนไขข้างบน
             {
@@ -59,6 +58,7 @@ namespace timenone
             timer1.Stop(); // ให้หยุดการทำงาน timer1
             settime = 0; // ให้ settime เป็น 0
             run = false; // ให้ run เป็น false
+            button1.Text = "นับถอยหลัง";
         }
 
         private void button3_Click(object sender, EventArgs e) // เมื่อคลิก button3 หรือ ปุ่ม ตั้งค่าเวลา
@@ -66,6 +66,49 @@ namespace timenone
             this.Hide(); // ซ่อนหน้าต่าง
             set_time_countdown settimebox = new set_time_countdown(); // ประกาศตัวแปร settimebox แทน set_time_countdown
             settimebox.ShowDialog(); // แสดง set_time_countdown
+        }
+
+        private void buOK_Click(object sender, EventArgs e)
+        {
+            settime = 0; // กำหนดค่า settime ใน Countdown ให้เป็น 0 เป็นค่าเริ่มต้น
+            if (m.Text == "" && s.Text == "") MessageBox.Show("กรุณากรอกข้อมูล"); // เช็คกรณีที่ข้อมูลใน m และ s ว่างเปล่า ให้ขึ้น MessageBox ให้โชว์ "กรุณากรอกข้อมูล"
+            else // กรณีไม่เข้าเงื่อนไขข้างบน
+            {
+                if (m.Text == "") m.Text = "0"; // ถ้า m ว่างเปล่าให้มีค่าเป็น "0"
+                else if (s.Text == "") s.Text = "0"; // ถ้า s ว่างเปล่าให้มีค่าเป็น "0"
+                string mm, ss;
+                settime = int.Parse(m.Text) * 60 + int.Parse(s.Text); // กำหนดค่า settime ใน Countdown ให้เป็นเวลาวินาที นำค่านาทีของ m มาคูณ 60 แล้วบวกกับวินาทีของตัวแปร s
+                if (int.Parse(m.Text) > 9)
+                {
+                    mm = m.Text.ToString();
+                }
+                else
+                {
+                    mm="0"+ m.Text.ToString();
+                }
+                if (int.Parse(s.Text) > 9)
+                {
+                    ss = s.Text.ToString();
+                }
+                else
+                {
+                    ss = "0" + s.Text.ToString();
+                }
+                label2.Text = mm + ":" + ss;
+                MessageBox.Show("เวลาที่จะนับถอยหลัง : " + (Countdown.settime).ToString() + " วินาที"); // ให้ขึ้น MessageBox โชว์วินาทีที่กำหนด
+                run = true; // ให้ run เป็น true
+                if (settime != 0) // ถ้า settime ไม่เป็น 0
+                {
+                    button1.Text = "กำลังนับถอยหลัง..."; // ให้ข้อความใน button1 เป็น "กำลังนับถอยหลัง..."
+                    timer1.Enabled = true; // ให้เปิดการใช้งาน timer1
+                    timer1.Start(); // ให้เริ่มการทำงาน timer1
+                }
+                else // กรณีไม่เข้าเงื่อนไขข้างบน
+                {
+                    label2.Text = "00:00:00";// ให้ข้อความของ label2 เป็น "00:00:00"
+                    MessageBox.Show("กรุณาตั้งค่าเวลานับถอยหลัง");// ขึ้น MessageBox โดยมีข้อความ "กรุณาตั้งค่าเวลานับถอยหลัง"
+                }
+            }
         }
     }
 }

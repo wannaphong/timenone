@@ -34,7 +34,11 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buOK = new System.Windows.Forms.Button();
+            this.s = new System.Windows.Forms.TextBox();
+            this.m = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -82,23 +86,62 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // buOK
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button3.Location = new System.Drawing.Point(64, 199);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(139, 38);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "ตั้งค่าเวลาใหม่";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buOK.Location = new System.Drawing.Point(412, 184);
+            this.buOK.Name = "buOK";
+            this.buOK.Size = new System.Drawing.Size(108, 37);
+            this.buOK.TabIndex = 11;
+            this.buOK.Text = "เริ่ม";
+            this.buOK.UseVisualStyleBackColor = true;
+            this.buOK.Click += new System.EventHandler(this.buOK_Click);
+            // 
+            // s
+            // 
+            this.s.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.s.Location = new System.Drawing.Point(429, 102);
+            this.s.Name = "s";
+            this.s.Size = new System.Drawing.Size(100, 22);
+            this.s.TabIndex = 10;
+            // 
+            // m
+            // 
+            this.m.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.m.Location = new System.Drawing.Point(429, 49);
+            this.m.Name = "m";
+            this.m.Size = new System.Drawing.Size(100, 22);
+            this.m.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label3.Location = new System.Drawing.Point(360, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "วินาที";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label4.Location = new System.Drawing.Point(360, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 16);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "นาที";
             // 
             // Countdown
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 249);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(617, 249);
+            this.Controls.Add(this.buOK);
+            this.Controls.Add(this.s);
+            this.Controls.Add(this.m);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -119,6 +162,10 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buOK;
+        private System.Windows.Forms.TextBox s;
+        private System.Windows.Forms.TextBox m;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
