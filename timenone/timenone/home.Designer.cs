@@ -67,9 +67,9 @@
             this.timenow.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.timenow.Location = new System.Drawing.Point(60, 87);
             this.timenow.Name = "timenow";
-            this.timenow.Size = new System.Drawing.Size(210, 73);
+            this.timenow.Size = new System.Drawing.Size(479, 73);
             this.timenow.TabIndex = 0;
-            this.timenow.Text = "label1";
+            this.timenow.Text = "ชั่วโมง:นาที:วินาที";
             this.timenow.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.timenow.Click += new System.EventHandler(this.timenow_Click);
             // 
@@ -248,9 +248,9 @@
             this.day_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.day_time.Location = new System.Drawing.Point(110, 207);
             this.day_time.Name = "day_time";
-            this.day_time.Size = new System.Drawing.Size(106, 37);
+            this.day_time.Size = new System.Drawing.Size(161, 37);
             this.day_time.TabIndex = 3;
-            this.day_time.Text = "label1";
+            this.day_time.Text = "วัน/เดือน/ปี";
             // 
             // home
             // 
