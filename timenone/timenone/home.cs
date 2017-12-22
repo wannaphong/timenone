@@ -11,7 +11,7 @@ namespace timenone
 {
     public partial class home : Form
     {
-        string file = "",now; // ประกาศตัวแปร file และ now เป็นข้อมูลชนิด string โดย file มีค่าเริ่มต้นว่างเปล่า
+        string file = "",now,filesound; // ประกาศตัวแปร file และ now เป็นข้อมูลชนิด string โดย file มีค่าเริ่มต้นว่างเปล่า
         Task task1=null; // ประกาศตัวแปร task1 เป็นวัตถุ Task โดยมีค่าเริ่มต้น null
         public home()
         {
@@ -19,6 +19,7 @@ namespace timenone
             file = new db().file_db().ToString(); // ดึงข้อมูลจาก db().file_db() แล้วเก็บไว้ใน file
             InitializeComponent();
             timer1.Start(); // ให้เริ่มต้นการทำงาน timer1
+            filesound =db.file_sound("").ToString();
         }
         private void Form1_Resize(object sender, EventArgs e) // เมื่อ Form นี้มีการปรับขนาด
         {
@@ -32,6 +33,10 @@ namespace timenone
         {
             this.Show(); // ให้โชว์หน้าต่าง
             this.WindowState = FormWindowState.Normal; // ให้หน้าต่างปกติ
+        }
+        private string file_sound()
+        {
+            return "";
         }
         private void timer1_Tick(object sender, EventArgs e) // เหตุการณ์เมื่อ timer1 มีการขยับเวลา
         {
@@ -134,7 +139,7 @@ namespace timenone
                 notifyIcon2.Visible = true; // เปิดการมองเห็นของ notifyIcon
                 notifyIcon2.ShowBalloonTip(16000, "แจ้งเตือนเวลา " + timenow + " น.", name, ToolTipIcon.Warning); // ให้แสดง notifyIcon โดยโชว์ข้อมูล แจ้งเตือนเวลา ... แบบ Warning โดยโชว์เป็นเวลา 16000 มิลลิวินาที
                
-                SoundPlayer my_wave_file = new SoundPlayer(Application.StartupPath + @"\funky-breakbeat_102bpm_F_major.wav"); // กำหนด path ที่จะเล่นไฟล์เสียงแจ้งเตือน
+                SoundPlayer my_wave_file = new SoundPlayer(filesound); // กำหนด path ที่จะเล่นไฟล์เสียงแจ้งเตือน
                 my_wave_file.PlaySync(); // ให้เล่นไฟล์เสียง
                 MessageBox.Show(name, "แจ้งเตือนเวลา " + timenow + " น.", MessageBoxButtons.OK, MessageBoxIcon.Warning); // โชว์ MessageBox ขึ้น  แจ้งเตือนเวลา ...
                 notifyIcon2.Dispose(); // ปิดการทำงาน notifyIcon2
@@ -284,6 +289,12 @@ namespace timenone
         {
             add_alert a = new add_alert(); // ประกาศตัวแปร a แทนวัตถุ add_alert
             a.Show(); // แสดง add_alert
+        }
+
+        private void ตงคาเสยงการแจงเตอนToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_set_sound a = new Form_set_sound();
+            a.Show();
         }
 
         private void แกไขการแจงเตอนToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก แก้ไขการแจ้งเตือน ใน ToolStripMenuItem

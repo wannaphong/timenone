@@ -54,6 +54,7 @@
             this.ออกจากโปรแกรมToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.day_time = new System.Windows.Forms.Label();
+            this.ตงคาเสยงการแจงเตอนToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStripHome.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +104,8 @@
             // 
             this.การแจงเตอนToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.เพมการแจงเตอนToolStripMenuItem1,
-            this.แกไขการแจงเตอนToolStripMenuItem});
+            this.แกไขการแจงเตอนToolStripMenuItem,
+            this.ตงคาเสยงการแจงเตอนToolStripMenuItem});
             this.การแจงเตอนToolStripMenuItem1.Name = "การแจงเตอนToolStripMenuItem1";
             this.การแจงเตอนToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
             this.การแจงเตอนToolStripMenuItem1.Text = "การแจ้งเตือน";
@@ -111,14 +113,14 @@
             // เพมการแจงเตอนToolStripMenuItem1
             // 
             this.เพมการแจงเตอนToolStripMenuItem1.Name = "เพมการแจงเตอนToolStripMenuItem1";
-            this.เพมการแจงเตอนToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
+            this.เพมการแจงเตอนToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
             this.เพมการแจงเตอนToolStripMenuItem1.Text = "เพิ่มการแจ้งเตือน";
             this.เพมการแจงเตอนToolStripMenuItem1.Click += new System.EventHandler(this.เพมการแจงเตอนToolStripMenuItem1_Click);
             // 
             // แกไขการแจงเตอนToolStripMenuItem
             // 
             this.แกไขการแจงเตอนToolStripMenuItem.Name = "แกไขการแจงเตอนToolStripMenuItem";
-            this.แกไขการแจงเตอนToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.แกไขการแจงเตอนToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.แกไขการแจงเตอนToolStripMenuItem.Text = "แก้ไขการแจ้งเตือน";
             this.แกไขการแจงเตอนToolStripMenuItem.Click += new System.EventHandler(this.แกไขการแจงเตอนToolStripMenuItem_Click);
             // 
@@ -252,6 +254,13 @@
             this.day_time.TabIndex = 3;
             this.day_time.Text = "วัน/เดือน/ปี";
             // 
+            // ตงคาเสยงการแจงเตอนToolStripMenuItem
+            // 
+            this.ตงคาเสยงการแจงเตอนToolStripMenuItem.Name = "ตงคาเสยงการแจงเตอนToolStripMenuItem";
+            this.ตงคาเสยงการแจงเตอนToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.ตงคาเสยงการแจงเตอนToolStripMenuItem.Text = "ตั้งค่าเสียงการแจ้งเตือน";
+            this.ตงคาเสยงการแจงเตอนToolStripMenuItem.Click += new System.EventHandler(this.ตงคาเสยงการแจงเตอนToolStripMenuItem_Click);
+            // 
             // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,5 +312,6 @@
         private System.Windows.Forms.ToolStripMenuItem เพมการแจงเตอนToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem แกไขการแจงเตอนToolStripMenuItem;
         private System.Windows.Forms.Label day_time;
+        private System.Windows.Forms.ToolStripMenuItem ตงคาเสยงการแจงเตอนToolStripMenuItem;
     }
 }
