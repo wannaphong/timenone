@@ -59,8 +59,10 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.save_file);
             this.Controls.Add(this.select_file);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "Form_set_sound";
-            this.Text = "Form_set_sound";
+            this.Text = "ตั้งค่าเสียงแจ้งเตือน";
             this.ResumeLayout(false);
 
         }
