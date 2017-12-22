@@ -22,6 +22,7 @@ namespace timenone
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Title = "Select";
+            openFileDialog1.Filter = "wav files (*.wav)|*.wav";
             if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
             {
                 string fullPath = openFileDialog1.FileName;
