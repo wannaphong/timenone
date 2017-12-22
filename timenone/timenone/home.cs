@@ -97,8 +97,9 @@ namespace timenone
             {
                 string[] list = SplitWords(name, @",code123 "); // เรียกใช้ method SplitWords ในการแบ่งข้อความ เป็น string[] เก็บไว้ใน list
                 string[] list2 = SplitWords(name, @",code123none "); // เรียกใช้ method SplitWords ในการแบ่งข้อความ เป็น string[] เก็บไว้ใน list2
+                string[] list3 = SplitWords(name, @",run1 ");
                 string code = "";// ประกาศตัวแปร code ชนิดข้อมูล string มีค่าเริ่มต้นเป็น ""
-                if (list.Length == 2 || list2.Length == 2) // ถ้า list ยาวเท่ากับ 2 หรือ list2 ยาวเท่ากับ 2
+                if (list.Length == 2 || list2.Length == 2|| list3.Length == 2) // ถ้า list ยาวเท่ากับ 2 หรือ list2 ยาวเท่ากับ 2
                 {
                     if (list2.Length == 2) // ถ้า list2 ยาวเท่ากับ 2
                     {
@@ -116,6 +117,13 @@ namespace timenone
                         Process.Start("CMD.exe", strCmdText); // สั่งงาน
                         name = list[0]; // ให้ name เก็บ list2[0]
                         code = list[1];// ให้ code เก็บ list2[1]
+                    }
+                    else if (list3.Length == 2) // ถ้า list ยาวเท่ากับ 2
+                    {
+                        string strCmdText = list3[1];// กำหนดคำสั่งสำหรับสั่งงาน
+                        Process.Start(strCmdText); // สั่งงาน
+                        name = list3[0]; // ให้ name เก็บ list2[0]
+                        code = list3[1];// ให้ code เก็บ list2[1]
                     }
                     name += "\r\n" + "คำสั่งพิเศษ : " + code; // เพิ่ม "คำสั่งพิเศษ :  code" เข้าไปใน name
                 }

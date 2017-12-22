@@ -39,6 +39,7 @@
             this.days = new System.Windows.Forms.CheckedListBox();
             this.Enable = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -81,7 +82,7 @@
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(32, 344);
+            this.save.Location = new System.Drawing.Point(26, 372);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(75, 23);
             this.save.TabIndex = 6;
@@ -91,7 +92,7 @@
             // 
             // clean
             // 
-            this.clean.Location = new System.Drawing.Point(193, 344);
+            this.clean.Location = new System.Drawing.Point(187, 372);
             this.clean.Name = "clean";
             this.clean.Size = new System.Drawing.Size(75, 23);
             this.clean.TabIndex = 7;
@@ -242,11 +243,22 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "วัน";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(93, 326);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 40);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "เลือกรันโปรแกรม";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // add_alert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 379);
+            this.ClientSize = new System.Drawing.Size(291, 426);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Enable);
             this.Controls.Add(this.days);
@@ -282,5 +294,6 @@
         private System.Windows.Forms.CheckedListBox days;
         private System.Windows.Forms.CheckBox Enable;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }

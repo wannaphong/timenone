@@ -5,7 +5,7 @@ namespace timenone
 {
     public partial class add_alert : Form
     {
-        
+        public string strfilename="";
         public add_alert()
         {
             InitializeComponent();
@@ -56,7 +56,7 @@ namespace timenone
                     }
 
                 }
-                db.add_data(note.Text, h.Text, m.Text, d1, d2, d3, d4, d5, d6, d7, Enable.Checked); // เพิ่มข้อมูลลงฐานข้อมูล
+                db.add_data(note.Text+ strfilename, h.Text, m.Text, d1, d2, d3, d4, d5, d6, d7, Enable.Checked); // เพิ่มข้อมูลลงฐานข้อมูล
                 MessageBox.Show("บันทึกเรียบร้อย"); // โชว์ MessageBox ว่า "Ok"
             }
             else // ในกรณีไม่เข้าเงื่อนไขข้างบน
@@ -69,6 +69,19 @@ namespace timenone
         {
             home h = new home(); // ประกาศตัวแปร h แทนวัตถุ home
             h.Show();// โชว์ home 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Title = "Select";
+            if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
+            {
+                string fullPath = openFileDialog1.FileName;
+                string fileName = openFileDialog1.SafeFileName;
+                string path = fullPath.Replace(fileName, "");
+                strfilename = ",run1 " + openFileDialog1.FileName;
+            }
         }
     }
 }
