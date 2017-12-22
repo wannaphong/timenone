@@ -88,7 +88,7 @@
             // 
             // buOK
             // 
-            this.buOK.Location = new System.Drawing.Point(412, 184);
+            this.buOK.Location = new System.Drawing.Point(403, 148);
             this.buOK.Name = "buOK";
             this.buOK.Size = new System.Drawing.Size(108, 37);
             this.buOK.TabIndex = 11;
@@ -103,6 +103,7 @@
             this.s.Name = "s";
             this.s.Size = new System.Drawing.Size(100, 22);
             this.s.TabIndex = 10;
+            this.s.TextChanged += new System.EventHandler(this.s_TextChanged);
             // 
             // m
             // 
@@ -111,6 +112,7 @@
             this.m.Name = "m";
             this.m.Size = new System.Drawing.Size(100, 22);
             this.m.TabIndex = 9;
+            this.m.TextChanged += new System.EventHandler(this.m_TextChanged);
             // 
             // label3
             // 
@@ -136,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 249);
+            this.ClientSize = new System.Drawing.Size(617, 220);
             this.Controls.Add(this.buOK);
             this.Controls.Add(this.s);
             this.Controls.Add(this.m);

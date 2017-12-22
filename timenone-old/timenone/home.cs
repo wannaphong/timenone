@@ -17,7 +17,7 @@ namespace timenone
             InitializeComponent();
             SidePanel.Height = button1.Height;
             SidePanel.Top = button1.Top;
-            firstCustomControl1.BringToFront();
+            
         }
         Point mousedownpoint = Point.Empty;
 
@@ -25,14 +25,14 @@ namespace timenone
         {
             SidePanel.Height = button1.Height;
             SidePanel.Top = button1.Top;
-            firstCustomControl1.BringToFront();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             SidePanel.Height = button2.Height;
             SidePanel.Top = button2.Top;
-            mySecondCustmControl1.BringToFront();
+            
 
             //Thanks for watching Friends...
             //Please dont forget to Subscribe... :) :) :) 
@@ -72,19 +72,47 @@ namespace timenone
         {
             Environment.Exit(0);
         }
+        private void r(RadioButton a,RadioButton b, RadioButton c , RadioButton d)
+        {
+           int aa, bb, cc, dd;
+            int aa1, bb1, cc1, dd1;
 
+            aa = a.Location.Y;
+            bb = b.Location.Y;
+            cc = c.Location.Y;
+            dd = d.Location.Y;
+            aa1 = a.Location.X;
+            bb1 = b.Location.X;
+            cc1 = c.Location.X;
+            dd1 = d.Location.X;
+            a.Left = bb;
+            b.Left = aa;
+            c.Left = dd;
+            d.Left = cc;
+            a.Top = aa1;
+            b.Top = bb1;
+            c.Top = cc1;
+            d.Top = dd1;
+        }
         private void index_Click(object sender, EventArgs e)
         {
             //SidePanel.Height =index.Height;
             SidePanel.Top = index.Top;
-            firstCustomControl1.BringToFront();
         }
 
         private void opencountdown_Click(object sender, EventArgs e)
         {
             //SidePanel.Height = index.Height;
             SidePanel.Top = index.Top;
-            mySecondCustmControl1.BringToFront();
+
+            button8.Left =opencountdown.Location.X;
+            string a = "5";
+            Math.Round(Convert.ToDouble((double.Parse(a.ToString()) / 30) * 100), 2);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            r(radioButton1, radioButton2, radioButton3, radioButton4);
         }
     }
 }

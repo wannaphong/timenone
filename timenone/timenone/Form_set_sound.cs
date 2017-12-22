@@ -38,5 +38,10 @@ namespace timenone
             MessageBox.Show("บันทึกเรียบร้อย");
             this.Hide();
         }
+
+        private void reset_sound_Click(object sender, EventArgs e)
+        {
+            file = Application.StartupPath + @"\funky-breakbeat_102bpm_F_major.wav";
+        }
     }
 }

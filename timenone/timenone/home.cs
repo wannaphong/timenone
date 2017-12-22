@@ -297,6 +297,12 @@ namespace timenone
             a.Show();
         }
 
+        private void ตงคาเสยงแจงเตอนToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_set_sound a = new Form_set_sound();
+            a.Show();
+        }
+
         private void แกไขการแจงเตอนToolStripMenuItem_Click(object sender, EventArgs e) // เมื่อคลิก แก้ไขการแจ้งเตือน ใน ToolStripMenuItem
         {
             edit_alert a = new edit_alert(); // ประกาศตัวแปร a แทนวัตถุ edit_alert

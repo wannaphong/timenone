@@ -30,6 +30,7 @@
         {
             this.select_file = new System.Windows.Forms.Button();
             this.save_file = new System.Windows.Forms.Button();
+            this.reset_sound = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // select_file
@@ -52,11 +53,22 @@
             this.save_file.UseVisualStyleBackColor = true;
             this.save_file.Click += new System.EventHandler(this.save_file_Click);
             // 
+            // reset_sound
+            // 
+            this.reset_sound.Location = new System.Drawing.Point(78, 147);
+            this.reset_sound.Name = "reset_sound";
+            this.reset_sound.Size = new System.Drawing.Size(124, 24);
+            this.reset_sound.TabIndex = 2;
+            this.reset_sound.Text = "ค่าเริ่มต้น";
+            this.reset_sound.UseVisualStyleBackColor = true;
+            this.reset_sound.Click += new System.EventHandler(this.reset_sound_Click);
+            // 
             // Form_set_sound
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.reset_sound);
             this.Controls.Add(this.save_file);
             this.Controls.Add(this.select_file);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -71,5 +83,6 @@
 
         private System.Windows.Forms.Button select_file;
         private System.Windows.Forms.Button save_file;
+        private System.Windows.Forms.Button reset_sound;
     }
 }
